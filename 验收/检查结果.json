@@ -1,0 +1,87 @@
+{
+  "checkedAt": "2026-10-03T05:53:44.977618+08:00",
+  "browser": "Codex in-app browser",
+  "responsiveWidths": [
+    320,
+    390,
+    650,
+    768,
+    900,
+    1024,
+    1440
+  ],
+  "horizontalOverflow": false,
+  "desktopAndMobileVisualReview": true,
+  "interactionsVerified": [
+    "exclusive scene expansion and collapse",
+    "scene preview and Escape",
+    "all three product hotspots",
+    "all three FAQ items",
+    "contact dialog",
+    "App navigation and return",
+    "mobile scene and hotspot",
+    "background image scroll transform"
+  ],
+  "allPageImagesLoaded": true,
+  "browserWarningsAndErrors": [],
+  "assets": [
+    {
+      "file": "assets/wordmark.svg",
+      "bytes": 12360
+    },
+    {
+      "file": "assets/hero.png",
+      "bytes": 8521957
+    },
+    {
+      "file": "assets/bedside.png",
+      "bytes": 1878383
+    },
+    {
+      "file": "assets/instagram.svg",
+      "bytes": 3247
+    },
+    {
+      "file": "assets/everyday.png",
+      "bytes": 1396960
+    },
+    {
+      "file": "assets/dm-mono.ttf",
+      "bytes": 44784
+    },
+    {
+      "file": "assets/routine.png",
+      "bytes": 925064
+    },
+    {
+      "file": "assets/tagline.svg",
+      "bytes": 36731
+    },
+    {
+      "file": "assets/dm-sans-700.ttf",
+      "bytes": 48200
+    },
+    {
+      "file": "assets/dm-sans-400.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "assets/bodoni.ttf",
+      "bytes": 44844
+    },
+    {
+      "file": "assets/tiktok.svg",
+      "bytes": 736
+    },
+    {
+      "file": "assets/postpartum.png",
+      "bytes": 2122408
+    }
+  ],
+  "limitations": [
+    "Real video not supplied or tested",
+    "App screenshot placeholders retained",
+    "Reduced motion implemented but not browser-emulated",
+    "Standalone Playwright unavailable; connected browser used instead"
+  ]
+}

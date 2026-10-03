@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-03",
+  "preview": "http://127.0.0.1:4173/",
+  "media": "现有图片占位，未提供正式视频",
+  "browser": "Codex 内置浏览器",
+  "responsive": [
+    { "width": 320, "height": 740, "pageWidth": 320, "backgroundCoversViewport": true },
+    { "width": 390, "height": 844, "pageWidth": 390, "backgroundCoversViewport": true },
+    { "width": 768, "height": 1024, "pageWidth": 768, "backgroundCoversViewport": true },
+    { "width": 1440, "height": 900, "pageWidth": 1440, "backgroundCoversViewport": true }
+  ],
+  "actualBrowserChecks": {
+    "backgroundFixedAtTopZeroThroughoutScroll": true,
+    "allHomeSectionsTransparent": true,
+    "foregroundFilterNoneAndOpacityOne": true,
+    "heroBlurZero": true,
+    "contentBlur20px": true,
+    "reverseScrollRestoresClearHero": true,
+    "singleFrostLayerWithSectionTintGradient": true,
+    "mobileLightDarkBoundaryReadable": true,
+    "backgroundIgnoresPointerEvents": true,
+    "sceneExclusiveExpansion": true,
+    "scenePreviewAndEscape": true,
+    "productHotspotSelection": true,
+    "faqExpansion": true,
+    "contactDialogAndEscape": true,
+    "appPageRoundTripAndAnchor": true,
+    "configuredImageLoaded": true,
+    "consoleErrorsOrWarnings": []
+  },
+  "controllerTest": {
+    "command": "node 验收/background.test.cjs",
+    "result": "PASS",
+    "covers": ["模糊中间值与反向恢复", "视频全页起中终点映射", "定位期间的最新滚动目标", "停止滚动保持帧", "内容尺寸变化", "减少动态效果", "视频错误回退"]
+  },
+  "limitations": ["视频定位逻辑使用模拟媒体测试；真实视频解码、定位性能及移动设备兼容性待正式素材接入后验证。"],
+  "finalPreview": { "viewportOverrideReset": true, "scrollY": 0, "blur": "0px", "backgroundImageLoaded": true }
+}
