@@ -435,7 +435,7 @@ export function PodSceneContent({
 }: PodModelProps & { onUserOrbit: () => void; resetToken: number }) {
   const [bounds, setBounds] = useState<THREE.Box3 | null>(null);
   const gl = useThree(s => s.gl);
-  useEffect(() => { gl.domElement.setAttribute('role', 'application'); gl.domElement.setAttribute('aria-label', lang === 'en' ? 'L Pro 3D product: drag or use arrow keys to rotate; pinch or plus/minus keys to zoom.' : 'L Pro 三维产品：拖动或方向键旋转，双指或加减键缩放。'); }, [gl, lang]);
+  useEffect(() => { gl.domElement.setAttribute('role', 'application'); gl.domElement.setAttribute('aria-label', lang === 'en' ? 'L PRO 3D product: drag or use arrow keys to rotate; pinch or plus/minus keys to zoom.' : 'L PRO 三维产品：拖动或方向键旋转，双指或加减键缩放。'); }, [gl, lang]);
   return (
     <>
       <color attach="background" args={['#0a0d13']} />

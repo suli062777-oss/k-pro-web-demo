@@ -101,15 +101,6 @@
 .price-refill-strip{display:grid;grid-template-columns:1.15fr 1fr auto;gap:4%;align-items:center;border-top:1px solid #ccc;padding-top:22px;margin-top:20px}
 .price-refill-strip h3{font-size:clamp(21px,2.1vw,36px);line-height:1.2;text-align:center}
 .price-refill-strip p{padding-left:12%;border-left:1px solid #ccc;font-size:clamp(16px,1.25vw,21px)}
-.pricing-header-brand,.pricing-header-nav,.pricing-header-wordmark{display:none}
-.site-header.is-pricing .site-brand,.site-header.is-pricing .site-section-links{display:none}
-.site-header.is-pricing .pricing-header-brand{display:block;font:800 30px/1 'Intro Poppins',sans-serif;letter-spacing:-.04em}
-.site-header.is-pricing .pricing-header-nav{display:flex;gap:30px;position:absolute;left:50%;transform:translateX(-50%);font-size:16px}
-.site-header.is-pricing .pricing-header-wordmark{display:block;font:400 26px/1 Arial,sans-serif;letter-spacing:-.045em}
-.site-header.is-pricing .site-header-actions{gap:24px}
-.site-header.is-pricing .site-language{border:0;border-radius:0}
-.site-header.is-pricing .site-language button{min-width:30px;padding:6px;font-size:10px}
-.site-header.is-pricing .site-language button[aria-pressed=true]{background:transparent;color:#000;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:1200px) and (min-width:801px){
   .price-home-row{gap:8px;font-size:18px}.price-home-row>span{gap:8px}.price-home-row>span+span{padding-left:12px}.price-home-row strong{font-size:23px}
   .price-tagline{font-size:21px}.price-form-title{font-size:3.8vw}.price-main-actions{margin-right:0}
@@ -145,9 +136,26 @@
   .price-refill-strip{grid-template-columns:1fr;gap:18px;padding-top:24px;margin-top:30px;text-align:left}
   .price-refill-strip h3{text-align:left;font-size:24px}.price-refill-strip p{border:0;padding:0;font-size:16px}.price-text-link{font-size:14px}
   .price-concept{font-size:11px;margin-top:28px}
-  .site-header.is-pricing .pricing-header-brand{font-size:22px}.site-header.is-pricing .pricing-header-wordmark{display:none}
-  .site-header.is-pricing .pricing-header-nav{position:static;transform:none;gap:12px;font-size:12px;margin-left:auto;margin-right:12px}
-  .site-header.is-pricing .site-header-actions{gap:0}.site-header.is-pricing .site-language button{padding:4px;min-width:24px;font-size:9px}
+  
+  
+  
 }
-@media(max-width:380px){.pricing-section{padding-left:18px;padding-right:18px}.site-header.is-pricing{padding-left:12px;padding-right:12px}.site-header.is-pricing .pricing-header-brand{font-size:19px}.site-header.is-pricing .pricing-header-nav{gap:8px;font-size:10px;margin-right:8px}.price-plan-columns{gap:14px}.price-plan-columns article+article{padding-left:14px}.price-plan-columns h3{font-size:17px}.price-plan-columns dd{font-size:22px}.price-date-row{grid-template-columns:1fr;gap:0}}
+@media(max-width:380px){.pricing-section{padding-left:18px;padding-right:18px}.price-plan-columns{gap:14px}.price-plan-columns article+article{padding-left:14px}.price-plan-columns h3{font-size:17px}.price-plan-columns dd{font-size:22px}.price-date-row{grid-template-columns:1fr;gap:0}}
 @media(prefers-reduced-motion:reduce){.pricing-section *,.pricing-section *::before,.pricing-section *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+/* Preserve the reading position inside a form; only new views get a new anchor. */
+.pricing-content,#price-success{scroll-margin-top:18px}
+.price-demo-context{font-size:12px;line-height:1.5;color:#666;margin:0 0 18px}
+@media(max-width:800px){
+ .price-photo-frame{height:260px}
+ .pricing-section:not([data-state=overview]) .pricing-gallery{display:flex;align-items:center;gap:18px;min-height:0}
+ .pricing-section:not([data-state=overview]) .price-photo-frame{height:100px;width:64px;flex:none;pointer-events:none}
+ .pricing-section:not([data-state=overview]) .price-experience-caption{text-align:left;margin:0}
+ .pricing-section:not([data-state=overview]) .price-experience-caption h3{font-size:22px;line-height:1.2}
+ .pricing-section:not([data-state=overview]) .price-experience-caption p{font-size:13px;margin-top:6px;max-width:24ch;color:#666}
+ .pricing-section[data-state=plans] .pricing-gallery{display:none}
+ .pricing-grid{gap:22px}
+ .price-product-title{font-size:clamp(48px,13vw,64px)}
+ .price-view-intro{font-size:16px;min-height:2.8em;margin-bottom:18px}
+ .price-form-title{min-height:2.3em;display:flex;align-items:flex-end}
+ .price-view[data-view=booking]{overflow-anchor:none}
+}

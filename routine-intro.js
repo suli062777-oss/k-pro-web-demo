@@ -132,6 +132,8 @@
     $('routine-notes').innerHTML = text.notes.map(note => `<p>${escape(note)}</p>`).join('');
     $('routine-order').textContent = text.orderLabel;
     $('routine-how').textContent = text.howLabel;
+    $('routine-video-hint').textContent = text.videoHint;
+    $('routine-how').setAttribute('aria-describedby', 'routine-video-hint');
     $('routine-poster').setAttribute('aria-label', text.imageAlt);
     renderDialog();
     updateToggle();

@@ -72,7 +72,7 @@
     });
   });
   $$('[data-follow]').forEach(button=>button.addEventListener('click',()=>{
-    text('#follow-message',button.dataset.follow === 'Contact' ? 'K pro is taking shape. Our official contact details will be shared here as the project develops.' : 'Our official '+button.dataset.follow+' channel will be shared here. In the meantime, discover what K pro is all about.');
+    text('#follow-message',button.dataset.follow === 'Contact' ? 'L PRO is taking shape. Our official contact details will be shared here as the project develops.' : 'Our official '+button.dataset.follow+' channel will be shared here. In the meantime, discover what L PRO is all about.');
     openDialog($('#follow-dialog'));
   }));
 

@@ -43,3 +43,7 @@
   [data-state="fallback"] .world-choice img{display:block;aspect-ratio:1.3}
 }
 @media(prefers-reduced-motion:reduce){#world-canvas{transition:none}.world-status:before{animation:none!important}}
+.world-label-hit{transition:box-shadow .2s ease}
+.world-label-hit.is-highlighted{box-shadow:0 0 0 1px #ffffffcc,0 3px 14px #00000024}
+.world-choice:hover{border-color:#444}
+@media(prefers-reduced-motion:reduce){.world-label-hit{transition:none}}

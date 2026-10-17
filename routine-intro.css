@@ -58,3 +58,5 @@
   .routine-dialog{padding:48px 24px 28px}
 }
 @media(max-width:360px){.routine-intro-copy{padding-left:22px;padding-right:22px}.routine-intro #routine-title{font-size:8vw}.routine-actions{gap:12px}.routine-benefits{font-size:15px}}
+.routine-video-hint{font-size:12px;line-height:1.5;color:#666;margin-top:14px}
+@media(max-width:800px){.routine-video-hint{font-size:11px}}

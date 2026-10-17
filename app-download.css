@@ -48,3 +48,5 @@
   #app .phone-stage { padding: 0; }
   #app .app-phone-image { width: min(100%, 300px); }
 }
+#app .app-availability{font:500 12px/1.5 var(--sans);color:#686868;margin-top:26px}
+#app .app-download-actions{margin-top:22px}

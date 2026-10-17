@@ -6,13 +6,29 @@ const config = window.KPRO_CONTENT.spaces;
 let engine, importing, request = 0, activeId, controller;
 const buttons = [...dialog.querySelectorAll('[data-space-action]')];
 
+const copy = () => config.translations[window.KPRO_LANGUAGE || 'en'];
+const title = () => { const spec = config.scenes[activeId]; return spec ? (window.KPRO_LANGUAGE === 'zh' ? spec.title : spec.titleEn) : ''; };
+function translate() {
+  const c = copy(), name = title();
+  document.querySelector('#scene-dialog-title').textContent = name;
+  dialog.querySelector('.dialog-close').setAttribute('aria-label', c.close);
+  canvas.setAttribute('aria-label', c.canvas.replace('{name}', name));
+  document.querySelector('#space-fallback').alt = c.cover.replace('{name}', name);
+  const instruction = document.querySelector('#space-instruction');
+  if (instruction) instruction.textContent = c.instruction;
+  const keyboard = document.querySelector('#space-keyboard');
+  if (keyboard) keyboard.textContent = c.keyboard;
+  buttons.forEach(button => { const action = button.dataset.spaceAction; button.setAttribute('aria-label', c[action]); if (['reset','retry'].includes(action)) button.textContent = c[action]; });
+  status.textContent = stage.dataset.state === 'loading' ? c.loading.replace('{name}', name) : stage.dataset.state === 'fallback' ? c.failed : '';
+}
+window.addEventListener('kpro:language', translate);
 function state(value, message = '') {
   stage.dataset.state = value;
   stage.classList.toggle('is-ready', value === 'ready');
   stage.setAttribute('aria-busy', String(value === 'loading'));
   canvas.setAttribute('aria-hidden', String(value !== 'ready'));
   canvas.tabIndex = value === 'ready' ? 0 : -1;
-  status.textContent = message;
+  translate();
   buttons.forEach(button => {
     if (button.dataset.spaceAction === 'retry') button.hidden = value !== 'fallback';
     else button.disabled = value !== 'ready';
@@ -34,7 +50,7 @@ async function open(id) {
   document.querySelector('#space-fallback').src = spec.cover;
   document.querySelector('#space-fallback').alt = spec.title + '室内空间封面';
   engine?.release(); state('loading', '正在打开 ' + spec.title + '全景…');
-  canvas.setAttribute('aria-label', spec.title + ' 360°全景：拖动或方向键环视，加减键缩放，Esc 返回');
+  translate();
   let timeout;
   try {
     timeout = setTimeout(() => {

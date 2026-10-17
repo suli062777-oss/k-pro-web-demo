@@ -1,6 +1,6 @@
 window.KPRO_CONTENT = {
   "site": {
-    "name": "K pro",
+    "name": "L PRO",
     "description": "Wash. Dry. Care. A simpler hair-care routine.",
     "heroImage": "assets/hero.png",
     "heroVideo": "",
@@ -61,7 +61,7 @@ window.KPRO_CONTENT = {
     ".readiness-heading > .chinese": "使用前的三个问题。"
   },
   "navigation": {
-    "left": "explore K pro",
+    "left": "explore L PRO",
     "leftTarget": "#routine"
   },
   "receipts": [
@@ -128,7 +128,7 @@ window.KPRO_CONTENT = {
       "title": "06 / within reach",
       "divider": "------------------------",
       "lines": [
-        "meet the K pro app.",
+        "meet the L PRO app.",
         "set your preferences.",
         "follow your routine.",
         "find everyday guidance."
@@ -216,9 +216,9 @@ window.KPRO_CONTENT = {
   ],
   "app": {
     "title": "Your care.\nYour control.",
-    "intro": "Download the L Pro app to personalize your haircare, explore scalp insights, and control your device with ease.\nDownload for iOS & Android.",
+    "intro": "Personalise your routine, explore scalp insights and control your device.",
     "image": "assets/app-download-phone-cutout.png",
-    "imageAlt": "L Pro app on a phone, showing Care Without Limits",
+    "imageAlt": "L PRO app on a phone, showing Care Without Limits",
     "downloads": [
       {
         "id": "android",
@@ -227,7 +227,7 @@ window.KPRO_CONTENT = {
       },
       {
         "id": "ios",
-        "label": "IOS",
+        "label": "iOS",
         "url": ""
       }
     ],
@@ -318,7 +318,8 @@ window.KPRO_CONTENT = {
           "yaw": 5,
           "pitch": -3,
           "fov": 70
-        }
+        },
+        "titleEn": "Home Care"
       },
       "ward": {
         "title": "病房护理",
@@ -331,7 +332,8 @@ window.KPRO_CONTENT = {
           "yaw": 8,
           "pitch": -3,
           "fov": 70
-        }
+        },
+        "titleEn": "Ward Care"
       },
       "garden": {
         "title": "养老院护理",
@@ -344,7 +346,8 @@ window.KPRO_CONTENT = {
           "yaw": 12,
           "pitch": -3,
           "fov": 70
-        }
+        },
+        "titleEn": "Senior Care"
       },
       "salon": {
         "title": "头皮沙龙",
@@ -357,7 +360,40 @@ window.KPRO_CONTENT = {
           "yaw": -32,
           "pitch": -3,
           "fov": 70
-        }
+        },
+        "titleEn": "Scalp Salon"
+      }
+    },
+    "translations": {
+      "en": {
+        "close": "Close panorama and return to the world",
+        "canvas": "{name} 360° panorama: drag or use arrow keys to look around; plus/minus to zoom; Escape to return.",
+        "cover": "{name} panorama cover",
+        "loading": "Opening {name}…",
+        "failed": "The panorama could not load. Try again or return to the world.",
+        "instruction": "Drag to look around · Scroll or pinch to zoom",
+        "keyboard": "Arrow keys to look around · Esc to return",
+        "left": "Look left",
+        "right": "Look right",
+        "out": "Zoom out",
+        "in": "Zoom in",
+        "reset": "Reset view",
+        "retry": "Try again"
+      },
+      "zh": {
+        "close": "关闭全景，返回小世界",
+        "canvas": "{name} 360° 全景：拖动或方向键环视，加减键缩放，Esc 返回。",
+        "cover": "{name}室内空间封面",
+        "loading": "正在打开{name}全景…",
+        "failed": "全景暂时无法加载。请重试，或关闭返回小世界。",
+        "instruction": "拖动环视 · 滚轮 / 双指缩放",
+        "keyboard": "方向键环视 · Esc 返回",
+        "left": "向左环视",
+        "right": "向右环视",
+        "out": "缩小视野画面",
+        "in": "放大视野画面",
+        "reset": "重置视角",
+        "retry": "重新加载"
       }
     }
   },
@@ -371,21 +407,33 @@ window.KPRO_CONTENT = {
     "copy": {
       "en": {
         "title": "Four-scene mini world",
-        "instruction": "Drag to rotate · Select a building to enter 360° · Use + / − or pinch to zoom",
+        "instruction": "Drag to rotate · Select a building to explore 360°",
         "pause": "Ⅱ Pause",
         "play": "▷ Play",
         "reset": "Reset",
         "loading": "Opening your world…",
-        "failed": "The 3D world is unavailable. Choose a scene below to continue."
+        "failed": "The 3D world is unavailable. Choose a scene below to continue.",
+        "enter": "Explore {name} in 360°",
+        "canvas": "Four care settings. Drag to rotate; select a building to explore in 360°.",
+        "toolbar": "World view controls",
+        "choose": "Choose a 360° scene",
+        "zoomIn": "Zoom in",
+        "zoomOut": "Zoom out"
       },
       "zh": {
         "title": "四场景小世界",
-        "instruction": "拖动旋转 · 点击建筑进入 360° · 按钮或双指缩放",
+        "instruction": "拖动旋转 · 点击建筑进入 360° 场景",
         "pause": "Ⅱ 暂停",
         "play": "▷ 播放",
         "reset": "复位",
         "loading": "正在打开小世界…",
-        "failed": "小世界暂时无法显示，仍可选择下方场景进入全景。"
+        "failed": "小世界暂时无法显示，仍可选择下方场景进入全景。",
+        "enter": "进入{name} 360° 场景",
+        "canvas": "四场景小世界：拖动旋转，点击建筑进入 360° 场景。",
+        "toolbar": "世界视角控制",
+        "choose": "选择 360° 场景",
+        "zoomIn": "放大小世界",
+        "zoomOut": "缩小小世界"
       }
     },
     "scenes": [
@@ -433,7 +481,14 @@ window.KPRO_CONTENT = {
         "footprint": 11.2,
         "yaw": 180
       }
-    ]
+    ],
+    "hover": {
+      "scale": 1.04,
+      "durationMs": 200,
+      "outlineWidth": 2,
+      "outlineColor": "#ffffff",
+      "shadowColor": "#303030"
+    }
   },
   "productAnatomy": {
     "model": "assets/anatomy/pod-colored.glb",
@@ -447,7 +502,7 @@ window.KPRO_CONTENT = {
     "storageKey": "kpro-language",
     "translations": {
       "en": {
-        "navWorld": "World",
+        "navWorld": "Experience",
         "navProduct": "Product",
         "productLoading": "Loading the interactive product…",
         "copy": {
@@ -455,9 +510,10 @@ window.KPRO_CONTENT = {
           "#readiness-title": "Before you begin.",
           ".readiness-heading > .chinese": "Three things to know before you begin.",
           "#app-title": "Your care.\nYour control.",
-          "#app-intro": "Download the L Pro app to personalize your haircare, explore scalp insights, and control your device with ease.\nDownload for iOS & Android.",
+          "#app-intro": "Personalise your routine, explore scalp insights and control your device.",
           "#closing-title": "Care, made simpler.",
-          "#closing-chinese": "A little more ease in your next routine."
+          "#closing-chinese": "A little more ease in your next routine.",
+          "#app-availability": "Coming soon for iOS & Android"
         },
         "heroExplore": "explore",
         "scroll": "scroll to discover",
@@ -539,7 +595,7 @@ window.KPRO_CONTENT = {
             "title": "06 / within reach",
             "divider": "------------------------",
             "lines": [
-              "meet the K pro app.",
+              "meet the L PRO app.",
               "set your preferences.",
               "follow your routine.",
               "find everyday guidance."
@@ -554,10 +610,21 @@ window.KPRO_CONTENT = {
           "FAQ",
           "Contact"
         ],
-        "contact": "K pro is taking shape. Our official contact details will be shared here as the project develops.",
-        "follow": "Our official {platform} channel will be shared here. In the meantime, discover what K pro is all about.",
+        "contact": "L PRO is taking shape. Our official contact details will be shared here as the project develops.",
+        "follow": "Our official {platform} channel will be shared here. In the meantime, discover what L PRO is all about.",
         "modalTitle": "A little more to come.",
-        "modalDone": "Keep exploring"
+        "modalDone": "Keep exploring",
+        "navOverview": "Overview",
+        "navApp": "App",
+        "navPricing": "Pricing",
+        "navMenu": "Menu",
+        "navClose": "Close menu",
+        "navLabel": "Sections",
+        "homeLabel": "L PRO — Back to home",
+        "appAvailability": "Coming soon for iOS & Android",
+        "appAvailabilityLabel": "{platform} · Coming soon",
+        "appIntro": "Personalise your routine, explore scalp insights and control your device.",
+        "videoHint": "Watch the guide on Bilibili ↗"
       },
       "zh": {
         "navWorld": "场景",
@@ -568,9 +635,10 @@ window.KPRO_CONTENT = {
           "#readiness-title": "开始之前。",
           ".readiness-heading > .chinese": "使用前的三个问题。",
           "#app-title": "你的护理。\n由你掌控。",
-          "#app-intro": "下载 L Pro 应用，定制你的洗护流程、了解头皮状态，轻松控制设备。\n适用于 iOS 与 Android。",
+          "#app-intro": "定制洗护流程、了解头皮状态，轻松控制设备。",
           "#closing-title": "让护理，更简单。",
-          "#closing-chinese": "让下一次洗护，更从容。"
+          "#closing-chinese": "让下一次洗护，更从容。",
+          "#app-availability": "iOS 与 Android 版本即将开放"
         },
         "heroExplore": "探索",
         "scroll": "向下探索",
@@ -652,7 +720,7 @@ window.KPRO_CONTENT = {
             "title": "06 / 触手可及",
             "divider": "------------------------",
             "lines": [
-              "认识 K pro 应用。",
+              "认识 L PRO 应用。",
               "设置你的偏好。",
               "跟随日常护理流程。",
               "找到所需的使用指引。"
@@ -667,10 +735,21 @@ window.KPRO_CONTENT = {
           "常见问题",
           "联系"
         ],
-        "contact": "K pro 正在逐步完善。正式联系方式将在项目推进后公布。",
-        "follow": "我们的官方 {platform} 账号将在这里公布，你可以先继续探索 K pro。",
+        "contact": "L PRO 正在逐步完善。正式联系方式将在项目推进后公布。",
+        "follow": "我们的官方 {platform} 账号将在这里公布，你可以先继续探索 L PRO。",
         "modalTitle": "更多内容，\n即将到来。",
-        "modalDone": "继续探索"
+        "modalDone": "继续探索",
+        "navOverview": "概览",
+        "navApp": "应用",
+        "navPricing": "方案",
+        "navMenu": "菜单",
+        "navClose": "关闭菜单",
+        "navLabel": "页面章节",
+        "homeLabel": "L PRO — 回到首页",
+        "appAvailability": "iOS 与 Android 版本即将开放",
+        "appAvailabilityLabel": "{platform} · 即将开放",
+        "appIntro": "定制洗护流程、了解头皮状态，轻松控制设备。",
+        "videoHint": "在哔哩哔哩观看使用视频 ↗"
       }
     }
   },
@@ -705,7 +784,7 @@ window.KPRO_CONTENT = {
         "title": [
           "Effortless",
           "Hair Care With",
-          "L Pro"
+          "L PRO"
         ],
         "benefits": [
           [
@@ -740,15 +819,15 @@ window.KPRO_CONTENT = {
           "*Concept design. Features shown illustrate intended functionality and remain subject to prototype testing and validation.",
           "**Voice control and personalised care require compatible software. Performance may vary with hair type, setup and usage conditions."
         ],
-        "orderLabel": "Order now",
+        "orderLabel": "View plans",
         "howLabel": "How to Use",
         "imageAlt": "A smiling person in a black-and-white portrait",
         "play": "Play video",
         "pause": "Pause video",
         "close": "Close",
         "order": {
-          "title": "L Pro",
-          "intro": "L Pro is currently a concept preview. Ordering is not available yet. The official purchase link will appear here when it becomes available."
+          "title": "L PRO",
+          "intro": "L PRO is currently a concept preview. Ordering is not available yet. The official purchase link will appear here when it becomes available."
         },
         "how": {
           "title": "How to Use",
@@ -767,13 +846,14 @@ window.KPRO_CONTENT = {
               "body": "Capture close-up scalp images and add your hair details and preferences to receive a personalised care recommendation."
             }
           ]
-        }
+        },
+        "videoHint": "Watch the guide on Bilibili ↗"
       },
       "zh": {
         "title": [
           "轻松护理秀发",
           "尽在",
-          "L Pro"
+          "L PRO"
         ],
         "benefits": [
           [
@@ -811,15 +891,15 @@ window.KPRO_CONTENT = {
           "*概念设计。所展示的功能为预期功能，仍需经过原型测试和验证。",
           "**语音控制与个性化护理需要兼容软件支持。表现可能因发质、设置和使用条件而有所不同。"
         ],
-        "orderLabel": "立即订购",
+        "orderLabel": "查看方案",
         "howLabel": "如何使用",
         "imageAlt": "微笑人物的黑白肖像",
         "play": "播放视频",
         "pause": "暂停视频",
         "close": "关闭",
         "order": {
-          "title": "L Pro",
-          "intro": "L Pro 目前处于概念展示阶段，尚未开放订购。正式购买入口开放后将在这里更新。"
+          "title": "L PRO",
+          "intro": "L PRO 目前处于概念展示阶段，尚未开放订购。正式购买入口开放后将在这里更新。"
         },
         "how": {
           "title": "如何使用",
@@ -838,7 +918,8 @@ window.KPRO_CONTENT = {
               "body": "拍摄头皮近照，填写发质信息和护理偏好，获取个性化护理建议。"
             }
           ]
-        }
+        },
+        "videoHint": "在哔哩哔哩观看使用视频 ↗"
       }
     }
   }

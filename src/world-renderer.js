@@ -11,6 +11,10 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { OutlinePass } from "three/examples/jsm/postprocessing/OutlinePass.js";
+import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { createBackdrop } from "./world-backdrop.js";
 
 const START_THETA = 45;     /* camera azimuth the fronts are composed against */
@@ -34,7 +38,7 @@ const ICON_PATHS = {
  * chevron) with a thin stem down to an anchor dot on the roofline. Drawn
  * as a canvas texture so it stays crisp and immune to DOM compositing.
  * drawPill is kept separate so the language toggle can redraw in place. */
-function drawPill(cnv, name, desc, iconKey) {
+function drawPill(cnv, name, desc, iconKey, highlighted = false) {
   const W = cnv.width, H = cnv.height;
   const cx = cnv.getContext("2d");
   cx.clearRect(0, 0, W, H);
@@ -60,7 +64,7 @@ function drawPill(cnv, name, desc, iconKey) {
   /* icon in a periwinkle disc */
   const cxI = 74, cyI = 65, rI = 30;
   cx.beginPath(); cx.arc(cxI, cyI, rI, 0, Math.PI * 2);
-  cx.fillStyle = "#b7bad3"; cx.fill();
+  cx.fillStyle = highlighted ? "#202124" : "#858585"; cx.fill();
   cx.save();
   cx.translate(cxI - 15, cyI - 15);
   cx.scale(30 / 24, 30 / 24);
@@ -79,14 +83,14 @@ function drawPill(cnv, name, desc, iconKey) {
   cx.textAlign = "left";
   cx.fillStyle = "#23282e";
   cx.font = "700 38px 'Microsoft YaHei','PingFang SC',system-ui,sans-serif";
-  cx.fillText(name, 124, 50);
+  cx.fillText(name, 124, desc ? 50 : 65);
   cx.fillStyle = "#8d949b";
   cx.font = "400 25px 'Microsoft YaHei','PingFang SC',system-ui,sans-serif";
   if (desc) cx.fillText(desc, 124, 93);
   cx.fillStyle = "#b9bfc6";
   cx.font = "400 46px system-ui,sans-serif";
   cx.textAlign = "center";
-  cx.fillText("›", 668, 63);
+  cx.fillText("›", highlighted ? 677 : 668, 63);
 }
 
 function makeCalloutMesh(name, desc, iconKey) {
@@ -107,7 +111,7 @@ function makeCalloutMesh(name, desc, iconKey) {
   mesh.renderOrder = 10;
   /* anchor dot sits at canvas y 256; keep it at the building-top anchor */
   mesh.userData.dotOffset = (0.5 - 256 / H) * PLANE_H;
-  mesh.userData.redraw = (n, d) => { drawPill(cnv, n, d, iconKey); tex.needsUpdate = true; };
+  mesh.userData.redraw = (n, d, highlighted = false) => { drawPill(cnv, n, d, iconKey, highlighted); tex.needsUpdate = true; };
   return mesh;
 }
 
@@ -259,7 +263,72 @@ export async function createWorldRenderer(canvas, config, hooks) {
   const loader = new GLTFLoader().setDRACOLoader(draco);
   let active = false, ready = false, failed = false, raf = 0, ticking = false, last = 0, dirty = true;
   let paused = matchMedia('(prefers-reduced-motion: reduce)').matches, lang = config.language || 'en';
-  let items = [];
+  let items = [], pointerHighlight = null, focusHighlight = null, hoverId = null;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const feedback = { scale: 1.04, durationMs: 200, outlineWidth: 2, ...config.hover };
+  let composer, outline;
+  function ensureOutline() {
+    if (composer) return;
+    // Allocate postprocessing only when a pointer/keyboard first selects a building.
+    composer = new EffectComposer(renderer);
+    composer.addPass(new RenderPass(scene, camera));
+    outline = new OutlinePass(new THREE.Vector2(canvas.clientWidth, canvas.clientHeight), scene, camera);
+    outline.visibleEdgeColor.set(feedback.outlineColor || '#fff');
+    outline.hiddenEdgeColor.set('#000');
+    outline.edgeThickness = feedback.outlineWidth;
+    outline.downSampleRatio = 2;
+    outline.pulsePeriod = 0;
+    // White silhouette over a soft charcoal rim remains visible on pale buildings.
+    outline.overlayMaterial.blending = THREE.NormalBlending;
+    outline.overlayMaterial.uniforms.rimColor = { value: new THREE.Color(feedback.shadowColor || '#303030') };
+    outline.overlayMaterial.fragmentShader = `
+      varying vec2 vUv;
+      uniform sampler2D edgeTexture1;
+      uniform sampler2D edgeTexture2;
+      uniform float edgeStrength;
+      uniform vec3 rimColor;
+      void main() {
+        float edge = texture2D(edgeTexture1, vUv).r;
+        float wide = texture2D(edgeTexture2, vUv).r;
+        float line = smoothstep(0.025, 0.19, edge);
+        float shadow = clamp(wide * 7.0, 0.0, 0.6);
+        gl_FragColor = vec4(mix(rimColor, vec3(1.0), line), max(line, shadow) * edgeStrength);
+      }`;
+    composer.addPass(outline);
+    composer.addPass(new OutputPass());
+    composer.setSize(canvas.clientWidth, canvas.clientHeight);
+  }
+  function setHighlight(id, source = 'pointer') {
+    if (source === 'focus') focusHighlight = id; else pointerHighlight = id;
+    const next = pointerHighlight || focusHighlight;
+    if (hoverId === next) return;
+    hoverId = next;
+    if (hoverId) ensureOutline();
+    for (const item of items) {
+      const selected = item.spec.id === hoverId;
+      item.button.classList.toggle('is-highlighted', selected);
+      item.callout.userData.redraw(labelText(item.spec)[0], selected ? (lang === 'en' ? 'Enter 360°' : '进入 360° 空间') : '', selected);
+    }
+    canvas.dataset.hovered = hoverId || '';
+    wake();
+  }
+  function animateFeedback(delta) {
+    let changing = false;
+    for (const item of items) {
+      const target = item.spec.id === hoverId ? 1 : 0;
+      const step = reducedMotion.matches ? 1 : delta * 1000 / feedback.durationMs;
+      const previous = item.hoverAmount;
+      item.hoverAmount = target > previous ? Math.min(target, previous + step) : Math.max(target, previous - step);
+      changing ||= item.hoverAmount !== target;
+      const eased = item.hoverAmount * item.hoverAmount * (3 - 2 * item.hoverAmount);
+      item.visual.scale.setScalar(1 + (reducedMotion.matches ? 0 : feedback.scale - 1) * eased);
+      item.callout.scale.setScalar(1 + (reducedMotion.matches ? 0 : .025) * eased);
+      item.callout.position.y = item.calloutY + item.height * (item.visual.scale.x - 1) * item.unit.scale.x;
+      item.button.dataset.hoverScale = item.visual.scale.x.toFixed(4);
+      if (previous !== item.hoverAmount) { dirty = true; renderer.shadowMap.needsUpdate = true; }
+    }
+    return changing;
+  }
   function failure(error) {
     if (failed) return;
     failed = true; active = false; controls.enabled = false;
@@ -285,17 +354,17 @@ export async function createWorldRenderer(canvas, config, hooks) {
     model.rotation.y = THREE.MathUtils.degToRad(START_THETA - 180 + (spec.yaw ?? 180));
     const box = new THREE.Box3().setFromObject(model), size = box.getSize(new THREE.Vector3()), center = box.getCenter(new THREE.Vector3());
     const scale = (spec.footprint || 11.2) / Math.max(size.x, size.z);
-    const wrap = new THREE.Group(), unit = new THREE.Group();
+    const wrap = new THREE.Group(), unit = new THREE.Group(), visual = new THREE.Group();
     model.scale.setScalar(scale);
-    model.position.set(-center.x * scale, -box.min.y * scale + SLAB_TOP + .015, -center.z * scale);
-    unit.add(model);
+    model.position.set(-center.x * scale, -box.min.y * scale, -center.z * scale);
+    visual.position.y = SLAB_TOP + .015; visual.add(model); unit.add(visual);
     const slab = new THREE.Mesh(new THREE.ExtrudeGeometry(roundedRectShape(SLAB_HALF * 2, SLAB_HALF * 2, 1), { depth: .2, bevelEnabled: true, bevelThickness: .025, bevelSize: .03, bevelSegments: 2, curveSegments: 10 }), MATS.slab);
     slab.rotation.x = -Math.PI / 2; slab.receiveShadow = true;
     unit.add(slab); addHedges(unit); wrap.add(unit);
-    const callout = makeCalloutMesh(...labelText(spec), spec.icon);
+    const callout = makeCalloutMesh(labelText(spec)[0], '', spec.icon);
     callout.position.y = size.y * scale + .35 - callout.userData.dotOffset;
     wrap.add(callout); scene.add(wrap);
-    return { wrap, unit, model, callout, spec, index, button: labels.get(spec.id) };
+    return { wrap, unit, visual, model, callout, spec, index, height: size.y * scale, calloutY: callout.position.y, hoverAmount: 0, button: labels.get(spec.id) };
   });
   addStreetTrees(scene);
   const home = { position: new THREE.Vector3(), target: new THREE.Vector3() };
@@ -356,7 +425,14 @@ export async function createWorldRenderer(canvas, config, hooks) {
   function draw() {
     for (const item of items) item.callout.quaternion.copy(camera.quaternion);
     backdrop.setDistance(camera.position.distanceTo(controls.target), camera.position); backdrop.update();
-    renderer.render(scene, camera); updateLabels();
+    const highlighted = items.filter(item => item.hoverAmount > 0);
+    if (composer && highlighted.length) {
+      outline.selectedObjects = highlighted.map(item => item.visual);
+      outline.edgeStrength = Math.max(...highlighted.map(item => item.hoverAmount));
+      composer.render();
+    } else renderer.render(scene, camera);
+    canvas.dataset.outlined = highlighted.map(item => item.spec.id).join(',');
+    updateLabels();
     Object.assign(canvas.dataset, { frames: String(Number(canvas.dataset.frames || 0) + 1), angle: controls.getAzimuthalAngle().toFixed(5), distance: camera.position.distanceTo(controls.target).toFixed(5), paused: String(paused) });
     dirty = false;
   }
@@ -366,27 +442,28 @@ export async function createWorldRenderer(canvas, config, hooks) {
     const elapsed = last ? (now - last) / 1000 : 0;
     if (last && elapsed < 1 / (config.maxFps || 30)) { raf = requestAnimationFrame(tick); return; }
     last = now; ticking = true;
-    controls.autoRotate = !paused;
+    controls.autoRotate = !paused && !hoverId;
+    const animating = animateFeedback(elapsed || 1 / 60);
     const changed = controls.update(Math.min(elapsed, .1));
-    if (changed || dirty || !paused) draw();
+    if (changed || dirty || controls.autoRotate) draw();
     ticking = false;
-    if (!paused || changed) raf = requestAnimationFrame(tick); else last = 0;
+    if (controls.autoRotate || changed || animating) raf = requestAnimationFrame(tick); else last = 0;
   }
   function wake() { dirty = true; if (!raf && active && ready && !ticking && !failed) raf = requestAnimationFrame(tick); }
   function setActive(value) {
     active = !!value && !failed;
     controls.enabled = active;
-    if (!active) { cancelAnimationFrame(raf); raf = 0; last = 0; }
+    if (!active) { pointerHighlight = null; focusHighlight = null; hoverId = null; items.forEach(item => item.button.classList.remove('is-highlighted')); canvas.dataset.hovered = ''; cancelAnimationFrame(raf); raf = 0; last = 0; }
     else wake();
     canvas.dataset.active = String(active);
   }
-  function setPaused(value) { paused = value; controls.autoRotate = !paused; onMotion(paused); wake(); }
+  function setPaused(value) { paused = value; controls.autoRotate = !paused && !hoverId; onMotion(paused); wake(); }
   controls.addEventListener('start', () => { setPaused(true); });
   controls.addEventListener('change', wake);
   function resize() {
     const width = Math.max(1, canvas.clientWidth), height = Math.max(1, canvas.clientHeight);
     renderer.setSize(width, height, false); camera.aspect = width / height; camera.updateProjectionMatrix();
-    layout(); wake();
+    layout(); composer?.setSize(width, height); wake();
   }
   function action(name) {
     if (name === 'pause') { setPaused(!paused); return; }
@@ -410,7 +487,7 @@ export async function createWorldRenderer(canvas, config, hooks) {
   function pick(event) {
     const rect = canvas.getBoundingClientRect();
     raycaster.setFromCamera(new THREE.Vector2((event.clientX - rect.left) / rect.width * 2 - 1, -((event.clientY - rect.top) / rect.height) * 2 + 1), camera);
-    const hit = raycaster.intersectObjects(items.map(i => i.wrap), true)[0];
+    const hit = raycaster.intersectObjects(items.map(i => i.model), true)[0];
     if (!hit) return null;
     let object = hit.object;
     while (object.parent && !items.some(i => i.wrap === object)) object = object.parent;
@@ -425,15 +502,16 @@ export async function createWorldRenderer(canvas, config, hooks) {
     if (event.pointerType !== 'touch') canvas.focus({ preventScroll: true });
   });
   canvas.addEventListener('pointermove', event => {
-    if (press && Math.hypot(event.clientX - press.x, event.clientY - press.y) > 7) press.moved = true;
-    if (event.pointerType === 'mouse' && !pointers.size) canvas.style.cursor = pick(event) ? 'pointer' : 'grab';
+    if (press && pointers.size && Math.hypot(event.clientX - press.x, event.clientY - press.y) > 7) { press.moved = true; setHighlight(null); }
+    if (event.pointerType === 'mouse' && !pointers.size) { const item = pick(event); canvas.style.cursor = item ? 'pointer' : 'grab'; setHighlight(item?.spec.id || null); }
   });
+  canvas.addEventListener('pointerleave', () => setHighlight(null));
   canvas.addEventListener('pointerup', event => { pointers.delete(event.pointerId); });
   canvas.addEventListener('pointercancel', event => { pointers.delete(event.pointerId); if (press) press.moved = true; });
   canvas.addEventListener('click', event => {
     if (!active || press?.moved) return;
     const item = pick(event);
-    if (item) { canvas.focus({ preventScroll: true }); canvas.dataset.lastPick = item.spec.id; onEnter(item.spec.id); }
+    if (item) { setHighlight(null); canvas.focus({ preventScroll: true }); canvas.dataset.lastPick = item.spec.id; onEnter(item.spec.id); }
   });
   canvas.addEventListener('keydown', event => {
     const name = { ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down', '+': 'in', '=': 'in', '-': 'out', ' ': 'pause', Escape: 'reset', Home: 'reset' }[event.key];
@@ -454,10 +532,10 @@ export async function createWorldRenderer(canvas, config, hooks) {
   ['pointerup', 'pointercancel'].forEach(type => canvas.addEventListener(type, () => { touch = null; }));
   function setLanguage(value) {
     lang = value;
-    for (const item of items) item.callout.userData.redraw(...labelText(item.spec));
+    for (const item of items) item.callout.userData.redraw(labelText(item.spec)[0], item.spec.id === hoverId ? (lang === 'en' ? 'Enter 360°' : '进入 360° 空间') : '', item.spec.id === hoverId);
     wake();
   }
   ready = true; resize(); controls.autoRotate = false; controls.update(0); draw(); onMotion(paused);
-  return { setActive, resize, action, setLanguage, setPaused };
+  return { setActive, resize, action, setLanguage, setPaused, setHighlight };
 }
 

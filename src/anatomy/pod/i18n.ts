@@ -43,7 +43,7 @@ export interface Strings {
 
 export const STRINGS: Record<Lang, Strings> = {
   en: {
-    hero: ['L Pro', 'exclusive', 'features.'],
+    hero: ['L PRO', 'exclusive', 'features.'],
     listTitle: 'Module features',
     tourIdle: 'Auto guided tour',
     tourActive: 'Stop tour',
@@ -58,7 +58,7 @@ export const STRINGS: Record<Lang, Strings> = {
     htmlLang: 'en',
   },
   zh: {
-    hero: ['L Pro', '独家功能', '全解析。'],
+    hero: ['L PRO', '独家功能', '全解析。'],
     listTitle: '模块特性目录',
     tourIdle: '自动巡览',
     tourActive: '停止巡览',

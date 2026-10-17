@@ -1,4 +1,4 @@
-// Reference UI/state preserved; scoped lifecycle, page scrolling and recovery added for K pro.
+// Reference UI/state preserved; scoped lifecycle, page scrolling and recovery added for L PRO.
 import React, { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
@@ -74,7 +74,7 @@ export function PodApp() {
         <aside className="pod-left">
           <h2 className="pod-hero" id="product-title">{t.hero.map((line, i) => <React.Fragment key={i}>{i > 0 && <><span className="pod-title-space"> </span><br /></>}{line}</React.Fragment>)}</h2>
           <FeatureList lang={lang} current={station.id} onPick={pickStation} />
-          <p className="pod-mobile-description">{lang === 'en' ? station.briefEn : station.brief}</p>
+          <p className="pod-mobile-description" id="pod-feature-description" aria-live="polite" aria-atomic="true">{lang === 'en' ? station.briefEn : station.brief}</p>
           <div className="pod-left-foot"><TourPill lang={lang} disabled={!ready || error} autoTour={autoTour} onToggle={() => setAutoTour(v => !v)} /></div>
         </aside>
         <div className="pod-stage" aria-label={lang === 'en' ? 'Interactive product model' : '可交互产品模型'}>
@@ -90,7 +90,7 @@ export function PodApp() {
               </Suspense>
             </Canvas>
           </SceneBoundary>}
-          {error ? <div className="pod-error" role="status"><img src={config.fallbackImage} alt={lang === 'en' ? 'L Pro product concept' : 'L Pro 产品概念图'} /><div><p>{lang === 'en' ? 'The 3D model could not load. You can still explore the six features.' : '3D 模型暂时无法加载，你仍可浏览六项功能。'}</p><button className="pod-pill" onClick={retry}>{lang === 'en' ? 'Try again' : '重新加载'}</button></div></div> : !ready && <LoadingVeil lang={lang} />}
+          {error ? <div className="pod-error" role="status"><img src={config.fallbackImage} alt={lang === 'en' ? 'L PRO product concept' : 'L PRO 产品概念图'} /><div><p>{lang === 'en' ? 'The 3D model could not load. You can still explore the six features.' : '3D 模型暂时无法加载，你仍可浏览六项功能。'}</p><button className="pod-pill" onClick={retry}>{lang === 'en' ? 'Try again' : '重新加载'}</button></div></div> : !ready && <LoadingVeil lang={lang} />}
           <SceneControls lang={lang} station={station} index={stationIdx} explode={explodeTarget} onPrev={() => step(-1)} onNext={() => step(1)} onReset={() => pickStation('overview')} onExplode={v => { setAutoTour(false); setExplodeOverride(v); }} disabled={!ready || error} />
         </div>
       </div>

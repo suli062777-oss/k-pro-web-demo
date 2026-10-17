@@ -18,8 +18,10 @@ for (const spec of config.scenes) {
   button.type = 'button'; button.className = 'world-label-hit'; button.dataset.worldEnter = spec.id;
   button.setAttribute('aria-label', `进入 ${spec.name} 360° 场景`);
   button.addEventListener('click', () => enter(spec.id));
-  button.addEventListener('pointerenter', event => { if (event.pointerType !== 'touch') engine?.setPaused(true); });
-  button.addEventListener('focus', () => engine?.setPaused(true));
+  button.addEventListener('pointerenter', event => { if (event.pointerType !== 'touch') engine?.setHighlight(spec.id); });
+  button.addEventListener('pointerleave', () => engine?.setHighlight(null));
+  button.addEventListener('focus', () => { if (button.matches(':focus-visible')) engine?.setHighlight(spec.id, 'focus'); });
+  button.addEventListener('blur', () => engine?.setHighlight(null, 'focus'));
   labelsRoot.append(button); labels.set(spec.id, button);
   const choice = document.createElement('button');
   choice.type = 'button'; choice.className = 'world-choice'; choice.dataset.worldChoice = spec.id;
@@ -30,6 +32,10 @@ for (const spec of config.scenes) {
   const name = document.createElement('span'); name.dataset.worldName = spec.id;
   choice.append(image, name);
   choice.addEventListener('click', () => enter(spec.id));
+  choice.addEventListener('pointerenter', event => { if (event.pointerType !== 'touch') engine?.setHighlight(spec.id); });
+  choice.addEventListener('pointerleave', () => engine?.setHighlight(null));
+  choice.addEventListener('focus', () => { if (choice.matches(':focus-visible')) engine?.setHighlight(spec.id,'focus'); });
+  choice.addEventListener('blur', () => engine?.setHighlight(null,'focus'));
   choices.append(choice);
 }
 function updateCopy() {
@@ -43,7 +49,17 @@ function updateCopy() {
   pause.textContent = paused ? copy.play : copy.pause;
   pause.setAttribute('aria-pressed', String(paused));
   stage.querySelector('[data-world-action="reset"]').textContent = copy.reset;
-  for (const spec of config.scenes) document.querySelector(`[data-world-name="${spec.id}"]`).textContent = lang === 'en' ? spec.nameEn : spec.name;
+  canvas.setAttribute('aria-label', copy.canvas);
+  stage.querySelector('.world-toolbar').setAttribute('aria-label', copy.toolbar);
+  choices.setAttribute('aria-label', copy.choose);
+  stage.querySelector('[data-world-action="in"]').setAttribute('aria-label', copy.zoomIn);
+  stage.querySelector('[data-world-action="out"]').setAttribute('aria-label', copy.zoomOut);
+  for (const spec of config.scenes) {
+    const name = lang === 'en' ? spec.nameEn : spec.name;
+    document.querySelector(`[data-world-name="${spec.id}"]`).textContent = name;
+    labels.get(spec.id).setAttribute('aria-label', copy.enter.replace('{name}', name));
+    choices.querySelector(`[data-world-choice="${spec.id}"]`).setAttribute('aria-label', copy.enter.replace('{name}', name));
+  }
   status.textContent = failed ? copy.failed : engine ? '' : copy.loading;
 }
 function active() { engine?.setActive(visible && !document.hidden && !document.querySelector('dialog[open]')); }
@@ -58,7 +74,7 @@ async function start() {
   if (started) return;
   started = true; stage.dataset.state = 'loading'; stage.setAttribute('aria-busy', 'true');
   try {
-    const module = await import('./assets/world-engine.js?v=20261017-worlds');
+    const module = await import('./assets/world-engine.js?v=20261017-ux');
     engine = await module.createWorldRenderer(canvas, config, { labels, onEnter: enter, onFailure: fail, onMotion(value) { paused = value; updateCopy(); } });
     if (failed) { engine.setActive(false); return; }
     stage.dataset.state = 'ready'; stage.setAttribute('aria-busy', 'false');

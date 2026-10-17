@@ -12,7 +12,6 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const routes = { '#pricing':'overview', '#pricing-demo':'demo', '#pricing-online':'online', '#pricing-plans':'plans', '#pricing-refills':'refills', '#pricing-specs':'specs' };
   let state = 'overview', selectedImage = 0, accordion = 'description', submitted = false;
-  let headerFrame = 0;
   let settleAnchor = Boolean(routes[location.hash]);
   const field = (key, input) => `<label class="price-field"><span data-p-copy="${key}"></span>${input}</label>`;
   const action = (key, target, primary = false) => `<button type="button" class="price-button${primary ? ' is-primary' : ''}" data-price-view="${target}" data-p-copy="${key}"></button>`;
@@ -39,11 +38,13 @@
           <div class="price-home-row"><span><span data-p-copy="home"></span> <strong>${money(price.home)}</strong></span><span><span data-p-copy="rental"></span> <strong>${money(price.homeRental)}<span data-p-copy="month"></span></strong></span></div>
           <p class="price-professional-row"><span data-p-copy="professional"></span> <span>${money(price.professional)}</span><span aria-hidden="true">·</span><span data-p-copy="rental"></span> <span>${money(price.professionalRental)}<span data-p-copy="month"></span></span></p>
           <p class="price-tax price-muted" data-p-copy="tax"></p>
+          <p class="price-demo-context" data-p-copy="previewNotice"></p>
           <div class="price-main-actions">${action('book','demo')}${action('plans','plans')}</div>
           <div class="price-accordions">${accordionItem('description',description)}${accordionItem('refills',refills)}${accordionItem('specifications',specs)}</div>
         </div>
         <div class="price-view" data-view="booking" hidden>
           <h2 class="price-form-title" id="price-booking-title" tabindex="-1"></h2><p class="price-view-intro" id="price-booking-intro"></p>
+          <p class="price-demo-context" data-p-copy="previewNotice"></p>
           <div class="price-mode-tabs" role="tablist" aria-label="Demo type"><button type="button" role="tab" id="price-demo-tab" aria-controls="price-form-panel" data-price-view="demo" data-p-copy="inPerson"></button><button type="button" role="tab" id="price-online-tab" aria-controls="price-form-panel" data-price-view="online" data-p-copy="online"></button></div>
           <div id="price-form-panel" role="tabpanel" aria-labelledby="price-demo-tab">
             <form id="price-booking-form" novalidate>
@@ -125,7 +126,9 @@
       next = 'overview';
     }
     if (!['overview','demo','online','plans'].includes(next)) return;
+    const previous = state;
     const changed = state !== next;
+    const inPlace = ['demo','online'].includes(previous) && ['demo','online'].includes(next);
     state = next;
     root.dataset.state = state;
     const booking = state === 'demo' || state === 'online';
@@ -146,9 +149,11 @@
       const hash = options.route || (state === 'overview' ? '#pricing' : `#pricing-${state}`);
       if (location.hash !== hash) history.pushState(null,'',hash);
     }
-    if (options.scroll) { settleAnchor = true; root.scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'}); }
-    if (options.focus) activeView.querySelector('h2').focus({preventScroll:true});
-    scheduleHeader();
+    if (options.scroll && !inPlace) {
+      settleAnchor = true;
+      anchorTarget().scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});
+    }
+    if (options.focus && !inPlace) activeView.querySelector('h2').focus({preventScroll:true});
   }
   root.addEventListener('click', event => {
     const target = event.target.closest('button'); if (!target) return;
@@ -187,6 +192,7 @@
     if (!form.reportValidity()) { q('#price-form-error').hidden=false; return; }
     q('#price-form-error').hidden=true; submitted=true; form.hidden=true; q('#price-success').hidden=false;
     q('#price-success-title').focus({preventScroll:true});
+    q('#price-success').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});
   });
   form.addEventListener('input', () => { q('#price-form-error').hidden=true; });
   function translate() {
@@ -201,23 +207,17 @@
     renderImage(); showState(state);
     if (submitted) { form.hidden=true; q('#price-success').hidden=false; }
   }
-  function syncHeader() {
-    headerFrame=0;
-    const rect=root.getBoundingClientRect();
-    const header=document.querySelector('.site-header');
-    header.classList.toggle('is-pricing',rect.top<=header.offsetHeight+2 && rect.bottom>header.offsetHeight+2);
+  function anchorTarget() {
+    return state !== 'overview' && matchMedia('(max-width:800px)').matches ? q('.pricing-content') : root;
   }
-  function scheduleHeader() { if (!headerFrame) headerFrame=requestAnimationFrame(syncHeader); }
-  addEventListener('scroll',scheduleHeader,{passive:true});addEventListener('resize',scheduleHeader,{passive:true});
   // Lazy 3D sections above can change height after a direct #pricing load.
   // Keep that requested anchor aligned until the visitor starts interacting.
   for (const name of ['wheel','touchstart','pointerdown','keydown']) addEventListener(name,()=>{settleAnchor=false;},{passive:true});
   new ResizeObserver(()=>{
-    if (settleAnchor && routes[location.hash]) root.scrollIntoView({behavior:'instant',block:'start'});
-    scheduleHeader();
+    if (settleAnchor && routes[location.hash]) anchorTarget().scrollIntoView({behavior:'instant',block:'start'});
   }).observe(document.querySelector('main'));
   function route(scroll = true) {
-    const next=routes[location.hash];if(!next) { scheduleHeader();return; }
+    const next=routes[location.hash];if(!next) return;
     if(next==='overview')setAccordion('description');
     showState(next,{scroll});
   }
@@ -228,5 +228,5 @@
   });
   addEventListener('popstate',()=>route());addEventListener('hashchange',()=>route());
   window.addEventListener('kpro:language',translate);
-  setAccordion('description');translate();route(true);scheduleHeader();
+  setAccordion('description');translate();route(true);
 })();

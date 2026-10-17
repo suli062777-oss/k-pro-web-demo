@@ -12,6 +12,7 @@ window.KPRO_CONTENT.pricing = {
   timeZones: ['Asia/Shanghai', 'Asia/Tokyo', 'Europe/London', 'Europe/Paris', 'America/New_York', 'America/Los_Angeles'],
   translations: {
     en: {
+      previewNotice: 'Concept preview · No purchase or live booking.',
       overviewNav: 'Overview', experienceNav: 'Experience', pricingNav: 'Pricing',
       homeCrumb: 'Home', toolsCrumb: 'Hair tools', productCrumb: 'L PRO',
       title: '[L PRO]', tagline: 'An all-in-one scalp and hair care concept.\nWash. Care. Dry. Your moment of calm.',
@@ -46,6 +47,7 @@ window.KPRO_CONTENT.pricing = {
       galleryLabel: 'Product images', back: 'Back to product overview', demoCrumb: 'Book a demo', plansCrumb: 'Plans', onlineCrumb: 'Online consultation'
     },
     zh: {
+      previewNotice: '概念展示 · 暂不提供真实购买或预约。',
       overviewNav: '概览', experienceNav: '体验', pricingNav: '定价',
       homeCrumb: '首页', toolsCrumb: '护理设备', productCrumb: 'L PRO',
       title: '[L PRO]', tagline: '一体式头皮与秀发护理概念。\n清洗、护理、吹干，享受片刻从容。',

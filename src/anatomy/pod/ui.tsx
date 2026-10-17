@@ -74,7 +74,6 @@ export function FeatureList({
       {FEATURE_ITEMS.map((s) => {
         const active = s.id === current;
         const title = lang === 'en' ? s.en : stripCircled(s.name);
-        const desc = lang === 'en' ? s.briefEn : s.brief;
         return (
           <li key={s.id}>
             <button
@@ -82,6 +81,7 @@ export function FeatureList({
               data-station-id={s.id}
               className={`pod-feat${active ? ' on' : ''}`}
               aria-pressed={active}
+              aria-describedby={active ? "pod-feature-description" : undefined}
               onClick={() => onPick(s.id)}
             >
               <span className="pod-feat-title">
@@ -90,7 +90,6 @@ export function FeatureList({
                 <span className="pod-feat-name">{title}</span>
                 {lang === 'zh' && <span className="pod-feat-en">{s.en}</span>}
               </span>
-              <span className="pod-feat-desc">{desc}</span>
             </button>
           </li>
         );
