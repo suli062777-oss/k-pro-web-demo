@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-17",
+  "checks": [
+    {
+      "background": [
+        0,
+        0,
+        1265,
+        720
+      ],
+      "clientWidth": 1265,
+      "cover": "cover",
+      "inlineAttribute": true,
+      "loop": true,
+      "name": "Autoplay on entry without interaction",
+      "overflow": false,
+      "pass": true,
+      "time": 1.307644,
+      "viewportHeight": 720
+    },
+    {
+      "name": "Pause holds current frame",
+      "pass": true,
+      "time": 11.81127
+    },
+    {
+      "name": "Scrolling preserves time-based autoplay",
+      "pass": true,
+      "elapsed": 28.892,
+      "expectedTime": 6.883334000000005,
+      "duration": 15.104,
+      "glass": [
+        "blur(24px) grayscale(1)",
+        "blur(24px) grayscale(1)"
+      ],
+      "paused": false,
+      "rect": [
+        0,
+        0,
+        1265,
+        720
+      ],
+      "scrollY": 4000,
+      "time": 6.751796
+    },
+    {
+      "label": "暂停背景",
+      "name": "390px mobile autoplay and cover",
+      "pass": true,
+      "position": "64% 50%",
+      "videoRect": [
+        0,
+        0,
+        375,
+        844
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "label": "暂停背景",
+      "name": "Final mobile centered framing",
+      "pass": true,
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "Reduced-motion preference starts on static fallback",
+      "pass": true
+    },
+    {
+      "name": "Manual play works with reduced-motion preference",
+      "pass": true
+    },
+    {
+      "name": "Dialog pauses background playback",
+      "pass": true
+    },
+    {
+      "name": "Closing dialog resumes background playback",
+      "pass": true
+    },
+    {
+      "name": "320px autoplay and no horizontal overflow",
+      "pass": true,
+      "playback": "playing",
+      "ready": 4,
+      "time": 14.093839,
+      "viewport": [
+        320,
+        740
+      ]
+    }
+  ],
+  "initial": {
+    "duration": 15.104,
+    "height": 720,
+    "hidden": false,
+    "loop": true,
+    "muted": true,
+    "paused": false,
+    "readyState": 4,
+    "scrollY": 0,
+    "source": "http://127.0.0.1:4173/assets/hero-loop.mp4",
+    "time": 0.276658,
+    "width": 1280
+  },
+  "final": {
+    "loop": true,
+    "muted": true,
+    "overflow": false,
+    "playing": true,
+    "ready": 4,
+    "url": "http://127.0.0.1:4173/?lang=en#home",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "asset": "assets/hero-loop.mp4",
+  "sourceCopiedWithoutModification": true,
+  "sha256": "c04ec874021d9be641acb2d5c62dd8ea07989b303a781d77f7c29aadf63b1d6f",
+  "limitations": [
+    "Browser responsive viewports, not physical iOS/Android device testing.",
+    "Autoplay rejection and missing-video fallback have guarded code paths but were not forced in this run."
+  ],
+  "workspace": {
+    "WORKSPACE_ROOT": null,
+    "project": "/Users/lisuhang1/Desktop/欧莱雅/K-pro-web-demo",
+    "rulesRead": false,
+    "pitfallsReadFromLegacyFolder": true,
+    "fixedPitfallLogUpdated": false,
+    "fixedExperienceLogUpdated": false
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "cover": "cover",
+      "filter": "grayscale(1)",
+      "inline": true,
+      "name": "Desktop muted autoplay",
+      "overflow": false,
+      "pass": true,
+      "time": 1.483618
+    },
+    {
+      "name": "Pause holds frame",
+      "pass": true
+    },
+    {
+      "heroSource": "http://127.0.0.1:4173/assets/hero-loop.mp4",
+      "name": "Offscreen portrait pauses while hero keeps playing",
+      "pass": true
+    },
+    {
+      "name": "Re-entering section resumes autoplay",
+      "pass": true
+    },
+    {
+      "name": "Mobile 390px muted autoplay and layout",
+      "objectFit": "cover",
+      "pass": false,
+      "rect": {
+        "bottom": -254.046875,
+        "height": 423.3125,
+        "left": 0,
+        "right": 390,
+        "top": -677.359375,
+        "width": 390,
+        "x": 0,
+        "y": -677.359375
+      },
+      "source": "http://127.0.0.1:4173/assets/routine-intro/portrait-loop.mp4",
+      "videoSize": [
+        1184,
+        1285
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "Mobile 390px after scroll settled",
+      "objectFit": "cover",
+      "pass": true,
+      "rect": {
+        "bottom": 497.953125,
+        "height": 423.3125,
+        "left": 0,
+        "right": 390,
+        "top": 74.640625,
+        "width": 390,
+        "x": 0,
+        "y": 74.640625
+      },
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "Fresh page load autoplay",
+      "pass": true,
+      "ready": 4
+    }
+  ],
+  "initial": {
+    "duration": 5.088,
+    "height": 1285,
+    "hidden": false,
+    "loop": true,
+    "muted": true,
+    "paused": false,
+    "ready": 4,
+    "source": "http://127.0.0.1:4173/assets/routine-intro/portrait-loop.mp4",
+    "time": 4.358493,
+    "viewport": [
+      1280,
+      720
+    ],
+    "width": 1184
+  },
+  "task": "Replace second-section portrait placeholder with supplied video",
+  "asset": "assets/routine-intro/portrait-loop.mp4",
+  "bytes": 1013571,
+  "sha256": "7ca8e689651a0e634f96cbccf0c37f5f2a8e3261dd8cdaa7e5220ffd0b43d4d4",
+  "notes": [
+    "Initial mobile check ran while PageDown scroll was still moving; video had moved offscreen and correctly paused. Retested after scroll settled: passed.",
+    "Mobile check uses a 390×844 browser viewport, not a physical phone.",
+    "Autoplay is muted and begins when this section enters the viewport; offscreen playback pauses. Reduced-motion preference keeps the manual play control."
+  ],
+  "workspace": {
+    "root": null,
+    "project": "/Users/lisuhang1/Desktop/欧莱雅/K-pro-web-demo",
+    "rulesRead": false,
+    "legacyPitfallRead": true,
+    "pitfallUpdated": false,
+    "experienceUpdated": false,
+    "reason": "Fixed Workspace and rule document not found; continuing in explicitly authorized existing project."
+  }
+}

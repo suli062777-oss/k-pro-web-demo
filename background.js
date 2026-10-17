@@ -41,6 +41,76 @@
   background.style.setProperty('--background-position', config.position);
   background.style.setProperty('--background-mobile-position', config.mobilePosition);
 
+  // Autoplay and scroll seeking are separate modes. Never let scrolling seek
+  // an automatically playing background; glass parameters stay constant in both.
+  if (content.site.videoPlayback === 'autoplay') {
+    const toggle = document.querySelector('#background-video-toggle');
+    let requested = false;
+    let ready = false;
+    let failed = false;
+    let userPaused = false;
+    let userStarted = false;
+    let blocked = false;
+    let playPending = false;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.loop = content.site.videoLoop !== false;
+    video.poster = content.site.heroImage;
+
+    function updateToggle() {
+      background.dataset.playback = failed ? 'fallback' : !video.paused ? 'playing' : blocked ? 'blocked' : 'paused';
+      video.hidden = !ready || failed || (reduceMotion.matches && !userStarted);
+      if (!toggle) return;
+      const zh = (window.KPRO_LANGUAGE || document.documentElement.lang).startsWith('zh');
+      toggle.hidden = !content.site.heroVideo || failed;
+      toggle.textContent = video.paused ? (zh ? '播放背景' : 'Play video') : (zh ? '暂停背景' : 'Pause video');
+      toggle.setAttribute('aria-label', toggle.textContent);
+      toggle.dataset.playing = String(!video.paused);
+    }
+    function shouldPlay() {
+      return !document.hidden && !document.querySelector('dialog[open]') && !failed && !userPaused && (!reduceMotion.matches || userStarted);
+    }
+    function syncPlayback() {
+      if (!content.site.heroVideo || failed) { updateToggle(); return; }
+      if (!requested && (!reduceMotion.matches || userStarted)) {
+        requested = true;
+        video.src = content.site.heroVideo;
+        video.preload = 'auto';
+        video.load();
+      }
+      if (!shouldPlay()) video.pause();
+      else if (!blocked && !playPending && video.paused) {
+        playPending = true;
+        video.play().catch(error => {
+          // Visibility/dialog changes can legitimately interrupt an in-flight play.
+          if (error.name !== 'AbortError') blocked = true;
+        }).finally(() => { playPending = false; updateToggle(); });
+      }
+      updateToggle();
+    }
+    video.addEventListener('loadeddata', () => { ready = true; syncPlayback(); });
+    video.addEventListener('playing', () => {
+      if (!shouldPlay()) video.pause();
+      updateToggle();
+    });
+    video.addEventListener('pause', updateToggle);
+    video.addEventListener('error', () => { failed = true; video.pause(); updateToggle(); });
+    toggle?.addEventListener('click', () => {
+      if (video.paused) { userPaused = false; userStarted = true; blocked = false; }
+      else userPaused = true;
+      syncPlayback();
+    });
+    reduceMotion.addEventListener('change', () => { userStarted = false; syncPlayback(); });
+    document.addEventListener('visibilitychange', syncPlayback);
+    window.addEventListener('pageshow', syncPlayback);
+    window.addEventListener('pagehide', () => video.pause());
+    window.addEventListener('kpro:language', updateToggle);
+    document.querySelectorAll('dialog').forEach(dialog => new MutationObserver(syncPlayback).observe(dialog, { attributes: true, attributeFilter: ['open'] }));
+    syncPlayback();
+    return;
+  }
+
   let framePending = false;
   let needsMeasure = true;
   let viewportHeight = 1;

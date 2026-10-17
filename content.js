@@ -3,7 +3,9 @@ window.KPRO_CONTENT = {
     "name": "L PRO",
     "description": "Wash. Dry. Care. A simpler hair-care routine.",
     "heroImage": "assets/hero.png",
-    "heroVideo": "",
+    "heroVideo": "assets/hero-loop.mp4",
+    "videoPlayback": "autoplay",
+    "videoLoop": true,
     "videoStart": 0,
     "videoEnd": null
   },
@@ -21,7 +23,7 @@ window.KPRO_CONTENT = {
   },
   "background": {
     "position": "50% 50%",
-    "mobilePosition": "64% 50%",
+    "mobilePosition": "50% 50%",
     "themes": {
       "dark": {
         "blur": 24,
@@ -755,7 +757,7 @@ window.KPRO_CONTENT = {
   },
   "routineIntro": {
     "media": {
-      "video": "",
+      "video": "assets/routine-intro/portrait-loop.mp4",
       "poster": {
         "src": "assets/routine-intro/design-source.png",
         "width": 1920,
