@@ -147,7 +147,10 @@
     if (changed && !reduced.matches) activeView.animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}], {duration:config.motion.viewMs,easing:'cubic-bezier(.2,.65,.3,1)'});
     if (options.push) {
       const hash = options.route || (state === 'overview' ? '#pricing' : `#pricing-${state}`);
-      if (location.hash !== hash) history.pushState(null,'',hash);
+      if (location.hash !== hash) {
+        const url = new URL(location.href); url.hash = hash;
+        history.pushState(null, '', url);
+      }
     }
     if (options.scroll && !inPlace) {
       settleAnchor = true;

@@ -4,7 +4,7 @@ async function start() {
   if (started) return;
   started = true;
   try {
-    const { mountAnatomy } = await import('./assets/anatomy-engine.js?v=20261017-anatomy');
+    const { mountAnatomy } = await import('./assets/anatomy-engine.js?v=20261017-ux-final');
     mountAnatomy(root);
   } catch (error) {
     root.innerHTML = '<div class="anatomy-placeholder"><h2 id="product-title">L Pro</h2><p>产品交互暂时无法加载 / Product preview unavailable.</p><button type="button">重新加载 / Retry</button></div>';

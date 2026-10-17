@@ -303,7 +303,16 @@ export async function createWorldRenderer(canvas, config, hooks) {
     const next = pointerHighlight || focusHighlight;
     if (hoverId === next) return;
     hoverId = next;
-    if (hoverId) ensureOutline();
+    if (hoverId) {
+      ensureOutline();
+      // Flush OrbitControls' residual auto-rotation without moving the camera.
+      // Otherwise damping keeps a hovered building drifting under the pointer.
+      const position = camera.position.clone(), target = controls.target.clone();
+      const damping = controls.enableDamping;
+      controls.autoRotate = false; controls.enableDamping = false; controls.update(0);
+      camera.position.copy(position); controls.target.copy(target); controls.update(0);
+      controls.enableDamping = damping;
+    }
     for (const item of items) {
       const selected = item.spec.id === hoverId;
       item.button.classList.toggle('is-highlighted', selected);
@@ -453,7 +462,11 @@ export async function createWorldRenderer(canvas, config, hooks) {
   function setActive(value) {
     active = !!value && !failed;
     controls.enabled = active;
-    if (!active) { pointerHighlight = null; focusHighlight = null; hoverId = null; items.forEach(item => item.button.classList.remove('is-highlighted')); canvas.dataset.hovered = ''; cancelAnimationFrame(raf); raf = 0; last = 0; }
+    if (!active) {
+      setHighlight(null, 'focus'); setHighlight(null);
+      canvas.style.cursor = 'grab';
+      cancelAnimationFrame(raf); raf = 0; last = 0;
+    }
     else wake();
     canvas.dataset.active = String(active);
   }

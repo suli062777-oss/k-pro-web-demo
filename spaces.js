@@ -57,7 +57,7 @@ async function open(id) {
       pending.abort();
       if (ticket === request && dialog.open) { request++; fail(new Error('Panorama request timed out')); }
     }, 30000);
-    importing ||= import('./assets/panorama-engine.js?v=20261015').catch(error => { importing = null; throw error; });
+    importing ||= import('./assets/panorama-engine.js?v=20261017-ux-final').catch(error => { importing = null; throw error; });
     const module = await importing;
     if (ticket !== request || !dialog.open || pending.signal.aborted) return;
     engine ||= module.createPanoramaRenderer(canvas, config, fail);

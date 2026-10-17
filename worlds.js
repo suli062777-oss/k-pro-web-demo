@@ -74,7 +74,7 @@ async function start() {
   if (started) return;
   started = true; stage.dataset.state = 'loading'; stage.setAttribute('aria-busy', 'true');
   try {
-    const module = await import('./assets/world-engine.js?v=20261017-ux');
+    const module = await import('./assets/world-engine.js?v=20261017-ux-final');
     engine = await module.createWorldRenderer(canvas, config, { labels, onEnter: enter, onFailure: fail, onMotion(value) { paused = value; updateCopy(); } });
     if (failed) { engine.setActive(false); return; }
     stage.dataset.state = 'ready'; stage.setAttribute('aria-busy', 'false');

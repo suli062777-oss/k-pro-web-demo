@@ -1,0 +1,870 @@
+{
+  "date": "2026-10-17",
+  "baseline": "717053ac0cefb54321729231241be206107e319b",
+  "scope": "Local UX refinement checks; repository upload status must be verified separately.",
+  "world": [
+    {
+      "mode": "normal",
+      "viewport": [
+        1440,
+        900
+      ],
+      "result": "pass",
+      "checks": [
+        {
+          "name": "home raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1.04,
+            "outline": "home"
+          }
+        },
+        {
+          "name": "home leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "home hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "ward raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1.04,
+            "outline": "ward"
+          }
+        },
+        {
+          "name": "ward leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "ward hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "garden raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1.04,
+            "outline": "garden"
+          }
+        },
+        {
+          "name": "garden leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "garden hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "salon raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1.04,
+            "outline": "salon"
+          }
+        },
+        {
+          "name": "salon leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "salon hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "Hover temporarily stops rotation",
+          "pass": true
+        },
+        {
+          "name": "Leaving resumes previously playing rotation",
+          "pass": true
+        },
+        {
+          "name": "Returning from another section clears stale highlight",
+          "pass": true
+        },
+        {
+          "name": "Mouse drag rotates without opening a panorama",
+          "pass": true
+        },
+        {
+          "name": "Horizontal touch drag rotates without opening",
+          "pass": true
+        },
+        {
+          "name": "home single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "home bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "home return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "ward single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "ward bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "ward return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "garden single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "garden bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "garden return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "salon single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "salon bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "salon return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "World does not capture ordinary page wheel",
+          "pass": true
+        },
+        {
+          "name": "No page horizontal overflow",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "viewport": [
+        390,
+        844
+      ],
+      "result": "pass",
+      "checks": [
+        {
+          "name": "home raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1.0398,
+            "outline": "home"
+          }
+        },
+        {
+          "name": "home leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "home hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "ward raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1.04,
+            "outline": "ward"
+          }
+        },
+        {
+          "name": "ward leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "ward hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "garden raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1.04,
+            "outline": "garden"
+          }
+        },
+        {
+          "name": "garden leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "garden hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "salon raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1.04,
+            "outline": "salon"
+          }
+        },
+        {
+          "name": "salon leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "salon hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "Hover temporarily stops rotation",
+          "pass": true
+        },
+        {
+          "name": "Leaving resumes previously playing rotation",
+          "pass": true
+        },
+        {
+          "name": "Returning from another section clears stale highlight",
+          "pass": true
+        },
+        {
+          "name": "Mouse drag rotates without opening a panorama",
+          "pass": true
+        },
+        {
+          "name": "Horizontal touch drag rotates without opening",
+          "pass": true
+        },
+        {
+          "name": "home single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "home bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "home return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "ward single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "ward bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "ward return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "garden single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "garden bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "garden return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "salon single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "salon bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "salon return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "World does not capture ordinary page wheel",
+          "pass": true
+        },
+        {
+          "name": "No page horizontal overflow",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "mode": "reduced",
+      "viewport": [
+        320,
+        740
+      ],
+      "result": "pass",
+      "checks": [
+        {
+          "name": "home raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1,
+            "outline": "home"
+          }
+        },
+        {
+          "name": "home leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "home hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "ward raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1,
+            "outline": "ward"
+          }
+        },
+        {
+          "name": "ward leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "ward hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "garden raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1,
+            "outline": "garden"
+          }
+        },
+        {
+          "name": "garden leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "garden hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "salon raycast hover / white outline / scale",
+          "pass": true,
+          "details": {
+            "scale": 1,
+            "outline": "salon"
+          }
+        },
+        {
+          "name": "salon leaves other buildings unscaled",
+          "pass": true
+        },
+        {
+          "name": "salon hover fully resets",
+          "pass": true
+        },
+        {
+          "name": "Hover temporarily stops rotation",
+          "pass": true
+        },
+        {
+          "name": "Leaving resumes previously playing rotation",
+          "pass": true
+        },
+        {
+          "name": "Returning from another section clears stale highlight",
+          "pass": true
+        },
+        {
+          "name": "Mouse drag rotates without opening a panorama",
+          "pass": true
+        },
+        {
+          "name": "Horizontal touch drag rotates without opening",
+          "pass": true
+        },
+        {
+          "name": "home single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "home bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "home return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "ward single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "ward bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "ward return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "garden single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "garden bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "garden return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "salon single tap opens matching panorama",
+          "pass": true
+        },
+        {
+          "name": "salon bilingual panorama UI",
+          "pass": true
+        },
+        {
+          "name": "salon return restores scroll and focus",
+          "pass": true
+        },
+        {
+          "name": "World does not capture ordinary page wheel",
+          "pass": true
+        },
+        {
+          "name": "No page horizontal overflow",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "ui": [
+    {
+      "formTop": 90.1953125,
+      "header": "rgb(255, 255, 255)",
+      "name": "Mobile booking prioritises form",
+      "overflow": false,
+      "photoHeight": 100,
+      "width": 390
+    },
+    {
+      "suite": "page-flow",
+      "viewport": [
+        390,
+        844
+      ],
+      "result": "pass",
+      "checks": [
+        {
+          "name": "Language updates URL and visible labels",
+          "pass": true
+        },
+        {
+          "name": "One persistent opaque white header",
+          "pass": true
+        },
+        {
+          "name": "Mobile menu opens and becomes keyboard-accessible",
+          "pass": true
+        },
+        {
+          "name": "Escape closes menu and restores focus",
+          "pass": true
+        },
+        {
+          "name": "Product model ready",
+          "pass": true
+        },
+        {
+          "name": "01–WASH + DIAGNOSIS selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "02–ENDS WASH & MASSAGE selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "03–HAIR CARE selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "04–RING DRYER selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "05–SHELL & CHASSIS selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "06–EXPLODED VIEW selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "Each feature has its own explanation",
+          "pass": true
+        },
+        {
+          "name": "App availability and button feedback are explicit",
+          "pass": true
+        },
+        {
+          "name": "App and FAQ remain white",
+          "pass": true
+        },
+        {
+          "name": "FAQ follows pricing",
+          "pass": true
+        },
+        {
+          "name": "How-to link retains supplied video",
+          "pass": true
+        },
+        {
+          "name": "Mobile booking lands on form",
+          "pass": true
+        },
+        {
+          "name": "Clicking booking mode retains scroll and tab position",
+          "pass": true,
+          "details": {
+            "before": {
+              "y": 4696.5,
+              "tab": 435.90625
+            },
+            "after": {
+              "y": 4696.5,
+              "tab": 435.90625
+            }
+          }
+        },
+        {
+          "name": "Booking mode preserves entered fields",
+          "pass": true
+        },
+        {
+          "name": "Online mode requires timezone instead of city",
+          "pass": true
+        },
+        {
+          "name": "Keyboard booking switch retains position",
+          "pass": true
+        },
+        {
+          "name": "Plan view opens",
+          "pass": true
+        },
+        {
+          "name": "Refills opens its accordion",
+          "pass": true
+        },
+        {
+          "name": "Accordion remains mutually exclusive",
+          "pass": true
+        },
+        {
+          "name": "FAQ expands",
+          "pass": true
+        },
+        {
+          "name": "No page horizontal overflow",
+          "pass": true,
+          "details": {
+            "width": 390,
+            "scrollWidth": 390
+          }
+        }
+      ]
+    },
+    {
+      "suite": "page-flow",
+      "viewport": [
+        1440,
+        900
+      ],
+      "result": "pass",
+      "checks": [
+        {
+          "name": "Language updates URL and visible labels",
+          "pass": true
+        },
+        {
+          "name": "One persistent opaque white header",
+          "pass": true
+        },
+        {
+          "name": "Product model ready",
+          "pass": true
+        },
+        {
+          "name": "01–WASH + DIAGNOSIS selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "02–ENDS WASH & MASSAGE selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "03–HAIR CARE selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "04–RING DRYER selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "05–SHELL & CHASSIS selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "06–EXPLODED VIEW selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "Each feature has its own explanation",
+          "pass": true
+        },
+        {
+          "name": "No nested desktop text scrolling",
+          "pass": true
+        },
+        {
+          "name": "App availability and button feedback are explicit",
+          "pass": true
+        },
+        {
+          "name": "App and FAQ remain white",
+          "pass": true
+        },
+        {
+          "name": "FAQ follows pricing",
+          "pass": true
+        },
+        {
+          "name": "How-to link retains supplied video",
+          "pass": true
+        },
+        {
+          "name": "Clicking booking mode retains scroll and tab position",
+          "pass": true,
+          "details": {
+            "before": {
+              "y": 4329.5,
+              "tab": 470.21875
+            },
+            "after": {
+              "y": 4329.5,
+              "tab": 470.21875
+            }
+          }
+        },
+        {
+          "name": "Booking mode preserves entered fields",
+          "pass": true
+        },
+        {
+          "name": "Online mode requires timezone instead of city",
+          "pass": true
+        },
+        {
+          "name": "Keyboard booking switch retains position",
+          "pass": true
+        },
+        {
+          "name": "Plan view opens",
+          "pass": true
+        },
+        {
+          "name": "Refills opens its accordion",
+          "pass": true
+        },
+        {
+          "name": "Accordion remains mutually exclusive",
+          "pass": true
+        },
+        {
+          "name": "FAQ expands",
+          "pass": true
+        },
+        {
+          "name": "No page horizontal overflow",
+          "pass": true,
+          "details": {
+            "width": 1440,
+            "scrollWidth": 1425
+          }
+        }
+      ]
+    },
+    {
+      "suite": "page-flow",
+      "viewport": [
+        320,
+        740
+      ],
+      "result": "pass",
+      "checks": [
+        {
+          "name": "Language updates URL and visible labels",
+          "pass": true
+        },
+        {
+          "name": "One persistent opaque white header",
+          "pass": true
+        },
+        {
+          "name": "Mobile menu opens and becomes keyboard-accessible",
+          "pass": true
+        },
+        {
+          "name": "Escape closes menu and restores focus",
+          "pass": true
+        },
+        {
+          "name": "Product model ready",
+          "pass": true
+        },
+        {
+          "name": "01–WASH + DIAGNOSIS selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "02–ENDS WASH & MASSAGE selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "03–HAIR CARE selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "04–RING DRYER selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "05–SHELL & CHASSIS selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "06–EXPLODED VIEW selected without duplicated explanations",
+          "pass": true
+        },
+        {
+          "name": "Each feature has its own explanation",
+          "pass": true
+        },
+        {
+          "name": "App availability and button feedback are explicit",
+          "pass": true
+        },
+        {
+          "name": "App and FAQ remain white",
+          "pass": true
+        },
+        {
+          "name": "FAQ follows pricing",
+          "pass": true
+        },
+        {
+          "name": "How-to link retains supplied video",
+          "pass": true
+        },
+        {
+          "name": "Mobile booking lands on form",
+          "pass": true
+        },
+        {
+          "name": "Clicking booking mode retains scroll and tab position",
+          "pass": true,
+          "details": {
+            "before": {
+              "y": 4339,
+              "tab": 377.640625
+            },
+            "after": {
+              "y": 4339,
+              "tab": 377.640625
+            }
+          }
+        },
+        {
+          "name": "Booking mode preserves entered fields",
+          "pass": true
+        },
+        {
+          "name": "Online mode requires timezone instead of city",
+          "pass": true
+        },
+        {
+          "name": "Keyboard booking switch retains position",
+          "pass": true
+        },
+        {
+          "name": "Plan view opens",
+          "pass": true
+        },
+        {
+          "name": "Refills opens its accordion",
+          "pass": true
+        },
+        {
+          "name": "Accordion remains mutually exclusive",
+          "pass": true
+        },
+        {
+          "name": "FAQ expands",
+          "pass": true
+        },
+        {
+          "name": "No page horizontal overflow",
+          "pass": true,
+          "details": {
+            "width": 320,
+            "scrollWidth": 305
+          }
+        }
+      ]
+    },
+    {
+      "name": "Language survives real browser reload",
+      "pass": true,
+      "language": "zh-CN",
+      "url": "http://127.0.0.1:4173/?lang=zh#routine"
+    },
+    {
+      "name": "Real browser menu navigation and Back restore language",
+      "pass": true,
+      "returnedURL": "http://127.0.0.1:4173/?lang=zh#routine"
+    },
+    {
+      "name": "Real browser local booking submission",
+      "pass": true,
+      "feedback": "✓\nDemo request previewed.\n\nThis is a local demonstration. Nothing has been sent, no booking has been created, and no payment is required.\n\nEDIT DETAILS\nBACK TO L PRO"
+    },
+    {
+      "name": "Chinese mobile panorama instruction visibly rendered",
+      "pass": true,
+      "copy": "拖动环视 · 滚轮 / 双指缩放"
+    }
+  ],
+  "limitations": [
+    "Responsive browser viewports, not physical device performance testing.",
+    "Pointer and touch regressions use fixture-dispatched DOM events; keyboard and navigation are also checked through the browser UI.",
+    "Formal video assets and physical-device performance remain untested.",
+    "World regression results predate the added instruction-visibility assertion; the final mobile Chinese instruction was separately verified in the browser."
+  ]
+}
