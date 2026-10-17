@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-10",
+  "changes": [
+    "Android/IOS button normal and hover background transparent",
+    "Use supplied transparent phone cutout without editing pixels"
+  ],
+  "figma": {
+    "fileKey": "yBv7SO4vTSRjAX3h08fAfB",
+    "frame": "326:519",
+    "image": "321:530"
+  },
+  "asset": {
+    "path": "assets/app-download-phone-cutout.png",
+    "bytes": 1081559,
+    "sha256": "f42cda5e84373628095ba444679b3905dc06f6816ea86dcc5e4800c191f73ae0",
+    "width": 710,
+    "height": 1356,
+    "hasAlpha": true,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "backup": "backups/pre-app-transparency-20261010-171435",
+  "browser": {
+    "desktopWidth": 1280,
+    "desktopVisual": "white rectangle removed; background visible through both buttons",
+    "mobileWidth": 390,
+    "documentWidth": 390,
+    "imageDisplay": [
+      300,
+      573
+    ],
+    "normalBackground": "rgba(0, 0, 0, 0)",
+    "hoverBackground": "rgba(0, 0, 0, 0)",
+    "downloadClick": "platform availability message displayed"
+  },
+  "originalOpaqueImageRetained": true
+}

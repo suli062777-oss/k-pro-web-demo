@@ -1,0 +1,96 @@
+{
+  "mode": "failed-world",
+  "viewport": [
+    390,
+    844
+  ],
+  "result": "pass",
+  "scenes": [
+    {
+      "id": "home",
+      "panorama": "assets/panoramas/home-mobile.webp"
+    },
+    {
+      "id": "ward",
+      "panorama": "assets/panoramas/ward-mobile.webp"
+    },
+    {
+      "id": "garden",
+      "panorama": "assets/panoramas/garden-mobile.webp"
+    },
+    {
+      "id": "salon",
+      "panorama": "assets/panoramas/salon-mobile.webp"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Old bookmark UI removed",
+      "pass": true
+    },
+    {
+      "name": "Recoverable world fallback",
+      "pass": true
+    },
+    {
+      "name": "home opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "home underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "home return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "ward opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "ward underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "ward return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "garden opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "garden underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "garden return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "salon opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "salon underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "salon return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "All world controls fit viewport width",
+      "pass": true
+    },
+    {
+      "name": "No page horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Stable glass unaffected",
+      "pass": true
+    }
+  ]
+}

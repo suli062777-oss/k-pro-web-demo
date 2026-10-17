@@ -1,0 +1,272 @@
+{
+  "mode": "normal",
+  "viewport": [
+    1440,
+    900
+  ],
+  "result": "pass",
+  "scenes": [
+    {
+      "id": "home",
+      "source": "assets/panoramas/home.webp",
+      "framing": {
+        "yaw": 5,
+        "pitch": -3,
+        "fov": 70
+      },
+      "canvas": [
+        1440,
+        733
+      ]
+    },
+    {
+      "id": "ward",
+      "source": "assets/panoramas/ward.webp",
+      "framing": {
+        "yaw": 8,
+        "pitch": -3,
+        "fov": 70
+      },
+      "canvas": [
+        1440,
+        733
+      ]
+    },
+    {
+      "id": "garden",
+      "source": "assets/panoramas/garden.webp",
+      "framing": {
+        "yaw": 12,
+        "pitch": -3,
+        "fov": 70
+      },
+      "canvas": [
+        1440,
+        733
+      ]
+    },
+    {
+      "id": "salon",
+      "source": "assets/panoramas/salon.webp",
+      "framing": {
+        "yaw": -32,
+        "pitch": -3,
+        "fov": 70
+      },
+      "canvas": [
+        1440,
+        733
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Panoramas are lazy loaded",
+      "pass": true
+    },
+    {
+      "name": "home only selected card expanded",
+      "pass": true
+    },
+    {
+      "name": "home correct scene ready",
+      "pass": true
+    },
+    {
+      "name": "home stays at fixed viewpoint",
+      "pass": true
+    },
+    {
+      "name": "home full 360 degree turn",
+      "pass": true
+    },
+    {
+      "name": "home zoom changes field of view",
+      "pass": true
+    },
+    {
+      "name": "home reset framing",
+      "pass": true
+    },
+    {
+      "name": "home touch drag changes direction",
+      "pass": true
+    },
+    {
+      "name": "home two finger pinch zoom",
+      "pass": true
+    },
+    {
+      "name": "home idle view has no animation loop",
+      "pass": true
+    },
+    {
+      "name": "home all controls inside viewport",
+      "pass": true
+    },
+    {
+      "name": "home closed and resource released",
+      "pass": true
+    },
+    {
+      "name": "home return restores page, rail and focus",
+      "pass": true
+    },
+    {
+      "name": "ward only selected card expanded",
+      "pass": true
+    },
+    {
+      "name": "ward correct scene ready",
+      "pass": true
+    },
+    {
+      "name": "ward stays at fixed viewpoint",
+      "pass": true
+    },
+    {
+      "name": "ward full 360 degree turn",
+      "pass": true
+    },
+    {
+      "name": "ward zoom changes field of view",
+      "pass": true
+    },
+    {
+      "name": "ward reset framing",
+      "pass": true
+    },
+    {
+      "name": "ward touch drag changes direction",
+      "pass": true
+    },
+    {
+      "name": "ward two finger pinch zoom",
+      "pass": true
+    },
+    {
+      "name": "ward idle view has no animation loop",
+      "pass": true
+    },
+    {
+      "name": "ward all controls inside viewport",
+      "pass": true
+    },
+    {
+      "name": "ward closed and resource released",
+      "pass": true
+    },
+    {
+      "name": "ward return restores page, rail and focus",
+      "pass": true
+    },
+    {
+      "name": "garden only selected card expanded",
+      "pass": true
+    },
+    {
+      "name": "garden correct scene ready",
+      "pass": true
+    },
+    {
+      "name": "garden stays at fixed viewpoint",
+      "pass": true
+    },
+    {
+      "name": "garden full 360 degree turn",
+      "pass": true
+    },
+    {
+      "name": "garden zoom changes field of view",
+      "pass": true
+    },
+    {
+      "name": "garden reset framing",
+      "pass": true
+    },
+    {
+      "name": "garden touch drag changes direction",
+      "pass": true
+    },
+    {
+      "name": "garden two finger pinch zoom",
+      "pass": true
+    },
+    {
+      "name": "garden idle view has no animation loop",
+      "pass": true
+    },
+    {
+      "name": "garden all controls inside viewport",
+      "pass": true
+    },
+    {
+      "name": "garden closed and resource released",
+      "pass": true
+    },
+    {
+      "name": "garden return restores page, rail and focus",
+      "pass": true
+    },
+    {
+      "name": "salon only selected card expanded",
+      "pass": true
+    },
+    {
+      "name": "salon correct scene ready",
+      "pass": true
+    },
+    {
+      "name": "salon stays at fixed viewpoint",
+      "pass": true
+    },
+    {
+      "name": "salon full 360 degree turn",
+      "pass": true
+    },
+    {
+      "name": "salon zoom changes field of view",
+      "pass": true
+    },
+    {
+      "name": "salon reset framing",
+      "pass": true
+    },
+    {
+      "name": "salon touch drag changes direction",
+      "pass": true
+    },
+    {
+      "name": "salon two finger pinch zoom",
+      "pass": true
+    },
+    {
+      "name": "salon idle view has no animation loop",
+      "pass": true
+    },
+    {
+      "name": "salon all controls inside viewport",
+      "pass": true
+    },
+    {
+      "name": "salon closed and resource released",
+      "pass": true
+    },
+    {
+      "name": "salon return restores page, rail and focus",
+      "pass": true
+    },
+    {
+      "name": "Glass panels unchanged",
+      "pass": true
+    },
+    {
+      "name": "Page has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Rapid close and switch cannot show stale scene",
+      "pass": true
+    }
+  ]
+}

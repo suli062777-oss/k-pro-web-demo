@@ -1,0 +1,57 @@
+{
+  "commit": "c86ce4e38f90979ef8c2790ca19eda85eb5aed2c",
+  "files": [
+    {
+      "id": "home",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/c86ce4e38f90979ef8c2790ca19eda85eb5aed2c/scene-home.html",
+      "pageSha256": "b3016be2e964194623228bdd030522f4ada3be5e8d27f85520e1e3bbd77568a4",
+      "sha256": "5fcfb1491235f161dff14d5ccc80bc72046374a7648fd744f90ef5c9299e60ec",
+      "bytes": 5119688,
+      "camera": {
+        "azimuth": 45,
+        "focus": null,
+        "span": null
+      }
+    },
+    {
+      "id": "ward",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/c86ce4e38f90979ef8c2790ca19eda85eb5aed2c/scene-ward.html",
+      "pageSha256": "b93829c33cb7401e1465f2c860d2c248f7e5ef2948b10d0e4ec82d37b8baa2e3",
+      "sha256": "5f92e9eab5d172cf858313fa863893dc00be7d177f6698cf9c397c3440641b31",
+      "bytes": 5035940,
+      "camera": {
+        "azimuth": 45,
+        "focus": [
+          0.9,
+          0.7
+        ],
+        "span": 5.8
+      }
+    },
+    {
+      "id": "garden",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/c86ce4e38f90979ef8c2790ca19eda85eb5aed2c/scene-garden.html",
+      "pageSha256": "1fdd74cd4e727d1f13f14cbedd252b83f57c88bb324b2a66e99f5e425c3fb56e",
+      "sha256": "0f93a49adb1f211712cb047c92431c16f57fcb83a8692dc680913896f0c47f3c",
+      "bytes": 5050420,
+      "camera": {
+        "azimuth": 45,
+        "focus": null,
+        "span": null
+      }
+    },
+    {
+      "id": "salon",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/c86ce4e38f90979ef8c2790ca19eda85eb5aed2c/scene-salon.html",
+      "pageSha256": "cc734e52c06dad8cd61867740896981f918ac996d9ea2a8e0b7c720c23f2183c",
+      "sha256": "3039895586dd71fc6a212588950f3a67fac55f794220e18581b57a8f1e6e68af",
+      "bytes": 2345468,
+      "camera": {
+        "azimuth": 38,
+        "focus": null,
+        "span": null
+      }
+    }
+  ],
+  "licenseNote": "User-selected source assets; source repository has no explicit model license. No new license assigned."
+}

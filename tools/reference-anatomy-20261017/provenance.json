@@ -1,0 +1,133 @@
+{
+  "repository": "https://github.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main",
+  "commit": "65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2218,
+      "gitBlob": "acc2aab3cdf761f9c5f6184cefc7fab67cacfa26",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/README.md"
+    },
+    {
+      "path": "index.html",
+      "bytes": 495,
+      "gitBlob": "3d0a0557c1b5330ed144128408b4296619b1275b",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/index.html"
+    },
+    {
+      "path": "package.json",
+      "bytes": 786,
+      "gitBlob": "614111725f12cf15236b481411db07b3e1a79530",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/package.json"
+    },
+    {
+      "path": "src/pod/PodApp.tsx",
+      "bytes": 4699,
+      "gitBlob": "6eeed6f14adb87e057996d2d0b817c900f167efa",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/pod/PodApp.tsx"
+    },
+    {
+      "path": "src/pod/PodScene.tsx",
+      "bytes": 12750,
+      "gitBlob": "2ed3f11964c920bf5358b0ce6b1a9fe2636fa943",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/pod/PodScene.tsx"
+    },
+    {
+      "path": "src/pod/i18n.ts",
+      "bytes": 2211,
+      "gitBlob": "68e4bc305f9d7976ad4a082a6b32a23d66d7a380",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/pod/i18n.ts"
+    },
+    {
+      "path": "src/pod/main.tsx",
+      "bytes": 401,
+      "gitBlob": "da1073f01a3caaf4015c9d7dfc1d478a1a42647e",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/pod/main.tsx"
+    },
+    {
+      "path": "src/pod/modules.ts",
+      "bytes": 12878,
+      "gitBlob": "8bdaad34258abcc10d503379dd5e1f3bac5fe13b",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/pod/modules.ts"
+    },
+    {
+      "path": "src/pod/partGroups.json",
+      "bytes": 951,
+      "gitBlob": "397cf2b1121ec4615b98316cd2f4cdd5f9774781",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/pod/partGroups.json"
+    },
+    {
+      "path": "src/pod/pod.css",
+      "bytes": 10576,
+      "gitBlob": "6dfc6169b97a0202b9331849719d187d540d6e42",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/pod/pod.css"
+    },
+    {
+      "path": "src/pod/ui.tsx",
+      "bytes": 5879,
+      "gitBlob": "b006c9413bcfbbd3326d2870bfa053c28181170e",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/pod/ui.tsx"
+    },
+    {
+      "path": "src/product/animations.ts",
+      "bytes": 364,
+      "gitBlob": "f8c42d43ad1d4afb0641c9e771ae9bf611c8c13e",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/product/animations.ts"
+    },
+    {
+      "path": "src/styles/index.css",
+      "bytes": 10534,
+      "gitBlob": "623485ad52a91799fbdc53e2c1b12e04081fbb52",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/styles/index.css"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "bytes": 38,
+      "gitBlob": "11f02fe2a0061d6e6e1f271b21da95423b448b32",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/src/vite-env.d.ts"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 479,
+      "gitBlob": "7b2cd99424b5e21cf2b0198e5bf25a80bf010a07",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b/vite.config.ts"
+    },
+    {
+      "path": "public/models/pod-colored.glb",
+      "bytes": 16456952,
+      "gitBlob": "3edf68a6dcb6882605472fb05c16b78937678721",
+      "sha256": "d76c5916b379cc2acba17a497532a9c3160b4e5657be0dc9c47459895c40c1af"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 87202,
+      "gitBlob": "85e9862a4ee48b26f80ebc4409871aad4df98177",
+      "sha256": "a85f93fb9eb3769399538bc829d66f364f5580ec738a4fbdec322b56d963a3f4"
+    }
+  ],
+  "integration": {
+    "sourceDirectory": "src/anatomy",
+    "model": "assets/anatomy/pod-colored.glb",
+    "referenceModulesPreserved": [
+      "pod/modules.ts",
+      "pod/partGroups.json",
+      "pod/i18n.ts",
+      "product/animations.ts"
+    ],
+    "adaptations": [
+      "移除参考页的全窗口fixed壳层，改为现有官网产品章节",
+      "参考标志与语言切换上移至全站白底固定顶栏，其他章节和小世界共用语言状态",
+      "保留六个功能站位、部件分组、高亮、爆炸位移、热点及自动巡览",
+      "选择功能时按该模块最终包围盒自适应取景，整机与爆炸总览按全部部件取景",
+      "离屏、隐藏标签及打开360度弹窗时暂停产品渲染和巡览",
+      "正常滚轮滚动官网，画布方向键/拖动旋转，双指或加减键缩放",
+      "手机上方横向功能导航、当前说明与下方模型相邻显示",
+      "新增加载失败封面与重试入口",
+      "多个查看器以共享Three.js分块构建，保留原全景资源",
+      "去除3D热点上的backdrop-filter，避免WebGL画面上出现矩形采样残影",
+      "模块切换保持参考镜头方向，在最终部件包围盒就绪后完成取景",
+      "产品章节禁用滚动锚定，避免动态热点改变外部页面位置",
+      "手机选中热点时仅横向滚动功能列表，不强制改变正文的垂直位置"
+    ]
+  }
+}

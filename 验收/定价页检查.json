@@ -1,0 +1,184 @@
+{
+  "date": "2026-10-17",
+  "checks": [
+    {
+      "message": "Please complete the required fields with a valid email and a date from today onward.",
+      "name": "empty form blocked",
+      "pass": true
+    },
+    {
+      "name": "booking modes preserve input and requirements",
+      "pass": true
+    },
+    {
+      "name": "online local-only success",
+      "pass": true,
+      "text": "✓\nConsultation request previewed.\n\nThis is a local demonstration. Nothing has been sent, no booking has been created, and no payment is required.\n\nEDIT DETAILS\nBACK TO L PRO"
+    },
+    {
+      "name": "in-person local-only success",
+      "pass": true
+    },
+    {
+      "name": "care accordion exclusive",
+      "pass": true
+    },
+    {
+      "name": "specification accordion exclusive",
+      "pass": true,
+      "rows": 8
+    },
+    {
+      "name": "gallery next switches photo and thumbnail",
+      "pass": true
+    },
+    {
+      "name": "gallery keyboard navigation",
+      "pass": true
+    },
+    {
+      "name": "professional plan opens online with correct edition",
+      "pass": true
+    },
+    {
+      "name": "browser Back restores plans",
+      "pass": true
+    },
+    {
+      "name": "plans refill shortcut",
+      "pass": true
+    },
+    {
+      "name": "refill inquiry prefills topic",
+      "pass": true
+    },
+    {
+      "name": "Chinese translation preserves form",
+      "pass": true
+    },
+    {
+      "name": "second-page How to Use opens pricing",
+      "pass": true
+    },
+    {
+      "name": "390px overview no horizontal overflow",
+      "pass": true,
+      "top": 59.7890625
+    },
+    {
+      "name": "390px plans no horizontal overflow",
+      "pass": true
+    },
+    {
+      "dateColumns": "284px",
+      "headerLinks": [
+        {
+          "bottom": 42,
+          "height": 13,
+          "left": 108.2578125,
+          "right": 151.1796875,
+          "top": 29,
+          "width": 42.921875,
+          "x": 108.2578125,
+          "y": 29
+        },
+        {
+          "bottom": 42,
+          "height": 13,
+          "left": 159.1796875,
+          "right": 210.65625,
+          "top": 29,
+          "width": 51.4765625,
+          "x": 159.1796875,
+          "y": 29
+        },
+        {
+          "bottom": 42,
+          "height": 13,
+          "left": 218.65625,
+          "right": 250,
+          "top": 29,
+          "width": 31.34375,
+          "x": 218.65625,
+          "y": 29
+        }
+      ],
+      "name": "320px online form no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320px specifications no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320px plans no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "960px online layout no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "existing world loads and original header restores",
+      "pass": true
+    },
+    {
+      "name": "existing anatomy loads",
+      "pass": true
+    },
+    {
+      "headerHeight": 84,
+      "name": "1586px overview stable anchor and no horizontal overflow",
+      "pass": true,
+      "rootHeight": 963,
+      "top": 84
+    },
+    {
+      "motion": "0.46s",
+      "name": "1586px plans no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "booking tabs support keyboard",
+      "pass": true
+    }
+  ],
+  "consoleErrors": [],
+  "scope": {
+    "newFiles": [
+      "pricing-content.js",
+      "pricing.css",
+      "pricing.js"
+    ],
+    "changedOriginals": [
+      "index.html",
+      "content.js",
+      "README.md"
+    ],
+    "protectedUnchanged": [
+      "app.js",
+      "site-ui.js",
+      "site-header.css",
+      "routine-intro.js",
+      "routine-intro.css",
+      "styles.css",
+      "background.js",
+      "package.json",
+      "pnpm-lock.yaml",
+      "anatomy.js",
+      "anatomy.css",
+      "worlds.js",
+      "worlds.css",
+      "spaces.js",
+      "spaces.css"
+    ],
+    "noBackendOrPayment": true,
+    "noDependenciesChanged": true
+  },
+  "limitations": [
+    "产品照片来自用户设计稿，护理舱和控制区是同图局部放大，尚无独立高清原图。",
+    "手机为响应式浏览器视口验收，未在实体手机测试。",
+    "动效为320/460/300ms实现值，静态参考未提供时间曲线。",
+    "WORKSPACE_ROOT未找到，规矩文档未读取；已读取旧位置踩坑日志，固定日志未更新。"
+  ]
+}

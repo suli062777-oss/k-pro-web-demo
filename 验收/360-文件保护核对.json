@@ -1,0 +1,34 @@
+{
+  "protected": {
+    "app.js": true,
+    "styles.css": true,
+    "app-download.css": true,
+    "background.js": true,
+    "islands.css": true,
+    "src/island-renderer.js": true,
+    "src/space-renderer.js": true,
+    "assets/wordmark.svg": true,
+    "assets/tagline.svg": true,
+    "assets/app-download-phone-cutout.png": true
+  },
+  "originalPanoramas": {
+    "/Users/lisuhang1/Desktop/欧莱雅/世界场景360/Modern Home Care Room Interior_pano.png": true,
+    "/Users/lisuhang1/Desktop/欧莱雅/世界场景360/Modern Hospital Room with Advanced Device_pano.png": true,
+    "/Users/lisuhang1/Desktop/欧莱雅/世界场景360/Serene Senior Care Lounge_pano.png": true,
+    "/Users/lisuhang1/Desktop/欧莱雅/世界场景360/Inviting Scalp-Care Salon Interior_pano.png": true
+  },
+  "backupCopies": {
+    "index.html": true,
+    "content.js": true,
+    "spaces.js": true,
+    "spaces.css": true,
+    "islands.js": true,
+    "tools/build-islands.mjs": true,
+    "package.json": true,
+    "README.md": true,
+    "assets/islands-engine.js": true,
+    "assets/islands-engine.js.LEGAL.txt": true,
+    "assets/spaces-engine.js": true,
+    "assets/spaces-engine.js.LEGAL.txt": true
+  }
+}

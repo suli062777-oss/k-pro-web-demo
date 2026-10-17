@@ -1,0 +1,50 @@
+/* Full-width white surface; preserve the original 1440px content alignment. */
+#app.app-section {
+  width: 100%;
+  max-width: none;
+  background: #fff;
+  color: var(--ink);
+  min-height: 920px;
+  margin-inline: auto;
+  padding: 80px max(var(--gutter), calc((100% - 1440px) / 2 + var(--gutter)));
+  grid-template-columns: minmax(0, 560fr) minmax(0, 600fr);
+  gap: clamp(40px, 8.333vw, 120px);
+}
+#app .app-copy { min-width: 0; padding-left: clamp(0px, 5.556vw, 80px); }
+#app .app-editorial { display: grid; gap: 20px; }
+#app .app-copy h2 { font-size: 56px; line-height: 1.12; letter-spacing: -.025em; }
+#app .app-intro { width: 100%; max-width: 357px; margin: 0; font-size: 20px; line-height: 1.35; }
+#app .app-download-actions { display: flex; gap: 40px; margin-top: 48px; }
+#app .app-download-button {
+  flex: 0 1 164px;
+  width: 164px;
+  min-width: 0;
+  min-height: 64px;
+  padding: 16px;
+  border: 2px solid #000;
+  border-radius: 50px;
+  background: transparent;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.4;
+}
+#app .app-download-button:hover { background: transparent; border-color: #555; }
+#app .app-download-status { max-width: 368px; margin-top: 18px; font-size: 14px; line-height: 1.5; }
+#app .phone-stage { min-width: 0; height: 760px; padding: 40px; background: transparent; overflow: visible; }
+#app .app-phone-image { width: 355px; max-width: 100%; height: auto; object-fit: contain; flex-shrink: 1; }
+@media (max-width: 1100px) {
+  #app.app-section { min-height: 0; gap: 40px; }
+  #app .app-copy { padding-left: 0; }
+  #app .app-copy h2 { font-size: clamp(40px, 4.6vw, 52px); }
+  #app .phone-stage { height: auto; padding: 24px 0; }
+  #app .app-download-actions { gap: 20px; }
+}
+@media (max-width: 650px) {
+  #app.app-section { grid-template-columns: minmax(0, 1fr); padding: 60px 24px; gap: 42px; }
+  #app .app-copy h2 { font-size: clamp(40px, 10.75vw, 48px); }
+  #app .app-intro { max-width: 357px; font-size: 18px; line-height: 1.5; }
+  #app .app-download-actions { gap: 20px; margin-top: 32px; }
+  #app .app-download-button { flex: 1 1 0; width: auto; min-height: 56px; }
+  #app .phone-stage { padding: 0; }
+  #app .app-phone-image { width: min(100%, 300px); }
+}

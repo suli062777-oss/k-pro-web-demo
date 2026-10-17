@@ -1,0 +1,21 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>空间封面工作台</title>
+<style>body{margin:0;background:#ddd;font:14px system-ui}header{padding:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}canvas{display:block;width:900px;height:900px;max-width:100vw}button,input,select{padding:8px}input{width:65px}#status{white-space:pre-wrap}</style>
+<script src="../content.js?v=20261004-spaces-2"></script><header><select id="scene"><option value="home">居家</option><option value="ward">病房</option><option value="garden">养老院</option><option value="salon">沙龙</option></select><label>方位角 <input id="azimuth" type="number" value="45"></label><label>俯视角 <input id="elevation" type="number" value="30"></label><button id="preview">预览</button><button id="save">保存当前封面</button><button id="all">生成四张封面</button><span id="status"></span></header><canvas id="cover"></canvas>
+<script type="module">
+import {createSpaceRenderer} from '../assets/spaces-engine.js?v=3';
+const config=window.KPRO_CONTENT.spaces, canvas=document.querySelector('canvas'), status=document.querySelector('#status');
+const renderer=createSpaceRenderer(canvas,{...config,maxDpr:1.34});
+async function show(id,custom=false){
+ status.textContent='正在渲染 '+id;
+ const spec={...config.scenes[id],src:'../'+config.scenes[id].src,camera:custom?{azimuth:Number(document.querySelector('#azimuth').value),elevation:Number(document.querySelector('#elevation').value)}:config.scenes[id].camera};
+ const asset=await renderer.load(spec);renderer.present(asset,spec);canvas.dataset.scene=id;
+ document.querySelector('#azimuth').value=spec.camera.azimuth;document.querySelector('#elevation').value=spec.camera.elevation;
+ status.textContent=id+' 已就绪';
+}
+async function save(){const blob=await renderer.exportCover();const response=await fetch('/__cover/'+canvas.dataset.scene,{method:'POST',headers:{'Content-Type':'image/webp'},body:blob});if(!response.ok)throw new Error('保存失败');status.textContent=canvas.dataset.scene+' 封面已保存';}
+document.querySelector('#preview').onclick=()=>show(document.querySelector('#scene').value,true).catch(e=>status.textContent=e.message);
+document.querySelector('#scene').onchange=()=>show(document.querySelector('#scene').value).catch(e=>status.textContent=e.message);
+document.querySelector('#save').onclick=()=>save().catch(e=>status.textContent=e.message);
+document.querySelector('#all').onclick=async()=>{try{for(const id of Object.keys(config.scenes)){document.querySelector('#scene').value=id;await show(id);await save();}status.textContent='四张室内空间封面已保存';}catch(e){status.textContent=e.message;}};
+await show('home');
+</script></html>

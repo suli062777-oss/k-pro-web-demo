@@ -1,0 +1,388 @@
+/* ============ L Pro 功能模块爆炸实验台 · Steampod 版式 ============ */
+/* 白底左右分割：左侧欧莱雅标志 + 大标题 + 编号模块列表；右侧深色 3D 舞台 + 编号热点圆标 */
+
+.pod-page {
+  --bg: #ffffff;
+  --ink: #0d0f12;
+  --ink-dim: #3c434b;
+  --ink-faint: #9aa3ad;
+  --stage: #0a0d13;
+  --accent: #1a6fd4;
+  --sans: "Poppins", "Avenir Next", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --mono: "SFMono-Regular", Consolas, monospace;
+}
+
+/* ---------------- 页面骨架：上页眉 + 下左右分割 ---------------- */
+
+.pod-shell {
+  position: fixed; inset: 0; z-index: 0;
+  display: flex; flex-direction: column;
+  background: var(--bg); color: var(--ink);
+  font-family: var(--sans);
+}
+
+.pod-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 24px 44px 0;
+  flex: none;
+}
+
+.pod-body {
+  flex: 1; display: flex; min-height: 0;
+}
+
+/* ---------------- 左列：标题 + 特性列表 + 胶囊按钮 ---------------- */
+
+.pod-left {
+  width: min(46%, 680px); min-width: 400px;
+  display: flex; flex-direction: column;
+  padding: 14px 52px 44px 44px;
+  overflow-y: auto; scrollbar-width: thin;
+}
+
+.pod-hero {
+  margin-top: 24px;
+  font-size: clamp(42px, 4.6vw, 64px);
+  font-weight: 800; letter-spacing: -0.018em; line-height: 1.04;
+  color: var(--ink);
+}
+
+.pod-feats {
+  list-style: none; margin: 32px 0 0; padding: 0;
+  display: flex; flex-direction: column; gap: 17px;
+  flex: 1; min-height: 0; overflow-y: auto; scrollbar-width: thin;
+  padding-right: 8px;
+}
+.pod-feats::-webkit-scrollbar { width: 4px; }
+.pod-feats::-webkit-scrollbar-track { background: transparent; }
+.pod-feats::-webkit-scrollbar-thumb { background: #d7dce2; border-radius: 2px; }
+.pod-left { scrollbar-width: none; }
+.pod-left::-webkit-scrollbar { display: none; }
+
+.pod-feat {
+  display: block; width: 100%; text-align: left;
+  background: none; border: none; padding: 0; border-radius: 0;
+}
+
+.pod-feat-title {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 16px; font-weight: 800; letter-spacing: 0.015em;
+  text-transform: uppercase; color: var(--ink);
+  white-space: nowrap;
+}
+
+/* 编号做成与 3D 热点呼应的圆点：常态透底，激活实心 */
+.pod-feat-num {
+  width: 27px; height: 27px; flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; font-size: 12px; font-weight: 700;
+  color: var(--ink); background: transparent;
+  transition: background 0.2s, color 0.2s;
+}
+.pod-feat-dash { color: var(--ink); }
+.pod-feat.on .pod-feat-num { background: var(--ink); color: #fff; }
+
+.pod-feat-en {
+  font-family: var(--mono); font-size: 8.5px; font-weight: 600;
+  letter-spacing: 0.14em; color: var(--ink-faint);
+  margin-left: 4px; text-transform: uppercase;
+}
+
+.pod-feat-desc {
+  display: block;
+  font-size: 13.5px; color: var(--ink-dim); line-height: 1.58;
+  margin-top: 5px; padding-left: 36px; max-width: 56ch;
+}
+
+.pod-feat:hover .pod-feat-name {
+  text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px;
+}
+
+.pod-left-foot { margin-top: 16px; padding-top: 24px; flex: none; }
+
+.pod-pill {
+  border: 1.5px solid var(--ink); border-radius: 999px;
+  background: transparent; color: var(--ink);
+  padding: 14px 30px; font-size: 14px; font-weight: 600;
+  font-family: var(--sans); letter-spacing: 0.01em;
+  transition: background 0.2s, color 0.2s;
+}
+.pod-pill:hover { background: var(--ink); color: #fff; }
+.pod-pill[aria-pressed="true"] { background: var(--ink); color: #fff; }
+
+/* 覆盖全局按压样式：列表激活态用编号实心圆表达，不用蓝底 */
+.pod-shell .pod-feat[aria-pressed="true"] {
+  background: transparent; border-color: transparent; color: inherit;
+}
+.pod-shell .pod-feat.on .pod-feat-num { background: var(--ink); color: #fff; }
+.pod-shell .pod-pill[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.pod-shell .pod-lang-opt[aria-pressed="true"] { background: var(--ink); color: #fff; }
+
+/* ---------------- 左上角欧莱雅标志 ---------------- */
+
+.pod-logo {
+  display: flex; flex-direction: column; line-height: 1;
+  width: fit-content; user-select: none;
+}
+.pod-logo-loreal {
+  font-family: Optima, Candara, "Segoe UI", var(--sans);
+  font-size: 25px; font-weight: 700; letter-spacing: 0.015em;
+  color: #000;
+}
+.pod-logo-pro {
+  background: #000; color: #fff;
+  font-size: 9.5px; font-weight: 600; letter-spacing: 0.3em;
+  padding: 3px 5px 2px 7px; margin-top: 3px;
+  /* 抵消末字母字距，与 L'ORÉAL 等宽 */
+  margin-right: -0.3em; width: fit-content;
+  align-self: stretch; text-align: center;
+}
+.pod-logo-paris {
+  font-size: 9.5px; font-weight: 500; letter-spacing: 0.52em;
+  color: #000; margin-top: 3px; margin-right: -0.52em;
+  text-align: center; align-self: stretch;
+}
+
+/* ---------------- 右上角语言切换 ---------------- */
+
+.pod-lang {
+  display: inline-flex; align-items: center;
+  border: 1.5px solid var(--ink); border-radius: 999px;
+  overflow: hidden; margin-top: 2px;
+}
+.pod-lang-opt {
+  border: none; background: transparent; color: var(--ink);
+  font-family: var(--sans); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.04em; padding: 7px 16px; line-height: 1;
+  transition: background 0.2s, color 0.2s;
+}
+.pod-lang-opt:hover { background: rgba(13, 15, 18, 0.08); }
+.pod-lang-opt.on { background: var(--ink); color: #fff; }
+
+/* ---------------- 右侧 3D 舞台 ---------------- */
+
+.pod-stage {
+  flex: 1; position: relative; min-width: 0;
+  background: var(--stage); overflow: hidden;
+}
+
+/* 右下角控件：站位名 / 爆炸滑杆 / 步进 */
+.pod-ctl {
+  position: absolute; right: 20px; bottom: 20px; z-index: 10;
+  display: flex; align-items: center; gap: 10px;
+}
+.pod-ctl-station {
+  display: flex; align-items: center; gap: 9px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px; padding: 9px 16px;
+  backdrop-filter: blur(8px);
+  animation: pod-ctl-in 0.35s ease;
+}
+@keyframes pod-ctl-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.pod-ctl-num {
+  font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--mc, #fff);
+}
+.pod-ctl-name { font-size: 12.5px; color: rgba(255, 255, 255, 0.92); white-space: nowrap; }
+
+.pod-ctl-slider {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px; padding: 9px 16px;
+  backdrop-filter: blur(8px);
+}
+.pod-ctl-label {
+  font-size: 9px; letter-spacing: 0.16em; color: rgba(255, 255, 255, 0.6);
+}
+.pod-ctl-pct {
+  font-family: var(--mono); font-size: 11px; color: #fff;
+  min-width: 36px; text-align: right;
+}
+.pod-ctl-slider input[type="range"] {
+  width: 128px; height: 3px; background: rgba(255, 255, 255, 0.28); border-radius: 2px;
+}
+.pod-ctl-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 13px; height: 13px;
+  background: #fff; border-radius: 50%; cursor: grab;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.pod-ctl-round {
+  width: 40px; height: 40px; flex: none; padding: 0;
+  border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08); color: #fff;
+  font-size: 15px; font-family: var(--sans);
+  display: inline-flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s;
+}
+.pod-ctl-round:hover { background: rgba(255, 255, 255, 0.22); }
+.pod-ctl-round:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* ---------------- 3D 热点圆标（仿 Steampod 编号圆标） ---------------- */
+
+.pod-hot-wrap { pointer-events: none; }
+
+.pod-hot {
+  pointer-events: auto;
+  width: 52px; height: 52px; padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(13, 17, 24, 0.62);
+  color: #fff;
+  font-family: var(--sans); font-size: 14.5px; font-weight: 700; letter-spacing: 0.03em;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  transform: translate(var(--lx, 0px), var(--ly, 0px));
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.pod-hot:hover {
+  background: rgba(13, 17, 24, 0.85);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+}
+.pod-hot.on {
+  background: #fff; color: var(--stage);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35), 0 6px 22px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------- 加载遮罩（白底） ---------------- */
+
+.pod-veil {
+  position: absolute; inset: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255, 255, 255, 0.96);
+  transition: opacity 0.5s;
+}
+.pod-veil-box { text-align: center; }
+.pod-veil-ring { animation: pod-spin 1.6s linear infinite; transform-origin: center; }
+@keyframes pod-spin { to { transform: rotate(360deg); } }
+.pod-veil-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.3em;
+  color: var(--ink); margin-top: 12px;
+}
+.pod-veil-text { font-size: 12px; color: var(--ink-dim); margin-top: 6px; }
+.pod-veil-bar {
+  width: 220px; height: 3px; background: #e8ebee; margin: 10px auto 0;
+  border-radius: 2px; overflow: hidden;
+}
+.pod-veil-bar i { display: block; height: 100%; background: var(--ink); transition: width 0.3s; }
+
+/* ---------------- WebGL 兜底 ---------------- */
+
+.pod-fallback {
+  position: fixed; inset: 0; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-dim); font-size: 13px; padding: 0 24px; text-align: center;
+}
+
+/* ---------------- 窄屏：上下堆叠 ---------------- */
+
+@media (max-width: 980px) {
+  .pod-top { padding: 18px 22px 0; }
+  .pod-body { flex-direction: column; overflow-y: auto; }
+  .pod-left {
+    width: 100%; min-width: 0; max-width: none;
+    padding: 6px 22px 26px; overflow: visible;
+  }
+  .pod-hero { margin-top: 18px; font-size: clamp(34px, 9vw, 46px); }
+  .pod-feats { margin-top: 26px; gap: 16px; }
+  .pod-feat-title { font-size: 14px; white-space: normal; flex-wrap: wrap; }
+  .pod-feat-desc { font-size: 12.5px; padding-left: 0; }
+  .pod-feat-en { display: none; }
+  .pod-left-foot { padding-top: 24px; }
+  .pod-stage { min-height: 62vh; flex: none; }
+  .pod-ctl { right: 12px; bottom: 12px; flex-wrap: wrap; justify-content: flex-end; }
+  .pod-ctl-slider input[type="range"] { width: 90px; }
+  .pod-ctl-station { display: none; }
+  .pod-hot { width: 44px; height: 44px; font-size: 12.5px; }
+}
+
+/* K pro host integration: only the product chapter owns this layout. */
+#product.product-anatomy{padding:0;min-height:0;background:#fff;color:#0d0f12;scroll-margin-top:0}
+#anatomy-root{min-height:600px}
+.anatomy-placeholder{padding:80px 32px;background:#fff;color:#141414;min-height:760px}
+.anatomy-placeholder h2{font:800 clamp(36px,4vw,64px)/1.05 var(--sans);margin-bottom:24px}
+.pod-shell{position:relative;inset:auto;z-index:0;isolation:isolate;min-height:600px;height:max(600px,calc(100svh - var(--site-header-height)));width:100%}
+.pod-body{overflow:hidden}
+.pod-left{width:42%;max-width:640px;min-width:355px;padding:36px 36px 30px;gap:0}
+#product .pod-hero{font-family:var(--sans);font-size:clamp(38px,3.7vw,60px);font-weight:800;line-height:1.04;letter-spacing:-.035em;margin:0 0 26px}
+.pod-feats{margin:0;gap:20px;min-height:220px;padding:4px 12px 8px 0;overscroll-behavior:auto}
+.pod-feat-title{white-space:normal;flex-wrap:wrap;font-size:14px;gap:6px}
+.pod-feat-en{display:none}
+.pod-feat-desc{font-size:13px;padding-left:33px}
+.pod-left-foot{margin-top:12px;padding-top:12px}
+.pod-pill{font-size:13px;padding:12px 22px}
+.pod-stage{min-height:0;touch-action:pan-y}
+.pod-stage>.pod-canvas{position:absolute!important;inset:0 0 122px!important;height:auto!important;width:100%!important;touch-action:pan-y!important}
+.pod-stage canvas{touch-action:pan-y!important;outline:none}
+.pod-ctl{inset:auto 20px 22px;min-height:90px;justify-content:flex-end;flex-wrap:wrap;gap:8px}
+.pod-ctl-station{flex-basis:100%;width:max-content;border:0;background:none;justify-content:flex-end;padding:0 4px 8px;backdrop-filter:none}
+.pod-ctl-slider{min-width:0;flex:1;max-width:320px}
+.pod-ctl-slider input[type="range"]{min-width:35px;width:100%;appearance:none;accent-color:#fff}
+.pod-ctl-pct{min-width:30px}
+.pod-hot{width:42px;height:42px;font-size:12px}
+.pod-error{position:absolute;inset:0 0 125px;display:grid;grid-template-rows:minmax(0,1fr) auto;color:#fff;background:#121212}
+.pod-error>img{width:100%;height:100%;object-fit:contain;min-height:0}
+.pod-error>div{padding:20px;text-align:center;font-size:13px}
+.pod-error button{color:#fff;border-color:#fff;margin-top:14px}
+.pod-mobile-description{display:none}
+.pod-shell :focus-visible{outline:2px solid currentColor;outline-offset:3px;box-shadow:none}
+.pod-veil{z-index:40}
+@media(max-width:980px){
+ #anatomy-root{min-height:950px}
+ .pod-shell{height:auto;min-height:0}
+ .pod-body{display:flex;flex-direction:column;overflow:visible}
+ .pod-left{width:100%;min-width:0;max-width:none;padding:24px 22px 22px;overflow:visible;position:relative}
+ #product .pod-hero{font-size:36px;margin:0 0 20px;line-height:1.05;max-width:80%}
+ #product .pod-hero br{display:none}
+ #product .pod-hero br:after{content:' '}
+ .pod-feats{display:flex;flex-direction:row;gap:8px;min-height:0;overflow-x:auto;padding:2px 2px 12px;scroll-snap-type:x proximity;scrollbar-width:thin}
+ .pod-feats li{flex:0 0 auto;scroll-snap-align:start}
+ .pod-feat{padding:11px 14px;border:1px solid #d5d5d5;border-radius:0;min-height:48px}
+ .pod-shell .pod-feat[aria-pressed="true"]{background:#141414;color:#fff;border-color:#141414}
+ .pod-feat-title{font-size:11px;flex-wrap:nowrap;white-space:nowrap;gap:6px;color:inherit}
+ .pod-feat-num{width:auto;height:auto;font-size:11px;color:inherit}
+ .pod-shell .pod-feat.on .pod-feat-num{background:none}
+ .pod-feat-dash{color:inherit}.pod-feat-desc{display:none}
+ .pod-mobile-description{display:block;min-height:64px;font-size:13px;line-height:1.55;color:#555;margin-top:8px}
+ .pod-left-foot{padding:0;margin:14px 0 0}
+ .pod-pill{padding:9px 18px;font-size:12px}
+ .pod-stage{height:650px;height:clamp(480px,70svh,680px);flex:none;min-height:0}
+ .pod-ctl{left:12px;right:12px;bottom:18px}
+ .pod-ctl-station{display:flex;padding-bottom:6px}
+ .pod-ctl-name{font-size:11px}
+ .pod-ctl-slider{padding:8px 10px;gap:6px;max-width:none}
+ .pod-ctl-label{font-size:8px;letter-spacing:.05em}
+ .pod-ctl-round{width:34px;height:34px}
+ .pod-hot{width:34px;height:34px;font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){.pod-veil-ring{animation:none}.pod-ctl-station{animation:none}}
+
+.pod-title-space{display:none}@media(max-width:980px){.pod-title-space{display:inline}}
+/* Keep the mobile product and its controls within one usable viewport. */
+@media(max-width:980px){
+ #anatomy-root{min-height:0}
+ .pod-shell{height:max(690px,calc(100svh - var(--site-header-height)));min-height:0}
+ .pod-body{height:100%;overflow:hidden}
+ .pod-left{flex:none;padding:18px 20px 16px}
+ #product .pod-hero{font-size:clamp(24px,6.5vw,32px);line-height:1.12;max-width:none;margin-bottom:15px}
+ .pod-feats{padding-bottom:10px}
+ .pod-feat{padding:9px 12px;min-height:42px}
+ .pod-mobile-description{font-size:12px;line-height:1.5;min-height:0;margin-top:7px}
+ .pod-left-foot{margin-top:12px}
+ .pod-pill{padding:8px 16px}
+ .pod-stage{height:auto;min-height:330px;flex:1}
+ .pod-ctl{bottom:15px}
+}
+
+.pod-ctl-label{white-space:nowrap}.pod-pill:disabled{opacity:.45;cursor:default}
+/* Solid translucent controls avoid backdrop sampling artefacts above the WebGL canvas. */
+.pod-hot,.pod-ctl-station,.pod-ctl-slider,.pod-ctl-round{backdrop-filter:none;-webkit-backdrop-filter:none}
+
+#product,.pod-canvas,.pod-hot-wrap{overflow-anchor:none}

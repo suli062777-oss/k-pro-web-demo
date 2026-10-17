@@ -1,0 +1,278 @@
+{
+  "sha": "65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b",
+  "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/trees/65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9d9bfdfbda1cd7a4a9f121ed4e54a93bdb6e4a4b",
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/trees/9d9bfdfbda1cd7a4a9f121ed4e54a93bdb6e4a4b"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dcd6f2ac13de93c3b1fda8265251244ee00898d3",
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/trees/dcd6f2ac13de93c3b1fda8265251244ee00898d3"
+    },
+    {
+      "path": ".github/workflows/deploy.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49bdfce39b42682a8b3e2a060efa717998e2802a",
+      "size": 776,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/49bdfce39b42682a8b3e2a060efa717998e2802a"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1571bc9ceea596bf40bcf0b99bbc1d16652028c",
+      "size": 93,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/b1571bc9ceea596bf40bcf0b99bbc1d16652028c"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "acc2aab3cdf761f9c5f6184cefc7fab67cacfa26",
+      "size": 2218,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/acc2aab3cdf761f9c5f6184cefc7fab67cacfa26"
+    },
+    {
+      "path": "index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d0a0557c1b5330ed144128408b4296619b1275b",
+      "size": 495,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/3d0a0557c1b5330ed144128408b4296619b1275b"
+    },
+    {
+      "path": "package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85e9862a4ee48b26f80ebc4409871aad4df98177",
+      "size": 87202,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/85e9862a4ee48b26f80ebc4409871aad4df98177"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "614111725f12cf15236b481411db07b3e1a79530",
+      "size": 786,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/614111725f12cf15236b481411db07b3e1a79530"
+    },
+    {
+      "path": "public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "492b6a0563ae8f24db3e88fc17032c81a09023cc",
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/trees/492b6a0563ae8f24db3e88fc17032c81a09023cc"
+    },
+    {
+      "path": "public/models",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "20971861f6d61e78c7ffae73c09cb1abcd2fa5ba",
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/trees/20971861f6d61e78c7ffae73c09cb1abcd2fa5ba"
+    },
+    {
+      "path": "public/models/pod-colored.glb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3edf68a6dcb6882605472fb05c16b78937678721",
+      "size": 16456952,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/3edf68a6dcb6882605472fb05c16b78937678721"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "687ba4ffd075d45903b2d3c03779edd779b7be9f",
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/trees/687ba4ffd075d45903b2d3c03779edd779b7be9f"
+    },
+    {
+      "path": "scripts/checkLayout.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bdbe4cabad5134fa5d145d044c955422f7203ec0",
+      "size": 4608,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/bdbe4cabad5134fa5d145d044c955422f7203ec0"
+    },
+    {
+      "path": "scripts/classify_parts.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53f17943ecdf9be1f1541863911a6e2176c9c601",
+      "size": 3255,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/53f17943ecdf9be1f1541863911a6e2176c9c601"
+    },
+    {
+      "path": "scripts/inspectGlb.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb0d88230199863e8d4fdd4f69596e03c85ca8cd",
+      "size": 4864,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/bb0d88230199863e8d4fdd4f69596e03c85ca8cd"
+    },
+    {
+      "path": "scripts/module_map.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35100e631634378e0e761e1f90b3e0aa09dd8eba",
+      "size": 837,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/35100e631634378e0e761e1f90b3e0aa09dd8eba"
+    },
+    {
+      "path": "scripts/parts_dump.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fcf74f0a9012d1d6e8df2ae8efecf04d961fcc0e",
+      "size": 18036,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/fcf74f0a9012d1d6e8df2ae8efecf04d961fcc0e"
+    },
+    {
+      "path": "scripts/preview_glb.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce1d18f89f43a99e9a2973f812a3c637bfb3c119",
+      "size": 2068,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/ce1d18f89f43a99e9a2973f812a3c637bfb3c119"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6b2b7fd3fe8ad0dc86837d00d573d9a7ed272c14",
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/trees/6b2b7fd3fe8ad0dc86837d00d573d9a7ed272c14"
+    },
+    {
+      "path": "src/pod",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b1493311730d67f14c5bdf4e6287f93d22bad0ff",
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/trees/b1493311730d67f14c5bdf4e6287f93d22bad0ff"
+    },
+    {
+      "path": "src/pod/PodApp.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6eeed6f14adb87e057996d2d0b817c900f167efa",
+      "size": 4699,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/6eeed6f14adb87e057996d2d0b817c900f167efa"
+    },
+    {
+      "path": "src/pod/PodScene.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ed3f11964c920bf5358b0ce6b1a9fe2636fa943",
+      "size": 12750,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/2ed3f11964c920bf5358b0ce6b1a9fe2636fa943"
+    },
+    {
+      "path": "src/pod/i18n.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68e4bc305f9d7976ad4a082a6b32a23d66d7a380",
+      "size": 2211,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/68e4bc305f9d7976ad4a082a6b32a23d66d7a380"
+    },
+    {
+      "path": "src/pod/main.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da1073f01a3caaf4015c9d7dfc1d478a1a42647e",
+      "size": 401,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/da1073f01a3caaf4015c9d7dfc1d478a1a42647e"
+    },
+    {
+      "path": "src/pod/modules.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bdaad34258abcc10d503379dd5e1f3bac5fe13b",
+      "size": 12878,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/8bdaad34258abcc10d503379dd5e1f3bac5fe13b"
+    },
+    {
+      "path": "src/pod/partGroups.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "397cf2b1121ec4615b98316cd2f4cdd5f9774781",
+      "size": 951,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/397cf2b1121ec4615b98316cd2f4cdd5f9774781"
+    },
+    {
+      "path": "src/pod/pod.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6dfc6169b97a0202b9331849719d187d540d6e42",
+      "size": 10576,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/6dfc6169b97a0202b9331849719d187d540d6e42"
+    },
+    {
+      "path": "src/pod/ui.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b006c9413bcfbbd3326d2870bfa053c28181170e",
+      "size": 5879,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/b006c9413bcfbbd3326d2870bfa053c28181170e"
+    },
+    {
+      "path": "src/product",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4da2ddfd884c0159d501980e71972dd961a424a3",
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/trees/4da2ddfd884c0159d501980e71972dd961a424a3"
+    },
+    {
+      "path": "src/product/animations.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8c42d43ad1d4afb0641c9e771ae9bf611c8c13e",
+      "size": 364,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/f8c42d43ad1d4afb0641c9e771ae9bf611c8c13e"
+    },
+    {
+      "path": "src/styles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6fbd6efac35846ac04c9bcb4047d2ada689ad7d2",
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/trees/6fbd6efac35846ac04c9bcb4047d2ada689ad7d2"
+    },
+    {
+      "path": "src/styles/index.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "623485ad52a91799fbdc53e2c1b12e04081fbb52",
+      "size": 10534,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/623485ad52a91799fbdc53e2c1b12e04081fbb52"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11f02fe2a0061d6e6e1f271b21da95423b448b32",
+      "size": 38,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/11f02fe2a0061d6e6e1f271b21da95423b448b32"
+    },
+    {
+      "path": "tsconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b52e9b5143effc72d4e86acc864d8f2463d77cfa",
+      "size": 588,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/b52e9b5143effc72d4e86acc864d8f2463d77cfa"
+    },
+    {
+      "path": "vite.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b2cd99424b5e21cf2b0198e5bf25a80bf010a07",
+      "size": 479,
+      "url": "https://api.github.com/repos/lzllzllzllzllzl/V2-L-Pro-Anatomy-main/git/blobs/7b2cd99424b5e21cf2b0198e5bf25a80bf010a07"
+    }
+  ],
+  "truncated": false
+}

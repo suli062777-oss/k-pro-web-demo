@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-15",
+  "project": "/Users/lisuhang1/Desktop/欧莱雅/K-pro-web-demo",
+  "result": "pass",
+  "implementation": "四个固定视点的 360° 等距柱状全景，保留原岛屿、展开封面和返回流程",
+  "browserChecks": [
+    {
+      "file": "360-桌面交互.json",
+      "result": "pass",
+      "viewport": [
+        1440,
+        900
+      ],
+      "passedChecks": 52
+    },
+    {
+      "file": "360-手机交互.json",
+      "result": "pass",
+      "viewport": [
+        390,
+        844
+      ],
+      "passedChecks": 52
+    },
+    {
+      "file": "360-资源失败恢复.json",
+      "result": "pass",
+      "viewport": [
+        390,
+        844
+      ],
+      "passedChecks": 8
+    },
+    {
+      "file": "360-WebGL降级.json",
+      "result": "pass",
+      "viewport": [
+        390,
+        844
+      ],
+      "passedChecks": 7
+    }
+  ],
+  "manualChecks": [
+    "桌面实际查看居家、病房、养老、沙龙；方向与图像匹配",
+    "原生鼠标拖拽、键盘环视及按钮缩放正常，相机位置始终为 0,0,0",
+    "手机 390×844 病房全景视觉检查；320×740 控件均在视口内，scrollWidth 为 320",
+    "调整窗口尺寸保留 yaw=-7.57864，不重置用户方向"
+  ],
+  "unitChecks": {
+    "panorama": "4 tests passed",
+    "islands": "5 tests passed",
+    "background": "existing background.test.cjs passed",
+    "syntax": [
+      "content.js",
+      "spaces.js"
+    ]
+  },
+  "sourcePreservation": "360-文件保护核对.json: 4 original panoramas, 10 protected project files, 12 backup copies all SHA-256 matched",
+  "limitations": [
+    "手机采用浏览器尺寸模拟；双指手势由合成 PointerEvent 验证生产处理器，尚未进行真实 iPhone/Android 性能测试",
+    "未发布到公网或推送仓库；现有 4173 本机服务可预览"
+  ],
+  "workspaceStatus": {
+    "WORKSPACE_ROOT": null,
+    "checked": [
+      "/Volumes/*/AI/workspace",
+      "/Users/lisuhang1/AI/workspace"
+    ],
+    "result": "无匹配目录；继续使用用户明确指定的现有项目目录",
+    "rulesRead": false,
+    "workspacePitfallsRead": false,
+    "legacyPitfallsRead": "/Users/lisuhang1/Desktop/欧莱雅/codex工作文档/踩坑日志.txt",
+    "pitfallsUpdated": false,
+    "experienceUpdated": false,
+    "reason": "固定 Workspace 不存在，未另建或猜测路径"
+  },
+  "backup": "backups/pre-panorama-20261015-215546/",
+  "preview": "http://127.0.0.1:4173/#settings"
+}

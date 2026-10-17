@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-10",
+  "scope": "首页 App 下载区与手机适配",
+  "design": {
+    "fileKey": "yBv7SO4vTSRjAX3h08fAfB",
+    "section": "51:2137",
+    "imageNode": "326:518",
+    "title": "Your care. Your control."
+  },
+  "backup": "backups/pre-app-download-20261010-170235",
+  "asset": {
+    "file": "assets/app-download-phone.png",
+    "bytes": 1248158,
+    "sha256": "0b5c6e6840e038eae161f16697b6dbc016aeaea660747a428bda519c0246de9c",
+    "naturalSize": [
+      710,
+      1356
+    ],
+    "desktopDisplaySize": [
+      355,
+      678
+    ]
+  },
+  "browserChecks": [
+    {
+      "width": 320,
+      "height": 740,
+      "documentWidth": 320,
+      "buttonWidth": 126,
+      "buttonHeight": 58,
+      "imageWidth": 272,
+      "imageRatioPreserved": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "buttonWidth": 161,
+      "buttonHeight": 58,
+      "imageWidth": 300,
+      "imageRatioPreserved": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "documentWidth": 430,
+      "buttonWidth": 181,
+      "buttonHeight": 58,
+      "imageWidth": 300,
+      "imageRatioPreserved": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "documentWidth": 768,
+      "buttonWidth": 145,
+      "buttonHeight": 64,
+      "imageWidth": 332.421875,
+      "imageRatioPreserved": true
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "documentWidth": 1440,
+      "buttonWidth": 164,
+      "buttonHeight": 64,
+      "imageWidth": 355,
+      "imageRatioPreserved": true
+    }
+  ],
+  "interaction": [
+    "Android 点击显示对应平台提示",
+    "IOS 按钮 Enter 显示对应平台提示"
+  ],
+  "consoleErrorsAndWarnings": 0,
+  "syntaxChecks": [
+    "app.js passed",
+    "content.js passed"
+  ],
+  "unchanged": [
+    "styles.css",
+    "app.html"
+  ],
+  "limitations": [
+    "尚未提供正式下载地址，按钮当前显示即将开放提示",
+    "手机测试为浏览器视口模拟，未进行真机测试",
+    "保留现有浅色毛玻璃面板，未覆盖为设计截图的纯白不透明底",
+    "此前 ZIP 是旧快照，本次没有重新打包或上传"
+  ]
+}

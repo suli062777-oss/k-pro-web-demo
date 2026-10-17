@@ -1,0 +1,141 @@
+{
+  "desktopActions": {
+    "how": true,
+    "orderAvailability": true,
+    "escapeClose": true,
+    "focusRestored": true
+  },
+  "layouts": [
+    {
+      "bodyWhite": true,
+      "columnRatio": 0.4817708333333333,
+      "headerFixed": true,
+      "headerWhite": true,
+      "lang": "en",
+      "noGlassParent": true,
+      "noHorizontalOverflow": true,
+      "noReceiptCards": true,
+      "otherSections": true,
+      "portrait": {
+        "bottom": 898.015625,
+        "height": 814.015625,
+        "left": 693.75,
+        "right": 1440,
+        "top": 84,
+        "width": 746.25,
+        "x": 693.75,
+        "y": 84
+      },
+      "posterOnly": true,
+      "sectionHeight": 814.015625,
+      "sectionTop": 84,
+      "size": [
+        1440,
+        894
+      ],
+      "titleLines": [
+        "Effortless",
+        "Hair Care With",
+        "L Pro"
+      ],
+      "videoNoSource": true
+    },
+    {
+      "buttonSizes": [
+        {
+          "height": 49,
+          "width": 154
+        },
+        {
+          "height": 49,
+          "width": 154
+        }
+      ],
+      "headerBottom": 72,
+      "lang": "en",
+      "noHorizontalOverflow": true,
+      "portraitRatio": 0.9219858156028368,
+      "sectionTop": 71.7734375,
+      "size": [
+        390,
+        844
+      ],
+      "stacked": true,
+      "titleWithinScreen": true
+    },
+    {
+      "buttonsFit": true,
+      "lang": "zh-CN",
+      "noHorizontalOverflow": true,
+      "size": [
+        320,
+        740
+      ],
+      "titleWithinScreen": true
+    },
+    {
+      "body": "Effortless\nHair Care With\nL Pro\nAll-in-one washing, massage and drying.\nHands-free care with simple voice control.\nPersonalised care with scalp profile memory.\nOrder now\nHow to Use\n\n*Concept design. Features shown illustrate intended functionality and remain subject to prototype testing and validation.\n\n**Voice control and personalised care require compatible software. Performance may vary with hair type, setup and usage conditions.",
+      "lang": "en",
+      "noHorizontalOverflow": true,
+      "size": [
+        320,
+        740
+      ],
+      "titleWithinScreen": true
+    },
+    {
+      "allTextWithinColumn": true,
+      "columns": "462.5px 497.5px",
+      "fontLoaded": true,
+      "noHorizontalOverflow": true,
+      "size": [
+        960,
+        900
+      ]
+    }
+  ],
+  "panoramaOpened": true,
+  "productFeatureSelected": true,
+  "finalDesktop": {
+    "fontLoaded": true,
+    "headerHeight": 84,
+    "noOverflow": true,
+    "noVideoRequested": true,
+    "portraitViewBox": "925 0 995 1080",
+    "sectionHeight": 812.1484375,
+    "sectionTop": 84,
+    "size": [
+      1440,
+      894
+    ]
+  },
+  "protectedFiles": {
+    "background.js": true,
+    "styles.css": true,
+    "site-header.css": true,
+    "site-ui.js": true,
+    "anatomy.js": true,
+    "anatomy.css": true,
+    "worlds.js": true,
+    "worlds.css": true,
+    "spaces.js": true,
+    "spaces.css": true,
+    "package.json": true,
+    "pnpm-lock.yaml": true
+  },
+  "scope": {
+    "media": "Image placeholder; no production video supplied or playback claimed as tested.",
+    "videoEntry": "content.js / routineIntro.media.video",
+    "order": "Availability dialog only; no purchase backend supplied.",
+    "preview": "http://127.0.0.1:4173/?lang=en#routine",
+    "backup": "/Users/lisuhang1/Desktop/欧莱雅/K-pro-web-demo/backups/pre-routine-design-20261017-164732"
+  },
+  "rules": {
+    "workspaceRoot": null,
+    "rulesRead": false,
+    "legacyPitfallsRead": true,
+    "pitfallLogUpdated": false,
+    "experienceLogUpdated": false,
+    "reason": "No AI/workspace candidate found on mounted volumes or under /Users/lisuhang1."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "repository": "https://github.com/lzllzllzllzllzl/V3-Halowash-little-worlds",
+  "commit": "c86ce4e38f90979ef8c2790ca19eda85eb5aed2c",
+  "files": [
+    {
+      "id": "home",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/c86ce4e38f90979ef8c2790ca19eda85eb5aed2c/models/home-main.glb",
+      "bytes": 3490704,
+      "sha256": "7924d9e5b189fe44d2044e5c850927219cf9590b3be5c4932d1bd3531329b12f"
+    },
+    {
+      "id": "ward",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/c86ce4e38f90979ef8c2790ca19eda85eb5aed2c/models/ward-main.glb",
+      "bytes": 3753664,
+      "sha256": "74f1043c5bd420b503babd3ef31dc1696412ce8f1958d48e2f821a455a9fa4f4"
+    },
+    {
+      "id": "garden",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/c86ce4e38f90979ef8c2790ca19eda85eb5aed2c/models/garden-main.glb",
+      "bytes": 3330708,
+      "sha256": "a3432f9b7598c19f52a6c3e25dfb8d6148caef425ec6006e88fa9aedd4a81510"
+    },
+    {
+      "id": "salon",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/c86ce4e38f90979ef8c2790ca19eda85eb5aed2c/models/salon-main.glb",
+      "bytes": 3632572,
+      "sha256": "ecbb73e320535977ef78f98e5678f2d85783a3a1e5ff0bcca6347cbc1c881329"
+    }
+  ],
+  "licenseNote": "Source repository does not include a model license; no new license is assigned to these user-selected assets."
+}

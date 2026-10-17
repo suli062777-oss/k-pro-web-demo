@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-15",
+  "request": "展开预览图也使用对应360场景的画面",
+  "result": "pass",
+  "changes": [
+    "四张 1200×1200 静态透视封面，由对应全景及相同初始镜头渲染",
+    "content.js 仅四个 cover 路径变更",
+    "新增可复用封面渲染脚本与来源清单",
+    "首页配置版本参数已更新，确保读取新封面"
+  ],
+  "verification": {
+    "desktopViewport": [
+      1440,
+      900
+    ],
+    "allFourCoversLoaded": true,
+    "naturalImageSize": [
+      1200,
+      1200
+    ],
+    "gardenPreviewOpens": "assets/panoramas/garden.webp",
+    "mobileViewport": [
+      390,
+      844
+    ],
+    "mobileGardenOpens": "assets/panoramas/garden-mobile.webp",
+    "mobileReturnKeepsExpandedCard": true,
+    "horizontalOverflow": false,
+    "existingPanoramasOldCoversStylesAndRendererUnchanged": true,
+    "otherContentConfigUnchanged": true
+  },
+  "screenshots": [
+    "360封面-桌面.jpg",
+    "360封面-手机.jpg"
+  ],
+  "backup": "backups/pre-panorama-covers-20261015-222229/",
+  "workspace": {
+    "WORKSPACE_ROOT": null,
+    "checked": [
+      "/Volumes/*/AI/workspace",
+      "/Users/lisuhang1/AI/workspace"
+    ],
+    "rulesRead": false,
+    "workspacePitfallsRead": false,
+    "legacyPitfallsRead": "/Users/lisuhang1/Desktop/欧莱雅/codex工作文档/踩坑日志.txt",
+    "pitfallsUpdated": false,
+    "experienceUpdated": false,
+    "reason": "固定 Workspace 未找到；沿用已授权项目目录，未另建日志路径"
+  },
+  "reusableLesson": "全景内容替换时，展开预览和失败备用封面也应来自同一场景；用透视投影渲染普通封面，避免直接裁切等距柱状全景导致形变。固定日志目录缺失，本条仅存为项目验收记录。"
+}

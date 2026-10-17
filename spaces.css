@@ -1,0 +1,32 @@
+#scene-dialog.space-dialog{position:fixed;inset:0;box-sizing:border-box;width:100%;max-width:none;height:100dvh;max-height:none;margin:0;padding:0;border:0;border-radius:0;overflow:hidden;background:#151515;color:#fafafa;overscroll-behavior:contain}
+#scene-dialog[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+#scene-dialog .space-header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 32px;z-index:3;background:#151515}
+#scene-dialog .space-header p{font:10px/1.5 var(--mono);letter-spacing:1px;margin:0 0 6px;opacity:.6}
+#scene-dialog h2{font:22px/1.35 var(--sans);text-transform:none;margin:0;padding:0}
+#scene-dialog .dialog-close{position:static;width:44px;height:44px;flex:none;border:1px solid #ffffff40;font-size:26px}
+#scene-dialog .dialog-close:hover{background:#ffffff14}
+.space-stage{position:relative;min-width:0;min-height:0;isolation:isolate}
+#space-canvas,#space-fallback{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+#space-canvas{touch-action:none;cursor:grab;opacity:0;transition:opacity .3s;outline-offset:-5px}
+#space-canvas:active{cursor:grabbing}
+.space-stage.is-ready #space-canvas{opacity:1}
+.space-stage.is-ready #space-fallback{visibility:hidden}
+#space-status{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);max-width:calc(100% - 40px);padding:12px 20px;background:#151515e8;color:#fafafa;border-radius:24px;font:13px/1.6 var(--sans);text-align:center;z-index:2}
+#space-status:empty{display:none}
+#scene-dialog .space-toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 32px 24px;border:0;margin:0;width:100%;box-sizing:border-box;color:inherit}
+.space-toolbar p{font:12px/1.5 var(--sans);opacity:.7;margin:0}
+.space-toolbar p span{display:block;font-size:10px;margin-top:4px}
+.space-toolbar>div{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.space-toolbar button{background:transparent;border:1px solid #ffffff40;border-radius:24px;min-width:44px;min-height:44px;padding:9px 14px;font:12px/1.4 var(--sans);color:inherit}
+.space-toolbar button:hover{background:#ffffff14}
+.space-toolbar button:disabled{opacity:.35;cursor:default}
+.space-toolbar button[hidden]{display:none}
+@media(max-width:650px){
+  #scene-dialog .space-header{padding:max(12px,env(safe-area-inset-top)) 20px 12px}
+  #scene-dialog h2{font-size:18px}
+  #scene-dialog .space-toolbar{padding:10px 18px max(18px,env(safe-area-inset-bottom));gap:12px;flex-direction:column;align-items:center}
+  .space-toolbar p{text-align:center;font-size:11px}
+  .space-toolbar p span{display:none}
+  .space-toolbar>div{gap:6px;justify-content:center}
+  .space-toolbar button{padding:9px 11px}
+}

@@ -1,0 +1,106 @@
+{
+  "mode": "failed-model",
+  "viewport": [
+    390,
+    844
+  ],
+  "result": "pass",
+  "checks": [
+    {
+      "name": "Old photo hotspot explorer removed",
+      "pass": true
+    },
+    {
+      "name": "One fixed opaque white header",
+      "pass": true
+    },
+    {
+      "name": "Six reference features available",
+      "pass": true
+    },
+    {
+      "name": "Chinese updates product and world",
+      "pass": true
+    },
+    {
+      "name": "Chinese updates rest of site",
+      "pass": true
+    },
+    {
+      "name": "English updates product and world",
+      "pass": true
+    },
+    {
+      "name": "Failed model has usable fallback",
+      "pass": true
+    },
+    {
+      "name": "Feature descriptions remain usable",
+      "pass": true
+    },
+    {
+      "name": "Unavailable 3D controls are disabled",
+      "pass": true
+    },
+    {
+      "name": "Retry remains available",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at home",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at settings",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at product",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at app",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at readiness",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at closing",
+      "pass": true
+    },
+    {
+      "name": "home panorama entry retained",
+      "pass": true
+    },
+    {
+      "name": "ward panorama entry retained",
+      "pass": true
+    },
+    {
+      "name": "garden panorama entry retained",
+      "pass": true
+    },
+    {
+      "name": "salon panorama entry retained",
+      "pass": true
+    },
+    {
+      "name": "No page horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Controls fit their stage width",
+      "pass": true
+    },
+    {
+      "name": "Background remains fixed",
+      "pass": true
+    },
+    {
+      "name": "Brand soft focus retained",
+      "pass": true
+    }
+  ]
+}

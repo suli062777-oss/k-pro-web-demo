@@ -3,14 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#697363">
+  <meta name="theme-color" content="#141414">
   <meta name="description" content="Meet K pro. Wash. Dry. Care. A simpler hair-care routine, shaped around you.">
   <title>K pro — Wash. Dry. Care.</title>
   <link rel="icon" href="assets/wordmark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="content.js" defer></script>
-  <script src="app.js" defer></script>
-  <script src="background.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261017-white-app-faq">
+  <link rel="stylesheet" href="app-download.css?v=20261017-white-app-faq">
+  <link rel="stylesheet" href="worlds.css?v=20261017-anatomy">
+  <link rel="stylesheet" href="anatomy.css?v=20261017-anatomy">
+  <link rel="stylesheet" href="site-header.css?v=20261017-anatomy">
+  <link rel="stylesheet" href="routine-intro.css?v=20261017-design-2">
+  <link rel="stylesheet" href="pricing.css?v=20261017-pricing-2">
+  <script src="content.js?v=20261017-how-to-video" defer></script>
+  <script src="pricing-content.js?v=20261017-pricing-2" defer></script>
+  <script src="app.js?v=20261017-design-2" defer></script>
+  <script src="site-ui.js?v=20261017-anatomy" defer></script>
+  <script src="routine-intro.js?v=20261017-design-2" defer></script>
+  <script src="pricing.js?v=20261017-pricing-2" defer></script>
+  <script type="module" src="anatomy.js?v=20261017-anatomy"></script>
+  <script type="module" src="worlds.js?v=20261017-anatomy"></script>
+  <script type="module" src="spaces.js?v=20261015-panoramas"></script>
+  <link rel="stylesheet" href="spaces.css?v=20261015-panoramas">
+  <script src="background.js?v=20261004-glass-panels" defer></script>
 </head>
 <body class="home-page">
   <div class="site-background" id="site-background" aria-hidden="true">
@@ -19,14 +33,17 @@
       <video id="background-video" muted playsinline preload="none" hidden></video>
     </div>
     <div class="background-shade"></div>
-    <div class="background-frost" id="background-frost"></div>
   </div>
   <a class="skip-link" href="#routine">Skip to content</a>
-  <header class="navigation" id="navigation">
-    <a class="nav-left" href="#routine">explore K pro</a>
-    <div class="nav-right">
-      <button class="social-button" type="button" data-follow="Instagram" aria-label="K pro on Instagram"><span class="icon-slot"><img src="assets/instagram.svg" alt=""></span></button>
-      <button class="social-button" type="button" data-follow="TikTok" aria-label="K pro on TikTok"><span class="icon-slot"><img src="assets/tiktok.svg" alt=""></span></button>
+  <header class="site-header" id="navigation">
+    <a class="site-brand" href="#home" aria-label="L’Oréal Professionnel Paris — 回到首页">
+      <span class="site-brand-name">L’ORÉAL</span><span class="site-brand-pro">PROFESSIONNEL</span><span class="site-brand-paris">PARIS</span>
+    </a>
+    <a class="pricing-header-brand" href="#pricing">L PRO</a>
+    <nav class="pricing-header-nav" aria-label="L PRO"><a href="#routine" data-p-copy="overviewNav">Overview</a><a href="#settings" data-p-copy="experienceNav">Experience</a><a href="#pricing" data-p-copy="pricingNav">Pricing</a></nav>
+    <div class="site-header-actions"><span class="pricing-header-wordmark">L’ORÉAL</span>
+      <nav class="site-section-links" aria-label="Sections"><a href="#settings" data-site-copy="navWorld">World</a><a href="#product" data-site-copy="navProduct">Product</a></nav>
+      <div class="site-language" role="group" aria-label="Language / 语言"><button type="button" data-site-language="en" aria-pressed="true">EN</button><button type="button" data-site-language="zh" aria-pressed="false">中文</button></div>
     </div>
   </header>
   <main>
@@ -41,37 +58,99 @@
         <div class="hero-bottom"><span class="mono">A LITTLE MORE EASE, EVERY DAY.</span><a href="#routine" class="scroll-cue">scroll to discover <span aria-hidden="true">↓</span></a></div>
       </div>
     </section>
-    <section class="routine" id="routine" aria-label="One connected routine" data-node-id="115:4371">
-      <div class="routine-visual"><img src="assets/routine.png" alt="K pro care routine and product controls" width="1001" height="467" loading="lazy"></div>
-      <div class="receipt-viewport" tabindex="0" aria-label="Six notes about K pro. Scroll horizontally for more."><div class="receipt-strip" id="receipt-strip"></div></div>
-    </section>
-    <section class="settings" id="settings" aria-labelledby="settings-title" data-node-id="51:2127">
-      <div class="settings-heading"><h2 id="settings-title">different settings.<br>the same care.<br>your routine, your way.</h2><p class="mono settings-hint">CHOOSE YOUR EVERYDAY <span aria-hidden="true">↙</span></p></div>
-      <div class="scene-strip" id="scene-strip"></div>
-    </section>
-    <section class="product section-pad" id="product" aria-labelledby="product-title" data-node-id="51:2131">
-      <div class="section-topline"><span class="mono">THE DETAILS, CONSIDERED.</span><span class="mono">01 — 03</span></div>
-      <h2 id="product-title">Meet K pro,<br>from every angle.</h2>
-      <div class="product-explorer">
-        <div class="product-visual"><img src="assets/hero.png" alt="K pro product concept, with three selectable details" loading="lazy"><div class="product-tint"></div><div id="hotspots"></div><span class="product-caption mono">K PRO / PRODUCT CONCEPT</span></div>
-        <div class="product-details"><p class="mono detail-instruction">Select a detail</p><div id="product-rows"></div></div>
+    <section class="routine-intro" id="routine" aria-labelledby="routine-title">
+      <div class="routine-intro-layout">
+        <div class="routine-intro-copy">
+          <h2 id="routine-title"><span>Effortless</span><span>Hair Care With</span><span>L Pro</span></h2>
+          <ul class="routine-benefits" id="routine-benefits">
+            <li><strong>All-in-one</strong> washing, massage and drying.</li>
+            <li>Hands-free care with simple <strong>voice control.</strong></li>
+            <li><strong>Personalised care</strong> with scalp profile memory.</li>
+          </ul>
+          <div class="routine-actions">
+            <a class="routine-action" id="routine-order" href="#pricing">Order now</a>
+            <a class="routine-action" id="routine-how" href="https://www.bilibili.com/video/BV19oJQ69E5X/?share_source=copy_web&amp;vd_source=8aa295a01e9dc9bc3cfdb93b2249a279">How to Use</a>
+          </div>
+          <div class="routine-notes" id="routine-notes">
+            <p>*Concept design. Features shown illustrate intended functionality and remain subject to prototype testing and validation.</p>
+            <p>**Voice control and personalised care require compatible software. Performance may vary with hair type, setup and usage conditions.</p>
+          </div>
+        </div>
+        <div class="routine-media" id="routine-media" data-state="poster">
+          <!-- Crop only the portrait from the original design export; all text is HTML. -->
+          <svg class="routine-poster" id="routine-poster" viewBox="925 0 995 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A smiling person in a black-and-white portrait">
+            <image id="routine-poster-source" href="assets/routine-intro/design-source.png" width="1920" height="1080" />
+          </svg>
+          <video id="routine-video" muted loop playsinline preload="none" hidden aria-hidden="true"></video>
+          <button type="button" class="routine-video-toggle" id="routine-video-toggle" hidden>Play video</button>
+        </div>
       </div>
     </section>
-    <section class="app-section section-pad" id="app" aria-labelledby="app-title" data-node-id="51:2137">
-      <div class="app-copy"><h2 id="app-title"></h2><p class="chinese" lang="zh-CN" id="app-chinese"></p><p class="app-intro" id="app-intro"></p><ol class="feature-list" id="app-features"></ol><a class="pill pill-dark" href="app.html" data-app-link>Explore the app <span aria-hidden="true">↗</span></a></div>
-      <div class="phone-stage"><div class="phone"><div class="phone-screen"><p class="phone-brand">K pro</p><div class="phone-placeholder"><span class="mono">App interface</span></div><p class="phone-caption">Your routine, within reach.</p></div></div></div>
+    <section class="settings world-section" id="settings" aria-labelledby="settings-title">
+      <div class="world-stage" id="world-stage" data-state="idle" aria-busy="true">
+        <canvas id="world-canvas" tabindex="0" role="application" aria-label="四场景小世界，可拖动旋转，点击建筑或标签进入对应 360° 场景" aria-describedby="world-instruction"></canvas>
+        <div class="world-vignette" aria-hidden="true"></div>
+        <header class="world-heading"><p class="world-brand">K pro</p><h2 id="settings-title">Four-scene mini world</h2></header>
+        <div class="world-toolbar" aria-label="世界视角控制">
+          
+          <button type="button" data-world-action="pause" aria-pressed="false" disabled>Pause</button>
+          <button type="button" data-world-action="out" aria-label="缩小小世界" disabled>−</button>
+          <button type="button" data-world-action="in" aria-label="放大小世界" disabled>＋</button>
+          <button type="button" data-world-action="reset" disabled>Reset</button>
+        </div>
+        <div class="world-labels" id="world-labels" hidden></div>
+        <p class="world-status" id="world-status" role="status" aria-live="polite"></p>
+        <div class="world-choices" id="world-choices" role="group" aria-label="选择 360° 场景"></div>
+        <p class="world-instruction" id="world-instruction">拖动旋转 · 点击建筑进入 360° 场景</p>
+      </div>
     </section>
+    <section class="product-anatomy pod-page" id="product" aria-labelledby="product-title">
+      <div id="anatomy-root"><div class="anatomy-placeholder"><h2 id="product-title">L Pro exclusive features.</h2><p data-site-copy="productLoading">Loading the interactive product…</p></div></div>
+    </section>
+    <section class="app-section section-pad" id="app" aria-labelledby="app-title" data-node-id="51:2137">
+      <div class="app-copy"><div class="app-editorial"><h2 id="app-title"></h2><p class="app-intro" id="app-intro"></p></div><div class="app-download-actions" id="app-download-actions" aria-label="App downloads"></div><p class="app-download-status" id="app-download-status" role="status" aria-live="polite" hidden></p></div>
+      <div class="phone-stage" data-node-id="326:517"><img class="app-phone-image" id="app-phone-image" src="assets/app-download-phone-cutout.png" alt="L Pro app on a phone, showing Care Without Limits" width="355" height="678" loading="lazy" decoding="async" data-node-id="321:530"></div>
+    </section>
+    <section class="pricing-section" id="pricing" aria-label="L PRO pricing and experience" data-state="overview"></section>
     <section class="readiness section-pad" id="readiness" aria-labelledby="readiness-title" data-node-id="51:2143">
-      <div class="readiness-heading"><h2 id="readiness-title">Find your place<br>for K pro.</h2><p class="chinese" lang="zh-CN">看看 K pro<br>如何进入你的日常。</p></div>
-      <div class="readiness-grid"><article class="product-card"><div class="product-card-image"><img src="assets/hero.png" alt="K pro in a calm home setting" loading="lazy"></div><div class="product-card-copy"><h3>K pro</h3><p>Wash. Dry. Care.</p><p class="product-card-description">Discover the product and the setup<br>behind your daily routine.</p><a class="pill pill-dark" href="#product">Explore K pro <span aria-hidden="true">↗</span></a></div></article><div class="faq"><h3>Before you begin.</h3><p>A few things to consider,<br>from setup to everyday care.</p><div id="faq-list"></div></div></div>
+      <div class="readiness-heading">
+        <h2 id="readiness-title">Before you begin.</h2>
+        <p class="chinese" lang="zh-CN">使用前的三个问题。</p>
+      </div>
+      <div class="faq" id="faq-list"></div>
     </section>
     <section class="closing section-pad" id="closing" aria-labelledby="closing-title" data-node-id="51:2155">
-      <div class="closing-copy"><p class="mono">YOUR NEXT ROUTINE</p><h2 id="closing-title"></h2><p class="chinese" id="closing-chinese" lang="zh-CN"></p><a class="pill" href="#readiness">Explore K pro <span aria-hidden="true">↗</span></a></div>
-      <footer><a class="footer-brand" href="#home">K pro</a><nav aria-label="Footer"><a href="#product">Product</a><a href="app.html" data-app-link>App</a><a href="#readiness">Use &amp; support</a><button type="button" data-follow="Contact">Contact</button></nav><div class="footer-bottom"><span>Thoughtfully made for everyday care.</span><span class="mono">K PRO © 2026 · CONCEPT PREVIEW</span></div></footer>
+      <div class="closing-copy">
+        <h2 id="closing-title"></h2>
+        <p class="chinese" id="closing-chinese" lang="zh-CN"></p>
+      </div>
+      <footer>
+        <a class="footer-brand" href="#home">K pro</a>
+        <nav aria-label="Footer">
+          <a href="#product">Product</a>
+          <a href="#app">App</a>
+          <a href="#readiness">FAQ</a>
+          <button type="button" data-follow="Contact">Contact</button>
+          <button type="button" data-follow="Instagram" aria-label="K pro on Instagram">Instagram</button>
+          <button type="button" data-follow="TikTok" aria-label="K pro on TikTok">TikTok</button>
+          <a href="#pricing" data-p-copy="pricingNav">Pricing</a>
+        </nav>
+        <div class="footer-bottom"><span class="mono">K PRO © 2026 · CONCEPT PREVIEW</span></div>
+      </footer>
     </section>
   </main>
   <dialog class="follow-dialog" id="follow-dialog" aria-labelledby="follow-title"><button class="dialog-close" aria-label="Close" type="button">×</button><p class="mono">STAY IN THE LOOP</p><h2 id="follow-title">A little more<br>to come.</h2><p id="follow-message"></p><button type="button" class="pill pill-dark dialog-done">Keep exploring <span aria-hidden="true">↗</span></button></dialog>
-  <dialog class="scene-dialog" id="scene-dialog" aria-labelledby="scene-dialog-title"><button class="dialog-close" aria-label="Close scene preview" type="button">×</button><h2 id="scene-dialog-title"></h2><img id="scene-dialog-image" alt=""><p class="mono">A CLOSER LOOK / K PRO</p></dialog>
+  <dialog class="scene-dialog space-dialog" id="scene-dialog" aria-labelledby="scene-dialog-title">
+    <header class="space-header"><div><p>K PRO / 360° VIEW</p><h2 id="scene-dialog-title"></h2></div><button class="dialog-close" aria-label="关闭全景，返回小世界" type="button" autofocus>×</button></header>
+    <div class="space-stage" id="space-stage"><img id="space-fallback" alt="当前场景封面"><canvas id="space-canvas" tabindex="0" role="img" aria-label="360°全景：拖动或方向键环视，加减键缩放，Esc 返回"></canvas><p id="space-status" role="status" aria-live="polite"></p></div>
+    <footer class="space-toolbar"><p>拖动环视 · 滚轮 / 双指缩放<span>方向键环视 · Esc 返回</span></p><div><button type="button" data-space-action="left" aria-label="向左环视">↶</button><button type="button" data-space-action="right" aria-label="向右环视">↷</button><button type="button" data-space-action="out" aria-label="缩小视野画面">−</button><button type="button" data-space-action="in" aria-label="放大视野画面">＋</button><button type="button" data-space-action="reset">重置视角</button><button type="button" data-space-action="retry" hidden>重新加载</button></div></footer>
+  </dialog>
+  <dialog class="routine-dialog" id="routine-dialog" aria-labelledby="routine-dialog-title" aria-describedby="routine-dialog-intro">
+    <button type="button" class="routine-dialog-close" autofocus aria-label="Close">×</button>
+    <h2 id="routine-dialog-title"></h2><p id="routine-dialog-intro"></p>
+    <ol id="routine-dialog-steps" hidden></ol>
+    <button type="button" class="routine-action routine-dialog-done">Close</button>
+  </dialog>
   <noscript><p class="noscript-message">Enable JavaScript to explore the interactive product details.</p></noscript>
 </body>
 </html>

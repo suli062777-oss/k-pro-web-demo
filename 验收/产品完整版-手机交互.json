@@ -1,0 +1,206 @@
+{
+  "mode": "normal",
+  "viewport": [
+    390,
+    844
+  ],
+  "result": "pass",
+  "checks": [
+    {
+      "name": "Old photo hotspot explorer removed",
+      "pass": true
+    },
+    {
+      "name": "One fixed opaque white header",
+      "pass": true
+    },
+    {
+      "name": "Six reference features available",
+      "pass": true
+    },
+    {
+      "name": "Chinese updates product and world",
+      "pass": true
+    },
+    {
+      "name": "Chinese updates rest of site",
+      "pass": true
+    },
+    {
+      "name": "English updates product and world",
+      "pass": true
+    },
+    {
+      "name": "Local model loaded",
+      "pass": true
+    },
+    {
+      "name": "washdiag selection updates model",
+      "pass": true
+    },
+    {
+      "name": "washdiag target fits viewport",
+      "pass": true,
+      "detail": {
+        "left": -0.4945231159642156,
+        "right": 0.5052321694259243,
+        "top": 0.6320819511905423,
+        "bottom": -0.7770629437679235
+      }
+    },
+    {
+      "name": "ends selection updates model",
+      "pass": true
+    },
+    {
+      "name": "ends target fits viewport",
+      "pass": true,
+      "detail": {
+        "left": -0.723261534302177,
+        "right": 0.6117280520606859,
+        "top": 0.5106458449320667,
+        "bottom": -0.7526150619922547
+      }
+    },
+    {
+      "name": "care selection updates model",
+      "pass": true
+    },
+    {
+      "name": "care target fits viewport",
+      "pass": true,
+      "detail": {
+        "left": -0.7575078225492913,
+        "right": 0.7909304311901432,
+        "top": 0.3239939133287013,
+        "bottom": -0.5188169135237551
+      }
+    },
+    {
+      "name": "dry selection updates model",
+      "pass": true
+    },
+    {
+      "name": "dry target fits viewport",
+      "pass": true,
+      "detail": {
+        "left": -0.554981216601324,
+        "right": 0.5968800474947521,
+        "top": 0.5991814908745151,
+        "bottom": -0.7712780570214599
+      }
+    },
+    {
+      "name": "structure selection updates model",
+      "pass": true
+    },
+    {
+      "name": "structure target fits viewport",
+      "pass": true,
+      "detail": {
+        "left": -0.5088525584156286,
+        "right": 0.4467793038642087,
+        "top": 0.6171600198792925,
+        "bottom": -0.7745049953911982
+      }
+    },
+    {
+      "name": "exploded selection updates model",
+      "pass": true
+    },
+    {
+      "name": "exploded target fits viewport",
+      "pass": true,
+      "detail": {
+        "left": -0.5178885792509981,
+        "right": 0.4530198640261601,
+        "top": 0.6184756710313619,
+        "bottom": -0.7747347980888393
+      }
+    },
+    {
+      "name": "Reset returns assembled state",
+      "pass": true
+    },
+    {
+      "name": "Explosion slider changes continuously",
+      "pass": true
+    },
+    {
+      "name": "Keyboard orbit scoped to canvas",
+      "pass": true
+    },
+    {
+      "name": "Ordinary wheel does not prevent page scroll",
+      "pass": true
+    },
+    {
+      "name": "Guided tour advances",
+      "pass": true
+    },
+    {
+      "name": "User orbit stops tour",
+      "pass": true
+    },
+    {
+      "name": "Offscreen scene stops rendering",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at home",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at settings",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at product",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at app",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at readiness",
+      "pass": true
+    },
+    {
+      "name": "Header stays fixed at closing",
+      "pass": true
+    },
+    {
+      "name": "home panorama entry retained",
+      "pass": true
+    },
+    {
+      "name": "ward panorama entry retained",
+      "pass": true
+    },
+    {
+      "name": "garden panorama entry retained",
+      "pass": true
+    },
+    {
+      "name": "salon panorama entry retained",
+      "pass": true
+    },
+    {
+      "name": "No page horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Controls fit their stage width",
+      "pass": true
+    },
+    {
+      "name": "Background remains fixed",
+      "pass": true
+    },
+    {
+      "name": "Brand soft focus retained",
+      "pass": true
+    }
+  ]
+}

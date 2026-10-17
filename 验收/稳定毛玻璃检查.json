@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-04",
+  "preview": "http://127.0.0.1:4173/",
+  "method": "真实浏览器分区截图、只读 DOM 几何与计算样式检查、实际点击；视频控制使用模拟媒体测试",
+  "viewports": [
+    { "width": 1440, "height": 900, "pageWidth": 1440, "result": "通过" },
+    { "width": 390, "height": 844, "pageWidth": 390, "result": "通过" },
+    { "width": 320, "height": 740, "pageWidth": 320, "result": "通过" }
+  ],
+  "panels": [
+    { "theme": "dark", "sections": ["routine", "settings", "product"], "background": "rgba(20, 20, 20, 0.78)" },
+    { "theme": "light", "sections": ["app", "readiness"], "background": "rgba(245, 245, 245, 0.86)" },
+    { "theme": "dark", "sections": ["closing"], "background": "rgba(20, 20, 20, 0.78)" }
+  ],
+  "verified": {
+    "oneFixedViewportBackground": true,
+    "heroOutsideGlassPanels": true,
+    "oldFixedFrostMaskRemoved": true,
+    "clearHorizontalEntryBoundary": true,
+    "continuousAdjacentChapters": true,
+    "panelEdgesMeetWithoutGapOrOverlap": true,
+    "constantBackdropFilter": "blur(24px) grayscale(1)",
+    "noScrollDrivenPanelStyleUpdates": true,
+    "backgroundCoveredAtPageEnd": true,
+    "foregroundParentsFilterNoneOpacityOne": true,
+    "glassPointerEventsNone": true,
+    "brandSoftFocusPreserved": true,
+    "foregroundImageColorsPreserved": true,
+    "neutralCssPalette": true,
+    "noHorizontalPageOverflow": true
+  },
+  "interactionChecks": [
+    "场景切换保持互斥展开",
+    "场景大图可打开并使用 Escape 关闭",
+    "桌面与手机产品热点切换详情",
+    "FAQ 可展开",
+    "App 页面进入及返回首页锚点",
+    "联系弹窗打开与关闭"
+  ],
+  "controllerTests": {
+    "command": "node 验收/background.test.cjs",
+    "result": "PASS",
+    "coverage": ["连续分组", "保留原章节节点和顺序", "往返滚动与尺寸改变时面板参数不变", "全页视频进度映射", "快速反向定位采用最新目标", "停止时保持帧", "布局变化", "减少动态效果", "媒体失败回退"]
+  },
+  "consoleErrorsOrWarningsInResumedPreview": [],
+  "limitations": [
+    "目前仍使用图片占位；真实视频的解码、滚动定位性能需正式视频素材验证。",
+    "浏览器验证使用当前 macOS 内置 Chromium 预览；未测试独立 Safari 或实体手机。",
+    "当前修改保存在本地，尚未同步到 GitHub。"
+  ]
+}

@@ -1,0 +1,45 @@
+/* Section-scoped integration of the reference's full four-building world. */
+#settings.world-section{padding:0;min-height:0;overflow:hidden;color:#202124;background:#eef0f2}
+.world-stage{position:relative;width:100%;height:clamp(680px,90svh,980px);isolation:isolate;background:#eef0f2;overflow:hidden}
+#world-canvas{display:block;width:100%;height:100%;opacity:0;transition:opacity .45s;outline:none;touch-action:pan-y;cursor:grab}
+[data-state="ready"]>#world-canvas{opacity:1}
+#world-canvas:focus-visible{outline:2px solid #333;outline-offset:-5px}
+.world-vignette{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 42%,transparent 58%,rgba(60,70,80,.1) 100%)}
+.world-heading{position:absolute;z-index:3;left:32px;top:30px;pointer-events:none}
+.world-brand{font:400 42px/1.1 var(--sans);letter-spacing:-2px;margin:0 0 10px}
+#settings .world-heading h2{font:400 13px/1.4 var(--sans);letter-spacing:2px;white-space:normal;margin:0}
+.world-heading:after{content:"";display:block;width:26px;height:2px;background:currentColor;margin-top:15px}
+.world-toolbar{position:absolute;top:24px;right:24px;z-index:4;display:flex;align-items:center;gap:7px}
+.world-toolbar button{font:500 12px/1.3 var(--sans);min-width:42px;min-height:42px;padding:10px 14px;background:#fffffff0;border:1px solid #dfe3e7;border-radius:24px;color:#292c30;touch-action:manipulation}
+.world-toolbar button:hover{background:#fff;border-color:#92969c}
+.world-toolbar button:disabled{opacity:.45;cursor:default}
+.world-toolbar button:focus-visible,.world-choice:focus-visible{outline:2px solid #1c1c1c;outline-offset:3px}
+.world-labels{position:absolute;inset:0;z-index:2;pointer-events:none}
+.world-label-hit{position:absolute;display:block;padding:0;border:0;border-radius:100px;background:transparent;pointer-events:auto;cursor:pointer;touch-action:manipulation}
+.world-label-hit:focus-visible{outline:2px solid #202124;outline-offset:4px}
+.world-instruction{position:absolute;z-index:3;bottom:22px;left:24px;right:24px;margin:0;text-align:center;font:12px/1.5 var(--sans);color:#454b50;pointer-events:none}
+.world-status{position:absolute;left:50%;top:45%;z-index:3;transform:translate(-50%,-50%);font:13px/1.6 var(--sans);text-align:center;width:260px;color:#4f5357}
+[data-state="loading"] .world-status:before{content:"";display:block;width:22px;height:22px;margin:0 auto 14px;border:1px solid #0002;border-top-color:#0008;border-radius:50%;animation:world-load 1s linear infinite}
+.world-choices{display:none}
+[data-state="fallback"] .world-choices{position:absolute;inset:170px max(24px,12% ) 70px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-content:center;gap:14px;z-index:3}
+.world-choice{display:flex;flex-direction:column;gap:12px;align-items:center;padding:0 0 14px;background:#fff;border:1px solid #dfe3e7;border-radius:6px;overflow:hidden;color:#292c30;font:500 13px/1.3 var(--sans)}
+.world-choice img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+[data-state="fallback"] .world-status{top:135px;width:calc(100% - 48px)}
+@keyframes world-load{to{transform:rotate(360deg)}}
+@media(max-width:700px){
+  .world-stage{height:720px;height:clamp(650px,94svh,800px)}
+  .world-heading{left:20px;top:22px;isolation:isolate}
+  .world-heading:before{content:"";position:absolute;inset:-10px -12px;z-index:-1;background:#eef0f2d9;backdrop-filter:blur(8px);border-radius:4px}
+  .world-brand{font-size:32px;margin-bottom:8px}
+  #settings .world-heading h2{font-size:10px;letter-spacing:1px;max-width:150px}
+  .world-toolbar{right:14px;top:20px;max-width:170px;flex-wrap:wrap;justify-content:flex-end;gap:5px}
+  .world-toolbar button{min-width:38px;min-height:38px;padding:8px 10px;font-size:11px}
+  .world-instruction{bottom:18px;left:16px;right:16px;font-size:10px}
+  .world-choices,[data-state="fallback"] .world-choices{display:grid;position:absolute;z-index:3;left:20px;right:20px;bottom:50px;top:auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .world-choice{padding:11px 8px;border-radius:30px;font-size:12px;background:#fffffff0;min-height:42px}
+  .world-choice img{display:none}
+  [data-state="fallback"] .world-choices{top:180px;bottom:65px;align-content:center}
+  [data-state="fallback"] .world-choice{padding:0 0 12px;border-radius:5px}
+  [data-state="fallback"] .world-choice img{display:block;aspect-ratio:1.3}
+}
+@media(prefers-reduced-motion:reduce){#world-canvas{transition:none}.world-status:before{animation:none!important}}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-03",
+  "scope": "首屏 K pro 与 Wash. Dry. Care. 的朦胧效果",
+  "method": "本地浏览器截图、DOM 计算样式与实际点击检查",
+  "viewports": [
+    { "width": 1440, "height": 900, "pageWidth": 1440, "wordmarkBlur": 6, "extraTaglineBlur": 1.4 },
+    { "width": 390, "height": 844, "pageWidth": 390, "wordmarkBlur": 2.6, "extraTaglineBlur": 0.6 },
+    { "width": 320, "height": 740, "pageWidth": 320, "wordmarkBlur": 2.6, "extraTaglineBlur": 0.6 }
+  ],
+  "results": {
+    "visibleSoftEdgesAndSubtleWhiteHalo": true,
+    "originalSvgShapesPreserved": true,
+    "noHorizontalPageOverflow": true,
+    "mainNavigationAndCtaFilterNoneOpacityOne": true,
+    "exploreButtonNavigatesToRoutine": true,
+    "routineAndReceiptFilterNoneOpacityOne": true,
+    "backgroundStillCoversViewportWhenScrolled": true,
+    "backgroundBlurAtRoutine": "20px",
+    "backgroundBlurAfterReturningToTop": "0px",
+    "consoleErrorsOrWarnings": []
+  },
+  "notes": [
+    "tagline.svg 内原有 2.25 单位高斯模糊保留，表中记录额外的 CSS 柔焦。",
+    "浏览器曾保留旧样式，首页样式与脚本 URL 已加版本参数并确认新版生效。",
+    "已恢复默认浏览器尺寸与首页顶部。",
+    "本次仅修改本地版本，尚未提交到远程仓库。"
+  ]
+}

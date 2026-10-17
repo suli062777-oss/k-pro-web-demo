@@ -1,0 +1,70 @@
+{
+  "retrieved": "2026-10-17",
+  "reference": "https://lzllzllzllzllzl.github.io/V3-Halowash-little-worlds/index.html",
+  "sourceFiles": [
+    {
+      "file": "index.html",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/main/index.html",
+      "sha256": "ba944513a49a6051f34c9901f57a3924674bc901f4166bb44d0910e39ff0e9d6",
+      "gitBlob": "a4fc371a53be702d2aab30f48a2d454b2363a15a"
+    },
+    {
+      "file": "index-bundle.js",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/main/index-bundle.js",
+      "sha256": "a18f6aaba6e36a58498b48a92f709ad415c931d2739c87bad25bd928ef0a8397",
+      "gitBlob": "68fbfccd3e66a501e7293b7048e18832a96f36e8"
+    },
+    {
+      "file": "hw-index.js",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/main/src/hw-index.js",
+      "sha256": "45a4f5ddba1936948581de7b9f12ea43aa8b0eae8e0f0af37025ffc90a8461fb",
+      "gitBlob": "a60eb5a286cc7d8555149bc1199a99daa437ff3f"
+    },
+    {
+      "file": "hw-backdrop.js",
+      "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/main/src/hw-backdrop.js",
+      "sha256": "290b2b81a08c289d2792c2056725a936fdac8b293b5d0aee00e00fab2b5d3c5e",
+      "gitBlob": "9bd330d75b460c3b2c82106e698ec8b0db0a8f29"
+    }
+  ],
+  "buildings": [
+    {
+      "id": "home",
+      "sourceMatchesCurrentReference": true,
+      "runtime": "assets/islands/home.glb",
+      "originalSha256": "7924d9e5b189fe44d2044e5c850927219cf9590b3be5c4932d1bd3531329b12f"
+    },
+    {
+      "id": "ward",
+      "sourceMatchesCurrentReference": true,
+      "runtime": "assets/islands/ward.glb",
+      "originalSha256": "74f1043c5bd420b503babd3ef31dc1696412ce8f1958d48e2f821a455a9fa4f4"
+    },
+    {
+      "id": "garden",
+      "sourceMatchesCurrentReference": true,
+      "runtime": "assets/islands/garden.glb",
+      "originalSha256": "a3432f9b7598c19f52a6c3e25dfb8d6148caef425ec6006e88fa9aedd4a81510"
+    },
+    {
+      "id": "salon",
+      "sourceMatchesCurrentReference": true,
+      "runtime": "assets/islands/salon.glb",
+      "originalSha256": "ecbb73e320535977ef78f98e5678f2d85783a3a1e5ff0bcca6347cbc1c881329"
+    }
+  ],
+  "tree": {
+    "source": "https://raw.githubusercontent.com/lzllzllzllzllzl/V3-Halowash-little-worlds/main/models/tree-main.glb",
+    "runtime": "assets/worlds/tree.glb",
+    "bytes": 2321400,
+    "sha256": "2bbd013ac5f8ea413860055f0870ffc71e4fd710e54f71c8aeefedb17858d58a"
+  },
+  "adaptation": [
+    "Original geometry, street backdrop, tree distribution, plaza layout and callout rendering migrated into src/world-renderer.js and src/world-backdrop.js",
+    "Existing local optimized building GLBs used; their originals match current reference blobs",
+    "Reference navigation replaced by same-ID K pro panorama dialog",
+    "Rendering scoped to container; offscreen/modal suspension, pointer drag guard, keyboard scoping and page-scroll preservation added",
+    "Three.js built as shared local chunks; no runtime iframe or remote model dependencies"
+  ],
+  "licenseNote": "User-selected reference source; original notices and local snapshots retained. No new license assigned to reference code or model assets."
+}

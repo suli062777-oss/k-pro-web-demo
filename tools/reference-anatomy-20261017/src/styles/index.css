@@ -1,0 +1,271 @@
+:root {
+  --void: #04101e;
+  --panel: rgba(6, 14, 26, 0.84);
+  --ink: #dce8f5;
+  --ink-dim: #8ba3bd;
+  --titanium: #5f7d9c;
+  --accent: #4da3ff;
+  --line: rgba(125, 175, 230, 0.28);
+  --line-soft: rgba(125, 175, 230, 0.12);
+  --ok: #34c77b;
+  --danger: #ff6b6b;
+  --sans: "Avenir Next", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --mono: "SFMono-Regular", Consolas, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body, #root {
+  width: 100%; height: 100%; overflow: hidden;
+  background: var(--void); color: var(--ink);
+  font-family: var(--sans); font-size: 13px; line-height: 1.45;
+}
+
+button {
+  font-family: var(--sans); font-size: 12px; cursor: pointer;
+  background: rgba(10, 22, 38, 0.9); color: var(--ink); border: 1px solid var(--line);
+  padding: 5px 12px; border-radius: 2px; transition: background 0.15s, border-color 0.15s;
+}
+button:hover { background: rgba(77, 163, 255, 0.12); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+button[aria-pressed="true"] { background: rgba(77, 163, 255, 0.2); border-color: var(--accent); }
+button:disabled { opacity: 0.35; cursor: not-allowed; }
+button.primary { border-color: var(--accent); background: rgba(77, 163, 255, 0.16); }
+button.danger { border-color: var(--danger); color: #ffd2d2; background: rgba(255, 107, 107, 0.1); }
+
+input[type="range"] {
+  -webkit-appearance: none; appearance: none; width: 100%; height: 4px;
+  background: var(--line); border-radius: 2px; outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 14px; height: 14px;
+  background: var(--accent); border-radius: 50%; cursor: grab;
+}
+input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.panel {
+  background: var(--panel); border: 1px solid var(--line);
+  backdrop-filter: blur(8px); padding: 10px 12px; border-radius: 3px;
+}
+
+.panel-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.panel-title {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--ink); font-weight: 600;
+}
+.panel-hint { font-size: 9px; color: var(--titanium); }
+.panel-foot { margin-top: 6px; font-size: 9px; color: var(--titanium); text-align: center; }
+
+/* ---------------- 标题块（蓝图标题栏） ---------------- */
+
+.overlay-title { position: fixed; top: 16px; left: 16px; z-index: 10; pointer-events: none; }
+.overlay-title h1 {
+  font-size: 17px; font-weight: 700; letter-spacing: 0.03em; color: var(--ink);
+}
+.overlay-title .subtitle { font-size: 11px; color: var(--ink-dim); margin-top: 2px; }
+.overlay-title .plaque-en {
+  font-family: var(--mono); font-size: 9px; color: var(--titanium);
+  letter-spacing: 0.14em; margin-top: 5px; text-transform: uppercase;
+  border-top: 1px solid var(--line-soft); padding-top: 4px;
+}
+
+.lang-btn {
+  position: fixed; top: 16px; right: 16px; z-index: 20;
+  font-family: var(--mono); font-size: 11px; padding: 4px 10px;
+}
+
+/* ---------------- 左侧模块目录（蓝图左列 ①-⑧） ---------------- */
+
+.module-index {
+  position: fixed; top: 88px; left: 16px; z-index: 10;
+  width: 232px; max-height: calc(100vh - 220px); overflow-y: auto;
+}
+.module-list { list-style: none; }
+.module-row {
+  display: flex; align-items: center; gap: 9px; width: 100%;
+  background: none; border: none; border-left: 2px solid var(--line-soft);
+  padding: 6px 6px 6px 8px; margin: 1px 0; text-align: left; border-radius: 0;
+}
+.module-row:hover { background: rgba(77, 163, 255, 0.08); }
+.module-row.hover { background: rgba(77, 163, 255, 0.08); }
+.module-row.selected {
+  border-left-color: var(--mc);
+  background: rgba(77, 163, 255, 0.14);
+}
+.module-row.running { border-left-color: var(--mc); }
+.module-num {
+  font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--mc);
+  width: 20px; height: 20px; border: 1px solid var(--mc); border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+}
+.module-text { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.module-name { font-size: 12px; color: var(--ink); white-space: nowrap; }
+.module-en {
+  font-family: var(--mono); font-size: 8px; letter-spacing: 0.08em;
+  color: var(--titanium); text-transform: uppercase; white-space: nowrap;
+}
+.module-dot {
+  width: 6px; height: 6px; border-radius: 50%; flex: none;
+  background: var(--line); transition: background 0.2s, box-shadow 0.2s;
+}
+.module-dot.on { background: var(--mc); box-shadow: 0 0 6px var(--mc); }
+
+/* ---------------- 右侧系统面板（蓝图右列） ---------------- */
+
+.system-panel {
+  position: fixed; top: 88px; right: 16px; z-index: 10;
+  width: 216px; max-height: calc(100vh - 220px); overflow-y: auto;
+}
+.legend { margin: 4px 0 8px; }
+.legend-row {
+  display: flex; align-items: center; gap: 8px; padding: 3px 2px;
+  border-left: 2px solid var(--line-soft); margin: 2px 0;
+}
+.legend-icon { color: var(--mc); display: inline-flex; width: 16px; justify-content: center; flex: none; }
+.legend-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em;
+  color: var(--ink-dim); flex: 1; text-transform: uppercase;
+}
+.legend-dot {
+  width: 6px; height: 6px; border-radius: 50%; flex: none;
+  background: var(--line); transition: background 0.25s, box-shadow 0.25s;
+}
+.legend-dot.on { background: var(--mc); box-shadow: 0 0 7px var(--mc); }
+
+.status-block { border-top: 1px solid var(--line-soft); padding: 7px 0; }
+.status-row { display: flex; justify-content: space-between; align-items: baseline; }
+.field-label { font-size: 10px; color: var(--titanium); }
+.status-value { font-family: var(--mono); font-size: 11px; color: var(--ink); }
+.status-value.running { color: var(--accent); }
+.progress-track {
+  height: 4px; background: var(--line-soft); border-radius: 2px;
+  overflow: hidden; margin-top: 6px;
+}
+.progress-fill { height: 100%; background: var(--accent); transition: width 0.2s linear; }
+
+.specs { border-top: 1px solid var(--line-soft); padding-top: 7px; }
+.specs-title {
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.13em;
+  color: var(--titanium); margin-bottom: 4px;
+}
+.spec-row {
+  display: flex; justify-content: space-between; font-size: 10px;
+  color: var(--ink-dim); padding: 2px 0;
+}
+.spec-value { font-family: var(--mono); color: var(--ink); }
+
+/* ---------------- 左下控制台 ---------------- */
+
+.control-desk {
+  position: fixed; bottom: 16px; left: 16px; z-index: 10;
+  width: 232px; max-height: 46vh; overflow-y: auto;
+}
+.control-desk summary {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--titanium); cursor: pointer; padding: 6px 0 2px; user-select: none;
+}
+.control-desk .section { margin: 4px 0 6px; }
+.control-desk .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+.control-desk .row label { font-size: 11px; color: var(--ink-dim); min-width: 40px; }
+.control-desk .value { font-family: var(--mono); font-size: 10px; color: var(--ink); min-width: 52px; text-align: right; }
+.demo-hint {
+  margin-top: 6px; font-size: 10px; color: var(--accent);
+  border-top: 1px solid var(--line-soft); padding-top: 5px;
+}
+
+/* ---------------- 右下模块详情 ---------------- */
+
+.part-info {
+  position: fixed; bottom: 16px; right: 16px; z-index: 10;
+  width: 268px; max-height: 56vh; overflow-y: auto;
+}
+.part-info h3 { font-size: 13px; margin-bottom: 2px; }
+.part-info .system-tag {
+  font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--titanium); margin-bottom: 8px;
+}
+.part-num {
+  position: absolute; top: 8px; right: 30px;
+  font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--mc);
+  width: 24px; height: 24px; border: 1px solid var(--mc); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.part-info .field { margin: 6px 0; }
+.parts-list { list-style: none; margin-top: 3px; }
+.parts-list li {
+  font-size: 11px; color: var(--ink); padding: 2px 0 2px 12px; position: relative;
+}
+.parts-list li::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 5px; height: 5px; border: 1px solid var(--accent); border-radius: 50%;
+}
+.how-text { font-size: 11px; color: var(--ink-dim); margin-top: 3px; }
+.part-info .close-btn {
+  position: absolute; top: 6px; right: 8px; background: none; border: none;
+  color: var(--ink-dim); font-size: 17px; padding: 2px;
+}
+
+/* ---------------- 顶部通告 ---------------- */
+
+.plaque-stack {
+  position: fixed; top: 18px; left: 50%; transform: translateX(-50%);
+  z-index: 30; pointer-events: none; display: flex; flex-direction: column;
+  gap: 6px; align-items: center;
+}
+.plaque {
+  padding: 6px 18px; font-size: 12px; text-align: center;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 2px;
+  animation: plaqueIn 0.3s ease-out, plaqueOut 0.4s 2.8s ease-in forwards;
+}
+.plaque.info { border-left: 3px solid var(--accent); }
+.plaque.success { border-left: 3px solid var(--ok); }
+
+@keyframes plaqueIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes plaqueOut {
+  from { opacity: 1; }
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* ---------------- WebGL 降级 ---------------- */
+
+.webgl-fallback {
+  position: fixed; inset: 0; z-index: 1000; display: flex;
+  align-items: center; justify-content: center; background: var(--void);
+  flex-direction: column;
+}
+.webgl-fallback svg { width: 60%; max-width: 480px; }
+.webgl-fallback p { margin-top: 24px; font-size: 12px; color: var(--ink-dim); text-align: center; padding: 0 20%; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
+}
+
+/* ---------------- 窄屏 ---------------- */
+
+@media (max-width: 900px) {
+  .module-index { width: 178px; }
+  .module-en { display: none; }
+  .system-panel { width: 168px; }
+  .legend-label { font-size: 8px; }
+}
+
+@media (max-width: 640px) {
+  .module-index {
+    top: auto; bottom: 0; left: 0; right: auto; width: 50%;
+    max-height: 34vh; border-radius: 8px 8px 0 0; z-index: 12;
+  }
+  .system-panel { display: none; }
+  .control-desk {
+    left: auto; right: 0; bottom: 0; width: 50%;
+    max-height: 34vh; border-radius: 8px 8px 0 0; z-index: 12;
+  }
+  .part-info { width: calc(100% - 24px); right: 12px; bottom: 36vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plaque { animation: none; opacity: 1; }
+}

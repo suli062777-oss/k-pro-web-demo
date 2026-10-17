@@ -1,0 +1,111 @@
+{
+  "checkedAt": "2026-10-11T08:29:52.689151+08:00",
+  "project": "/Users/lisuhang1/Desktop/欧莱雅/K-pro-web-demo",
+  "preview": "http://127.0.0.1:4173/#readiness",
+  "backup": "/Users/lisuhang1/Desktop/欧莱雅/K-pro-web-demo/backups/pre-simple-ending-20261011-082457",
+  "planCompleted": [
+    "删除收尾重复产品卡、重复介绍及两个 Explore K pro 按钮。",
+    "保留三项独立 FAQ；桌面左右排列，手机上下排列。",
+    "用 Care, made simpler. 和紧凑页脚收尾，移除整屏最小高度。",
+    "页脚 Product / App / FAQ 定位首页对应章节，Contact 保留原信息弹窗。"
+  ],
+  "browser": "Codex in-app browser; responsive viewport emulation, not physical-device testing",
+  "viewportChecks": [
+    {
+      "width": 1440,
+      "height": 900,
+      "horizontalOverflow": false,
+      "beforeReadinessHeight": 1000,
+      "beforeClosingHeight": 960,
+      "readinessHeight": 407.796875,
+      "closingHeight": 314.7734375,
+      "visual": "FAQ 与页脚均清晰，边界明确，正文无重叠。"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "horizontalOverflow": false,
+      "readinessHeight": 432.59375,
+      "closingHeight": 311.1875,
+      "visual": "单列排版，FAQ 与完整页脚可读。"
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "horizontalOverflow": false,
+      "readinessHeight": 468.59375,
+      "closingHeight": 347.984375,
+      "visual": "长问题和收尾标题自然换行，导航不溢出，页脚可完整滚动查看。"
+    },
+    {
+      "width": 648,
+      "height": 863,
+      "horizontalOverflow": false,
+      "visual": "恢复浏览器默认尺寸，预览停留在 FAQ 收尾区域。"
+    }
+  ],
+  "interactionChecks": {
+    "faqAllThreeOpenIndependently": true,
+    "faqEnterAndSpaceCollapse": true,
+    "faqMobileOpenAndClose": true,
+    "footerFAQ": "#readiness；桌面已滚动到该章节，页尾空间不足时浏览器自然停在文档底部。",
+    "footerApp": "#app；标题 Your care. Your control.，手机 PNG 加载正常，App 顶部落点约 90px。",
+    "footerProduct": "#product；点击 2. Controls 后 aria-expanded=true，正文显示对应说明。",
+    "contact": "弹窗打开正常；Escape 关闭；焦点恢复至 Contact。",
+    "consoleErrors": []
+  },
+  "backgroundChecks": {
+    "fixedBackgroundAt320": {
+      "width": 320,
+      "height": 740,
+      "position": "fixed"
+    },
+    "groups": {
+      "dark": [
+        "routine",
+        "settings",
+        "product"
+      ],
+      "light": [
+        "app",
+        "readiness"
+      ],
+      "closing": "dark"
+    },
+    "backdrop": "blur(24px) grayscale(1)",
+    "darkTint": "rgba(20, 20, 20, 0.78)",
+    "lightTint": "rgba(245, 245, 245, 0.86)",
+    "overlayPointerEvents": "none",
+    "foregroundFilter": "none",
+    "foregroundOpacity": "1",
+    "brandAndBackgroundCSSUnchanged": true,
+    "video": "正式视频仍为空；本轮沿用图片，现有视频映射模拟测试通过，未做真实视频验收。"
+  },
+  "checks": {
+    "contentJavaScriptSyntax": "PASS",
+    "existingBackgroundTests": "PASS"
+  },
+  "protectedFilesUnchanged": {
+    "app.js": true,
+    "background.js": true,
+    "app-download.css": true,
+    "islands.js": true,
+    "islands.css": true,
+    "island-state.mjs": true,
+    "spaces.js": true,
+    "spaces.css": true,
+    "assets/wordmark.svg": true,
+    "assets/tagline.svg": true,
+    "assets/app-download-phone-cutout.png": true
+  },
+  "workspaceRules": {
+    "WORKSPACE_ROOT": null,
+    "searched": "/Volumes/*/AI/workspace 无候选；/Users/lisuhang1/AI/workspace 不存在。",
+    "ruleFileRead": false,
+    "fixedWorkspacePitfallLogRead": false,
+    "legacyProjectPitfallLogRead": true,
+    "pitfallLogUpdated": false,
+    "experienceLogUpdated": false,
+    "reason": "固定 Workspace 未定位，不能读取或追加其中的规则/日志；修改保存在本任务已指定的现有项目目录。"
+  }
+}

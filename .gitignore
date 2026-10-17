@@ -7,3 +7,10 @@ node_modules/
 .env
 .env.*
 !.env.example
+backups/
+tools/.pnpm-store/
+tools/.cache/
+tools/.config/
+tools/.local/
+tools/island-originals/
+tools/space-originals/

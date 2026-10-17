@@ -1,0 +1,43 @@
+{
+  "mode": "failed",
+  "viewport": [
+    390,
+    844
+  ],
+  "result": "pass",
+  "scenes": [],
+  "checks": [
+    {
+      "name": "Panoramas are lazy loaded",
+      "pass": true
+    },
+    {
+      "name": "ward only selected card expanded",
+      "pass": true
+    },
+    {
+      "name": "failed has recoverable fallback",
+      "pass": true
+    },
+    {
+      "name": "Retry loads the correct recovered panorama",
+      "pass": true
+    },
+    {
+      "name": "ward closed and resource released",
+      "pass": true
+    },
+    {
+      "name": "ward return restores page, rail and focus",
+      "pass": true
+    },
+    {
+      "name": "Glass panels unchanged",
+      "pass": true
+    },
+    {
+      "name": "Page has no horizontal overflow",
+      "pass": true
+    }
+  ]
+}

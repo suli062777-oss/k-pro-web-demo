@@ -1,0 +1,65 @@
+{
+  "projection": "rectilinear perspective from the actual 360 panorama",
+  "records": [
+    {
+      "id": "home",
+      "source": "assets/panoramas/home.webp",
+      "sourceSha256": "a6a77a94abf3ab6314879bbfefffd55642e974a791d07e1104a99538e26f5697",
+      "file": "assets/panoramas/covers/home.webp",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "yaw": 5,
+        "pitch": -3,
+        "fov": 70
+      },
+      "bytes": 122734,
+      "sha256": "f510a47103950bb84806c8a109726e233c414eaa1c9af9ed80ec9fc3d29f340b"
+    },
+    {
+      "id": "ward",
+      "source": "assets/panoramas/ward.webp",
+      "sourceSha256": "b7b42a5b193f379a39fe377f1b8ddf07876456d59f194bc71b5e4d1d9651c2d1",
+      "file": "assets/panoramas/covers/ward.webp",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "yaw": 8,
+        "pitch": -3,
+        "fov": 70
+      },
+      "bytes": 88998,
+      "sha256": "ee0e9d150e92bbbe5329e8dfc91d06de54130b6e31d8d9a85f413cae92cd6033"
+    },
+    {
+      "id": "garden",
+      "source": "assets/panoramas/garden.webp",
+      "sourceSha256": "9e613eb6ce7de87f41999b6ca4bcb3f9cc7c105f1c5e4948f7ba39bc49a0fcca",
+      "file": "assets/panoramas/covers/garden.webp",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "yaw": 12,
+        "pitch": -3,
+        "fov": 70
+      },
+      "bytes": 108834,
+      "sha256": "2e64c7e98c8f5bf98be1d4504f859bffe5f69ec6faaab576831b5d351046ea2b"
+    },
+    {
+      "id": "salon",
+      "source": "assets/panoramas/salon.webp",
+      "sourceSha256": "6922f3a9a3bc3d93451828b2a2c61ab58296b621561ac34ebe0e13718e8c9a2b",
+      "file": "assets/panoramas/covers/salon.webp",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "yaw": -32,
+        "pitch": -3,
+        "fov": 70
+      },
+      "bytes": 98004,
+      "sha256": "f5fb747a710f6e25e37372386beb0d6bdf753104cc2baee40780a57e2b1ecc9b"
+    }
+  ]
+}

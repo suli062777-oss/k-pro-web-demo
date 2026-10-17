@@ -1,0 +1,332 @@
+{
+  "mode": "normal",
+  "viewport": [
+    1440,
+    1000
+  ],
+  "result": "pass",
+  "scenes": [
+    {
+      "id": "home",
+      "panorama": "assets/panoramas/home.webp"
+    },
+    {
+      "id": "ward",
+      "panorama": "assets/panoramas/ward.webp"
+    },
+    {
+      "id": "garden",
+      "panorama": "assets/panoramas/garden.webp"
+    },
+    {
+      "id": "salon",
+      "panorama": "assets/panoramas/salon.webp"
+    },
+    {
+      "id": "home",
+      "panorama": "assets/panoramas/home.webp"
+    },
+    {
+      "id": "ward",
+      "panorama": "assets/panoramas/ward.webp"
+    },
+    {
+      "id": "garden",
+      "panorama": "assets/panoramas/garden.webp"
+    },
+    {
+      "id": "salon",
+      "panorama": "assets/panoramas/salon.webp"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Old bookmark UI removed",
+      "pass": true
+    },
+    {
+      "name": "One complete world renders",
+      "pass": true
+    },
+    {
+      "name": "Reset returns to original composition",
+      "pass": true
+    },
+    {
+      "name": "World zoom works",
+      "pass": true
+    },
+    {
+      "name": "Scoped keyboard rotates without scrolling page",
+      "pass": true
+    },
+    {
+      "name": "Ordinary wheel remains page scrolling",
+      "pass": true
+    },
+    {
+      "name": "Language changes within world only",
+      "pass": true
+    },
+    {
+      "name": "home opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "home underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "home return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "home world orientation and zoom restored",
+      "pass": true,
+      "detail": {
+        "before": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        },
+        "after": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        }
+      }
+    },
+    {
+      "name": "ward opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "ward underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "ward return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "ward world orientation and zoom restored",
+      "pass": true,
+      "detail": {
+        "before": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        },
+        "after": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        }
+      }
+    },
+    {
+      "name": "garden opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "garden underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "garden return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "garden world orientation and zoom restored",
+      "pass": true,
+      "detail": {
+        "before": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        },
+        "after": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        }
+      }
+    },
+    {
+      "name": "salon opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "salon underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "salon return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "salon world orientation and zoom restored",
+      "pass": true,
+      "detail": {
+        "before": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        },
+        "after": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        }
+      }
+    },
+    {
+      "name": "home opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "home underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "home return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "home world orientation and zoom restored",
+      "pass": true,
+      "detail": {
+        "before": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        },
+        "after": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        }
+      }
+    },
+    {
+      "name": "home building raycast matches",
+      "pass": true
+    },
+    {
+      "name": "ward opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "ward underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "ward return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "ward world orientation and zoom restored",
+      "pass": true,
+      "detail": {
+        "before": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        },
+        "after": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        }
+      }
+    },
+    {
+      "name": "ward building raycast matches",
+      "pass": true
+    },
+    {
+      "name": "garden opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "garden underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "garden return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "garden world orientation and zoom restored",
+      "pass": true,
+      "detail": {
+        "before": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        },
+        "after": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        }
+      }
+    },
+    {
+      "name": "garden building raycast matches",
+      "pass": true
+    },
+    {
+      "name": "salon opens own panorama",
+      "pass": true
+    },
+    {
+      "name": "salon underlying world pauses",
+      "pass": true
+    },
+    {
+      "name": "salon return and focus restored",
+      "pass": true
+    },
+    {
+      "name": "salon world orientation and zoom restored",
+      "pass": true,
+      "detail": {
+        "before": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        },
+        "after": {
+          "angle": 0.7854,
+          "distance": 81.24619
+        }
+      }
+    },
+    {
+      "name": "salon building raycast matches",
+      "pass": true
+    },
+    {
+      "name": "One finger horizontal rotation",
+      "pass": true
+    },
+    {
+      "name": "Drag never opens a panorama",
+      "pass": true
+    },
+    {
+      "name": "Two finger zoom",
+      "pass": true
+    },
+    {
+      "name": "Play resumes world spin",
+      "pass": true
+    },
+    {
+      "name": "Paused world stops rendering when settled",
+      "pass": true
+    },
+    {
+      "name": "Offscreen world suspended",
+      "pass": true
+    },
+    {
+      "name": "All world controls fit viewport width",
+      "pass": true
+    },
+    {
+      "name": "No page horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Stable glass unaffected",
+      "pass": true
+    }
+  ]
+}

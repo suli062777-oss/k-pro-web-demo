@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-04",
+  "project": "/Users/lisuhang1/Desktop/欧莱雅/K-pro-web-demo",
+  "backup": "backups/pre-bookmark-spaces-20261004-090611",
+  "backupFilesVerified": 57,
+  "scope": "Four horizontal bookmarks, exclusive right expansion, indoor covers, full-viewport interactive room viewer and return state",
+  "mapping": { "home": "居家护理", "ward": "病房护理", "garden": "养老院护理", "salon": "头皮沙龙" },
+  "source": { "commit": "c86ce4e38f90979ef8c2790ca19eda85eb5aed2c", "manifest": "assets/spaces/sources.json", "originalBytes": 17551516, "optimizedBytes": 6008812, "originalTriangles": 5935581, "optimizedTriangles": 1217202, "covers": "Four WebP images rendered from the corresponding indoor GLBs" },
+  "browser": "Codex in-app browser on macOS; responsive viewports, not physical phones",
+  "completeFlows": [
+    { "viewport": [1440,1000], "fixture": "bookmark-spaces-fixture.html", "passedChecks": 40, "failures": [], "scenes": ["home","ward","garden","salon"], "returnedPositions": [{"id":"home","y":2351.5,"rail":0},{"id":"ward","y":2351.5,"rail":82},{"id":"garden","y":2351.5,"rail":202},{"id":"salon","y":2351.5,"rail":202}] },
+    { "viewport": [390,844], "fixture": "bookmark-spaces-fixture.html", "passedChecks": 40, "failures": [], "scenes": ["home","ward","garden","salon"], "returnedPositions": [{"id":"home","y":1779,"rail":203},{"id":"ward","y":1779,"rail":423},{"id":"garden","y":1779,"rail":643},{"id":"salon","y":1779,"rail":863}] }
+  ],
+  "flowCoverage": ["All four initially collapsed and horizontal", "Only one expanded; all bookmark note widths fixed", "Preview physically to right of note", "Corresponding cover loaded", "Corresponding indoor scene ready", "Dialog equals viewport", "Zoom changes distance", "Reset restores distance", "Close restores vertical scroll, rail scroll, expanded card and keyboard focus", "Second island click collapses", "Switching is exclusive", "No document horizontal overflow"],
+  "additionalWidths": [
+    {"width":320,"height":740,"documentWidth":320,"railScrollWidth":926,"bookmarkWidth":206,"noteOverflow":false,"viewerWidth":320,"viewerHeight":740,"passed":true},
+    {"width":768,"height":1024,"documentWidth":768,"direction":"row","noteWidths":[220,220,220,220],"passed":true},
+    {"width":984,"height":800,"documentWidth":984,"direction":"row","noteWidths":[220,220,220,220],"passed":true}
+  ],
+  "realInputChecks": {
+    "drag": "Ward drag changed azimuth/elevation; final renderer v3 salon drag changed azimuth 0.66323 to 1.04113 and elevation 0.52360 to 0.68157",
+    "wheel": "Final renderer v3 salon distance changed 17.75216 to 15.06492 with wheel input",
+    "keyboard": "320px home canvas: ArrowRight changed azimuth 0.78540 to 0.96540; + changed distance 31.47341 to 26.43767; Escape closed and restored y=1711, rail=212, home entry focus",
+    "hover": "Ward angle/frame held at 3.15925/5045 while home and garden advanced; leaving resumed ward at 3.19274/5053",
+    "appearance": "Visually inspected collapsed desktop row, right-expanded desktop cover, narrow-screen horizontal bookmarks, phone expanded cover, full-screen desktop/phone rooms, and the four authored indoor covers"
+  },
+  "fallbacks": [
+    {"mode":"failed-space","viewport":[390,844],"passedChecks":11,"failures":[],"result":"Intentional GLB 404 shows corresponding cover and retry. Restoring URL then retry loads ward. Close preserves original card/scroll/focus."},
+    {"mode":"no-webgl","viewport":[390,844],"passedChecks":10,"failures":[],"result":"Simulated WebGL unavailable only in room viewer; cover remains visible and close/card controls remain usable."}
+  ],
+  "automated": {"islandMotionAndFramingTests":5,"backgroundRegression":"passed","javascriptSyntax":"passed"},
+  "preserved": {"byteIdenticalToBackup":["background.js","styles.css","assets/wordmark.svg","assets/tagline.svg","app.html"],"runtime":"One fixed cover background; main filter:none and opacity:1; three existing panels remain blur(24px) grayscale(1)."},
+  "performance": ["Indoor engine and selected GLB load on entry", "Four preview cards use static covers", "Only one indoor model retained; close disposes geometries/materials/textures", "Static room redraws only for camera/input/resize; no idle rotation loop", "Static shadow maps update on model change", "Stale asynchronous loads are discarded", "Temporary local cover generator was stopped after saving assets"],
+  "limitations": ["No physical iOS/Android device performance run", "No production background video supplied", "360 space means orbitable indoor 3D diorama, without first-person walking", "Source model license was not supplied; provenance retained without adding a license", "Local files updated; no GitHub upload in this goal"]
+}

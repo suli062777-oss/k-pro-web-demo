@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-04",
+  "project": "/Users/lisuhang1/Desktop/欧莱雅/K-pro-web-demo",
+  "backup": "backups/pre-3d-islands-20261004-020005",
+  "sourceCommit": "c86ce4e38f90979ef8c2790ca19eda85eb5aed2c",
+  "mapping": { "home": "home care", "ward": "bedside care", "garden": "assisted living", "salon": "scalp salon" },
+  "assets": { "originalBytes": 14207648, "optimizedBytes": 5395648, "originalTriangles": 2230635, "optimizedTriangles": 667213, "localDracoDecoder": true },
+  "browser": "Codex in-app browser on macOS; responsive viewport checks, not physical mobile devices",
+  "responsive": [
+    { "width": 1440, "height": 1000, "documentWidth": 1440, "passed": true },
+    { "width": 1280, "height": 720, "documentWidth": 1280, "passed": true },
+    { "width": 768, "height": 1024, "documentWidth": 768, "passed": true },
+    { "width": 390, "height": 844, "documentWidth": 390, "thumbnailSize": 125, "passed": true },
+    { "width": 320, "height": 740, "documentWidth": 320, "thumbnailSize": 105, "passed": true }
+  ],
+  "rotationAudit": {
+    "method": "Actual canvas pixels, accelerated 6-second revolution in isolated fixture; production remains 50 seconds",
+    "home": { "radians": 8.579370614359167, "samples": 315, "nontransparentEdgePixels": 0, "nonempty": true, "passed": true },
+    "ward": { "radians": 8.579375307179586, "samples": 315, "nontransparentEdgePixels": 0, "nonempty": true, "passed": true },
+    "garden": { "radians": 8.579375307179589, "samples": 315, "nontransparentEdgePixels": 0, "nonempty": true, "passed": true },
+    "salon": { "radians": 8.579370614359167, "samples": 315, "nontransparentEdgePixels": 0, "nonempty": true, "passed": true }
+  },
+  "interaction": {
+    "independentHover": "home angle stayed 0.61087 while the other three frame counters and angles advanced; home resumed at 0.64552 after leaving",
+    "keyboardFocus": "focus-visible on the home motion control paused home; model stayed at 4.26361 radians",
+    "mobileWidthManualPause": "390px: home held angle 2.13354 and frame 358 across reads; card remained expanded; play resumed at 2.16495 and frame 366",
+    "expandCollapse": "Mutually exclusive card expansion and repeat-click collapse verified",
+    "preview": "Home desktop, garden 320px and salon 768px dialogs rendered their corresponding GLB; Escape closed them",
+    "scroll": "Normal page scrolling and anchors remained usable; no drag or wheel handlers added"
+  },
+  "performance": {
+    "offscreen": "At scrollY 0, all island views were below the viewport. Counters held at home 546, ward 996, garden 1001, salon 540 across separate reads, then resumed on returning to the cards",
+    "gpuContexts": 1,
+    "decoderWorkers": 1,
+    "maxFps": 30,
+    "maxDpr": 1.5,
+    "maxRenderDimension": 1200,
+    "hiddenDocument": "Visibility change handler cancels RAF and resets timing; motion gating verified by unit test, not OS background-tab profiling"
+  },
+  "fallbackFixtures": {
+    "reducedMotion": "Simulated matchMedia reduce: all four controls defaulted to paused; home and ward remained on frame 1 with float 0 across reads",
+    "noWebGL": "Simulated unavailable WebGL: all four original images visible, no ready canvas; home card still expanded normally",
+    "singleModelFailure": "Intentional ward GLB 404: ward showed original image while home and garden rendered 3D normally",
+    "console": "Intentional fixtures emitted expected fallback warnings. Production main tab had no warnings/errors during normal rendering"
+  },
+  "preserved": {
+    "byteIdenticalToBackup": ["background.js", "styles.css", "assets/wordmark.svg", "assets/tagline.svg", "app.html"],
+    "background": "One fixed cover background with rect equal to 768x1024 and 1440x1000 viewports",
+    "glass": "Existing three black/white panels retained blur(24px) grayscale(1); foreground main/panels filter:none and opacity:1"
+  },
+  "automated": { "islandTestsPassed": 5, "backgroundRegression": "passed", "syntax": "app.js, content.js and islands.js passed" },
+  "limitations": [
+    "No production background video supplied; simultaneous video decode and 3D rendering require later real-device checks",
+    "No physical iOS/Android low-end device performance testing in this session",
+    "Original placeholder PNGs remain fallback imagery; newly added scenes reuse legacy general island illustrations",
+    "Source repository has no explicit model license; no new model license was assigned",
+    "Local implementation only; this change was not uploaded to GitHub"
+  ]
+}

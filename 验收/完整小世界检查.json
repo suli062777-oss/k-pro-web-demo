@@ -1,0 +1,136 @@
+{
+  "completedAt": "2026-10-17T11:08:00.695185+08:00",
+  "projectRoot": "/Users/lisuhang1/Desktop/欧莱雅/K-pro-web-demo",
+  "preview": "http://127.0.0.1:4173/#settings",
+  "objective": "用参考站的完整四建筑小世界替代首页书签入口，点击建筑或标签仍打开本站对应360度全景。",
+  "planExecuted": [
+    "备份当前官网并核对参考站结构和原始素材",
+    "将完整道路、建筑、树木、浮动标签与环境代码接入本地组件",
+    "通过同一场景ID连接现有360度查看器",
+    "适配正常页面滚动、手机触控、返回状态和失败备用入口",
+    "完成桌面、响应式手机、失败降级和原有背景回归检查"
+  ],
+  "implementation": {
+    "reference": "https://lzllzllzllzllzl.github.io/V3-Halowash-little-worlds/index.html",
+    "sourceProvenance": "tools/reference-world-20261017/provenance.json",
+    "backup": "backups/pre-world-overview-20261017-104947/",
+    "worldSource": [
+      "src/world-renderer.js",
+      "src/world-backdrop.js",
+      "worlds.js",
+      "worlds.css"
+    ],
+    "configuration": "content.js: worldOverview + spaces.scenes",
+    "sceneMapping": {
+      "home": "居家护理",
+      "ward": "病房护理",
+      "garden": "养老院护理",
+      "salon": "头皮沙龙"
+    },
+    "panoramaCovers": "assets/panoramas/covers/sources.json",
+    "panoramaCoversMethod": "由各自360度全景按初始相机角度投影为正常透视图片；未使用旧室内模型封面。",
+    "iframe": false
+  },
+  "browserTests": [
+    {
+      "file": "完整小世界-桌面交互.json",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "mode": "normal",
+      "result": "pass",
+      "passed": 52
+    },
+    {
+      "file": "完整小世界-手机交互.json",
+      "viewport": [
+        390,
+        844
+      ],
+      "mode": "normal",
+      "result": "pass",
+      "passed": 52
+    },
+    {
+      "file": "完整小世界-资源失败.json",
+      "viewport": [
+        390,
+        844
+      ],
+      "mode": "failed-world",
+      "result": "pass",
+      "passed": 17
+    },
+    {
+      "file": "完整小世界-WebGL降级.json",
+      "viewport": [
+        390,
+        844
+      ],
+      "mode": "no-webgl",
+      "result": "pass",
+      "passed": 17
+    }
+  ],
+  "regression": {
+    "panoramaNodeTests": {
+      "passed": 4,
+      "file": "验收/panorama.test.mjs"
+    },
+    "backgroundTests": {
+      "result": "pass",
+      "file": "验收/background.test.cjs"
+    },
+    "protectedFilesUnchanged": 20,
+    "protectionEvidence": "完整小世界-保护核对.json",
+    "320pxNoHorizontalOverflow": true,
+    "finalVisualReview": "1440×1000与390×844；手机标题采用独立中性浅色衬底。"
+  },
+  "screenshots": [
+    "完整小世界-桌面.jpg",
+    "完整小世界-手机.jpg",
+    "完整小世界-病房全景.jpg"
+  ],
+  "verified": [
+    "一个完整世界而非多个旋转缩略图",
+    "四个标签及四个建筑均进入匹配全景",
+    "关闭全景后恢复页面位置、焦点、相机角度与缩放",
+    "拖动旋转及缩放有效且拖动不会误入场景",
+    "普通滚轮仍滚动页面",
+    "离开视口、隐藏页面、打开弹窗时暂停世界渲染",
+    "关闭自动播放并静止时停止持续绘制",
+    "模型失败和WebGL不可用时仍能通过真实全景封面进入四场景",
+    "主站背景、品牌柔焦、产品内容、App和FAQ配置保持不变"
+  ],
+  "limits": [
+    "手机验证采用浏览器响应式视口与合成触控事件，尚未进行真机性能测试。",
+    "仅更新本地预览，未推送GitHub或部署。"
+  ],
+  "reusableFindings": [
+    {
+      "problem": "全景开关后小世界缩放发生微小漂移",
+      "cause": "视口变化重新取景时，随相机旋转的标签改变包围盒",
+      "resolution": "使用固定标签包围范围，并按相对缩放恢复视角；往返测试角度与距离精确一致。"
+    },
+    {
+      "problem": "参考源阴影常量在当前Three.js中发出弃用警告",
+      "cause": "参考项目与当前依赖版本差异",
+      "resolution": "使用当前支持的PCFShadowMap，并核对最终画面。"
+    }
+  ],
+  "workspaceStatus": {
+    "WORKSPACE_ROOT": null,
+    "checked": [
+      "/Volumes/*/AI/workspace",
+      "/Users/lisuhang1/AI/workspace"
+    ],
+    "rulesRead": false,
+    "rulesIssue": "未找到固定Workspace或规矩文档.txt。",
+    "legacyPitfallsRead": true,
+    "legacyPitfallsPath": "/Users/lisuhang1/Desktop/欧莱雅/codex工作文档/踩坑日志.txt",
+    "fixedPitfallsLogUpdated": false,
+    "fixedExperienceLogUpdated": false,
+    "logIssue": "固定Workspace未找到；未创建替代固定日志，任务证据保存在已授权项目。"
+  }
+}

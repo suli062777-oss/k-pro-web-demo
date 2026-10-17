@@ -1,0 +1,56 @@
+/* Horizontal bookmarks at every breakpoint. The note never flexes. */
+#settings{padding:72px 0 64px;min-height:0;overflow:hidden}
+#settings .settings-heading{width:min(1000px,calc(100% - 48px));margin-bottom:6px}
+.scene-viewport{width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#ffffff38 transparent;touch-action:pan-x pan-y}
+#settings .island-cards{--book-width:220px;--preview-width:clamp(380px,50vw,640px);--book-height:600px;--card:#fcf8f8;box-sizing:border-box;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:14px;width:max-content;min-width:100%;max-width:none;min-height:0;margin:0;padding:42px 40px 46px}
+#settings .scene-card{box-sizing:border-box;display:flex;align-items:stretch;flex:0 0 auto;width:var(--book-width);height:var(--book-height);min-height:0;padding:0;transform:rotate(var(--rotation));transform-origin:center;transition:width .55s cubic-bezier(.22,1,.36,1),transform .45s;overflow:visible;border-radius:1px}
+#settings .scene-card.is-expanded{width:calc(var(--book-width) + var(--preview-width));transform:rotate(0);z-index:2}
+#settings .scene-note{box-sizing:border-box;display:flex;flex-direction:column;flex:0 0 var(--book-width);width:var(--book-width);height:100%;padding:26px 22px 22px;font:12px/1.38 var(--mono);letter-spacing:-.4px}
+#settings .scene-note h3{font:inherit;line-height:1.35;text-align:center;white-space:normal;margin:8px -5px 26px}
+#settings .scene-note h3 span{font-size:10px}
+#settings .scene-subtitle{text-align:center;white-space:pre-line;min-height:0;margin:0 0 20px;line-height:1.4}
+#settings .scene-rule{display:block;border:0;font:12px/1.05 var(--mono);letter-spacing:-.55px;text-align:center;margin:0 -5px 22px;white-space:nowrap}
+#settings .scene-copy{display:block;white-space:pre-line;margin:18px 0 0;font:inherit;line-height:1.4}
+#settings .scene-copy+.scene-copy{margin-top:34px}
+.bookmark-mark{display:block;flex:none;width:25px;height:25px;background:#bfc1b9;margin:20px auto 0}
+.scene-card[data-scene="home"] .bookmark-mark{display:none}
+.island-slot{position:relative;flex:none;width:176px;height:196px;padding:0 0 20px;margin:10px 0}
+#settings .scene-note>.island-slot:last-of-type{margin-top:auto}
+#settings .scene-note>.island-slot:first-child{margin:0 0 17px}
+#settings .scene-card[data-position="middle"] .island-slot{margin:0 0 6px}
+#settings .scene-card[data-position="middle"] .scene-copy{margin-top:18px}
+#settings .scene-card[data-position="middle"] .scene-copy+.scene-copy{margin-top:28px}
+#settings .scene-thumb,#settings .scene-card:not(.is-expanded) .scene-thumb{display:block;width:176px;height:176px;padding:0;margin:0;touch-action:pan-x pan-y}
+#settings .scene-thumb:after{width:23px;height:23px;font-size:16px;line-height:23px;right:0;bottom:0}
+.island-view{position:relative;display:block;width:100%;height:100%;isolation:isolate;pointer-events:none}
+.island-view .island-fallback,.island-canvas{position:absolute;inset:0;display:block;width:100%!important;height:100%!important;object-fit:contain!important;transform:none!important}
+.island-canvas{z-index:2;opacity:0;transition:opacity .25s}
+.island-fallback{z-index:1;transition:opacity .25s}
+.island-view.is-ready .island-fallback{opacity:0}
+.island-view.is-ready .island-canvas{opacity:1}
+.island-shadow{position:absolute;left:50%;width:var(--island-shadow-width,62%);height:8%;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(37,34,31,var(--island-shadow-opacity,.16)),transparent 72%);filter:blur(var(--island-shadow-blur,6px));opacity:0;z-index:0}
+.island-view.is-ready .island-shadow{opacity:1}
+.island-motion{position:absolute;left:0;bottom:-5px;display:flex;align-items:center;gap:5px;min-height:30px;padding:4px 8px;border-radius:24px;background:transparent;font:9px/1.3 var(--mono);color:var(--ink);touch-action:manipulation}
+.island-motion:hover{background:#1c1c1c0b}
+.island-motion:disabled{visibility:hidden}
+#settings .scene-panorama{position:relative;flex:0 0 auto;width:0;min-width:0;min-height:0;height:100%;margin:0;opacity:0;background:transparent;overflow:hidden;transition:width .55s cubic-bezier(.22,1,.36,1),opacity .35s}
+#settings .is-expanded .scene-panorama{width:var(--preview-width);margin:0;opacity:1}
+#settings .scene-panorama-button{position:absolute;inset:26px 24px 26px 0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#e7e5df;border-radius:0}
+#settings .scene-cover{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s}
+#settings .scene-panorama-button:hover .scene-cover{transform:scale(1.025)}
+#settings .scene-cover-cta{position:relative;z-index:1;display:flex;gap:14px;align-items:center;margin-top:58%;font:13px/1.4 var(--sans);color:white;background:#27272287;border:1px solid #ffffff38;border-radius:30px;padding:14px 22px;backdrop-filter:blur(8px);white-space:nowrap}
+#settings .scene-cover-cta>span{padding:0;border:0;background:none;backdrop-filter:none;font:inherit;color:inherit}
+.scene-navigation{width:min(1000px,calc(100% - 48px));margin:4px auto 0;display:flex;align-items:center;justify-content:space-between;gap:16px;font:10px/1.5 var(--mono)}
+.scene-navigation p span{display:block;margin-top:7px;font:11px/1.5 var(--sans);opacity:.58}
+.scene-navigation>div{display:flex;gap:8px}
+.scene-navigation button{width:40px;height:40px;border:1px solid #ffffff30;border-radius:50%;background:transparent;color:inherit;font-size:19px}
+.scene-navigation button:disabled{opacity:.25;cursor:default}
+@media(max-width:650px){
+  #settings{padding:60px 0 50px}
+  #settings .island-cards{--book-width:206px;--book-height:590px;--preview-width:calc(100vw - 48px);gap:14px;padding:34px 30px 40px}
+  #settings .scene-note{padding:24px 15px 20px;font-size:12px}
+  #settings .scene-panorama-button{inset:24px 18px 24px 0}
+  #settings .scene-cover-cta{font-size:12px;padding:12px 17px}
+  .island-motion{min-height:32px}
+}
+@media(prefers-reduced-motion:reduce){#settings .scene-card,#settings .scene-panorama{transition:none}}

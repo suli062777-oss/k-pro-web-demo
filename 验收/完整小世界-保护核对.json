@@ -1,0 +1,26 @@
+{
+  "protectedFiles": {
+    "styles.css": true,
+    "background.js": true,
+    "app-download.css": true,
+    "spaces.css": true,
+    "src/panorama-renderer.js": true,
+    "panorama-state.mjs": true,
+    "assets/panoramas/sources.json": true,
+    "assets/panoramas/ward-mobile.webp": true,
+    "assets/panoramas/salon.webp": true,
+    "assets/panoramas/home.webp": true,
+    "assets/panoramas/ward.webp": true,
+    "assets/panoramas/home-mobile.webp": true,
+    "assets/panoramas/salon-mobile.webp": true,
+    "assets/panoramas/garden-mobile.webp": true,
+    "assets/panoramas/garden.webp": true,
+    "assets/panoramas/covers/sources.json": true,
+    "assets/panoramas/covers/salon.webp": true,
+    "assets/panoramas/covers/home.webp": true,
+    "assets/panoramas/covers/ward.webp": true,
+    "assets/panoramas/covers/garden.webp": true
+  },
+  "panoramasAndOriginalSiteConfigUnchanged": true,
+  "referenceBackdropBodyUnchanged": true
+}

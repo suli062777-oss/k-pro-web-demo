@@ -1,0 +1,103 @@
+{
+  "sourceDirectory": "/Users/lisuhang1/Desktop/欧莱雅/世界场景360",
+  "projection": "equirectangular",
+  "originalsUnchanged": true,
+  "records": [
+    {
+      "id": "home",
+      "original": "Modern Home Care Room Interior_pano.png",
+      "originalBytes": 12373568,
+      "width": 4608,
+      "height": 2304,
+      "originalSha256": "f48a7d83c28ceb523c61047bc4d176ecaa02eb76219e55f2dfea5df8dfc9643b",
+      "variants": [
+        {
+          "file": "home.webp",
+          "width": 4608,
+          "height": 2304,
+          "bytes": 1065930,
+          "sha256": "a6a77a94abf3ab6314879bbfefffd55642e974a791d07e1104a99538e26f5697"
+        },
+        {
+          "file": "home-mobile.webp",
+          "width": 2560,
+          "height": 1280,
+          "bytes": 368050,
+          "sha256": "25313f635372605d1779afda64f91fc9f82a745165c98d236d8838ac6a9841f5"
+        }
+      ]
+    },
+    {
+      "id": "ward",
+      "original": "Modern Hospital Room with Advanced Device_pano.png",
+      "originalBytes": 11148434,
+      "width": 4608,
+      "height": 2304,
+      "originalSha256": "c4a29e7aca0f871f77817835abc93889a528d91d67ead6ec211a7273f7cc4a72",
+      "variants": [
+        {
+          "file": "ward.webp",
+          "width": 4608,
+          "height": 2304,
+          "bytes": 861654,
+          "sha256": "b7b42a5b193f379a39fe377f1b8ddf07876456d59f194bc71b5e4d1d9651c2d1"
+        },
+        {
+          "file": "ward-mobile.webp",
+          "width": 2560,
+          "height": 1280,
+          "bytes": 316880,
+          "sha256": "a1e5122b4451c2e15c2464c817bf5a2a61b20fb9f0677d65a6d2875479eb9a79"
+        }
+      ]
+    },
+    {
+      "id": "garden",
+      "original": "Serene Senior Care Lounge_pano.png",
+      "originalBytes": 11419041,
+      "width": 4608,
+      "height": 2304,
+      "originalSha256": "57dc108fa7116cbf89495cdd1389005e67f5f6b5f8023757ff021d2fb2a99f18",
+      "variants": [
+        {
+          "file": "garden.webp",
+          "width": 4608,
+          "height": 2304,
+          "bytes": 950588,
+          "sha256": "9e613eb6ce7de87f41999b6ca4bcb3f9cc7c105f1c5e4948f7ba39bc49a0fcca"
+        },
+        {
+          "file": "garden-mobile.webp",
+          "width": 2560,
+          "height": 1280,
+          "bytes": 322812,
+          "sha256": "fcab83c2a6c29b952a24fcbf498ed686618338cfa9bdf8ca5cac754f097fc392"
+        }
+      ]
+    },
+    {
+      "id": "salon",
+      "original": "Inviting Scalp-Care Salon Interior_pano.png",
+      "originalBytes": 10724212,
+      "width": 4608,
+      "height": 2304,
+      "originalSha256": "6c3867e3ff76528089550e057dd2beafdd3ff5c4a10a33cee31a66fef9095970",
+      "variants": [
+        {
+          "file": "salon.webp",
+          "width": 4608,
+          "height": 2304,
+          "bytes": 821172,
+          "sha256": "6922f3a9a3bc3d93451828b2a2c61ab58296b621561ac34ebe0e13718e8c9a2b"
+        },
+        {
+          "file": "salon-mobile.webp",
+          "width": 2560,
+          "height": 1280,
+          "bytes": 282054,
+          "sha256": "efd4b7b9b902c6d481580bf88c39ce9ff2447218d0de7fcdd5f6e51304b8c563"
+        }
+      ]
+    }
+  ]
+}

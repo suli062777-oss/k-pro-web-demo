@@ -1,0 +1,154 @@
+{
+  "completedAt": "2026-10-17T11:46:39.247805+08:00",
+  "projectRoot": "/Users/lisuhang1/Desktop/欧莱雅/K-pro-web-demo",
+  "preview": "http://127.0.0.1:4173/?lang=zh#product",
+  "request": "将产品图片及三点初版升级为用户指定参考站的完整产品交互，并设置带标志与中英文切换的白底常驻顶栏。",
+  "planExecuted": [
+    "备份现有源码和构建输出",
+    "下载核对固定提交的17项参考源码/模型/依赖文件",
+    "移植六个模块站位、137网格模型、热点高亮、拆解滑杆、自动巡览与双语文案",
+    "将全屏页面改成官网章节，将参考标志与语言切换集中在全站固定白色顶栏",
+    "适配手机功能导航与模型控件同屏，处理失败备用界面与离屏暂停",
+    "完成交互、窄屏、降级、原站功能回归与视觉检查"
+  ],
+  "reference": {
+    "url": "https://lzllzllzllzllzl.github.io/V2-L-Pro-Anatomy-main/",
+    "commit": "65535fc7f1bb54b4f07b1e4b9fcdd3d47e5e594b",
+    "provenance": "tools/reference-anatomy-20261017/provenance.json",
+    "sourceFilesVerified": 17,
+    "modelBytes": 16456952,
+    "modelMeshes": 137,
+    "modelMatchesOriginal": true
+  },
+  "implementation": {
+    "source": "src/anatomy/",
+    "runtimeEntry": "anatomy.js",
+    "style": "anatomy.css",
+    "sharedHeader": [
+      "site-header.css",
+      "site-ui.js"
+    ],
+    "configuration": [
+      "content.js: productAnatomy",
+      "content.js: siteUI",
+      "src/anatomy/pod/modules.ts"
+    ],
+    "localSourceBackup": "backups/pre-product-anatomy-20261017-112306/",
+    "historicalDependencyLock": "backups/pre-bookmark-spaces-20261004-090611/pnpm-lock.yaml",
+    "backupScope": "本轮备份覆盖修改前源码、package.json与原构建输出；本轮新备份未复制原pnpm-lock.yaml。已核对历史备份的直接依赖配置与本轮修改前一致，可参考该历史锁文件。"
+  },
+  "browserTests": [
+    {
+      "file": "产品完整版-桌面交互.json",
+      "viewport": [
+        1366,
+        768
+      ],
+      "mode": "normal",
+      "passed": 40
+    },
+    {
+      "file": "产品完整版-手机交互.json",
+      "viewport": [
+        390,
+        844
+      ],
+      "mode": "normal",
+      "passed": 40
+    },
+    {
+      "file": "产品完整版-窄屏交互.json",
+      "viewport": [
+        320,
+        740
+      ],
+      "mode": "normal",
+      "passed": 40
+    },
+    {
+      "file": "产品完整版-失败降级.json",
+      "viewport": [
+        390,
+        844
+      ],
+      "mode": "failed-model",
+      "passed": 24
+    },
+    {
+      "file": "产品完整版-WebGL降级.json",
+      "viewport": [
+        390,
+        844
+      ],
+      "mode": "no-webgl",
+      "passed": 24
+    }
+  ],
+  "totalBrowserChecks": 168,
+  "regressions": {
+    "panoramaNodeTestsPassed": 4,
+    "backgroundTest": "pass",
+    "protectedFilesUnchanged": 39,
+    "protectedEvidence": "产品完整版-保护核对.json"
+  },
+  "visualAndManualChecks": [
+    "1366×768桌面：整机、功能列表、拆解与复原控件同屏，顶栏为不透明白色且固定",
+    "390×844手机：压缩标题区后，功能选择、模型及底部按钮同屏",
+    "320×740：没有页面横向溢出，六功能取景和四全景入口通过",
+    "直接点模型热点正确选中对应功能",
+    "鼠标拖动模型改变视角，仍为总览且页面scrollY保持2372.5",
+    "移除热点backdrop-filter后，WebGL上的矩形残影消失",
+    "17个参考文件及生产模型哈希一致；39项既有背景/全景/世界资源受保护"
+  ],
+  "screenshots": [
+    "产品完整版-桌面.jpg",
+    "产品完整版-手机.jpg"
+  ],
+  "limitations": [
+    "手机验证使用浏览器响应式视口，尚未做实体手机触控与性能实测。",
+    "完整原始模型约16.5MB，首次加载耗时取决于网络；已提供加载与失败处理。",
+    "参考React Three Fiber内部仍使用Three.Clock，当前Three.js会提示非阻塞弃用警告；正常运行未出现脚本错误。",
+    "本轮仅更新本地预览，未推送或部署。"
+  ],
+  "reusableFindings": [
+    {
+      "problem": "旧依赖缓存与默认缓存不同，新增依赖被拒绝",
+      "cause": "项目原来使用tools/.pnpm-store，包管理器默认改用用户库目录",
+      "resolution": "显式沿用项目store-dir，避免改变全局配置。"
+    },
+    {
+      "problem": "较大GLB下载在时限到达时仍未完整",
+      "cause": "模型约16.5MB，实际网络传输较慢",
+      "resolution": "断点续传后进行完整字节长度与Git blob SHA1校验，通过后再复制到网站assets。"
+    },
+    {
+      "problem": "3D圆形热点下出现矩形残影",
+      "cause": "热点backdrop-filter在WebGL画面上产生采样伪影",
+      "resolution": "热点使用稳定半透明底色，取消其backdrop-filter，正文背景玻璃独立保留。"
+    },
+    {
+      "problem": "手机控制区首版位于首屏之外",
+      "cause": "直接保留大标题与多段说明，占用过多高度",
+      "resolution": "使用紧凑标题、横向功能条、当前说明和弹性模型高度，实际检查控件底边在视口以内。"
+    },
+    {
+      "problem": "备份规则漏掉YAML锁文件",
+      "cause": "备份只按js/css/html/mjs/json/md扩展名收集",
+      "resolution": "今后依赖变更前显式备份所有包管理器锁文件；本次保留原package.json，并定位到了依赖输入匹配的历史pnpm锁文件。"
+    }
+  ],
+  "workspaceStatus": {
+    "WORKSPACE_ROOT": null,
+    "checked": [
+      "/Volumes/*/AI/workspace",
+      "/Users/lisuhang1/AI/workspace"
+    ],
+    "rulesRead": false,
+    "rulesIssue": "固定Workspace与规矩文档.txt未找到。",
+    "legacyPitfallsRead": true,
+    "legacyPitfallsPath": "/Users/lisuhang1/Desktop/欧莱雅/codex工作文档/踩坑日志.txt",
+    "fixedPitfallsLogUpdated": false,
+    "fixedExperienceLogUpdated": false,
+    "logIssue": "固定Workspace未找到，未猜测或创建替代固定日志；本轮可复用经验记录在已授权项目的验收报告。"
+  }
+}
