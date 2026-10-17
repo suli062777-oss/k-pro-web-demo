@@ -1,7 +1,7 @@
 {
   "date": "2026-10-17",
+  "codeCommit": "5257a59bbdf2dfe1d902772cbc68fe09e03cca00",
   "baseline": "717053ac0cefb54321729231241be206107e319b",
-  "scope": "Local UX refinement checks; repository upload status must be verified separately.",
   "world": [
     {
       "mode": "normal",
@@ -165,7 +165,7 @@
           "name": "home raycast hover / white outline / scale",
           "pass": true,
           "details": {
-            "scale": 1.0398,
+            "scale": 1.04,
             "outline": "home"
           }
         },
@@ -865,6 +865,181 @@
     "Responsive browser viewports, not physical device performance testing.",
     "Pointer and touch regressions use fixture-dispatched DOM events; keyboard and navigation are also checked through the browser UI.",
     "Formal video assets and physical-device performance remain untested.",
-    "World regression results predate the added instruction-visibility assertion; the final mobile Chinese instruction was separately verified in the browser."
+    "External Bilibili playback was not tested; supplied link destination was checked.",
+    "Remote upload has not succeeded and is not implied by local verification."
+  ],
+  "finalVisual": [
+    {
+      "background": [
+        0,
+        0,
+        1425,
+        900
+      ],
+      "cover": "cover",
+      "hero": [
+        {
+          "box": [
+            367.5,
+            309,
+            690,
+            220
+          ],
+          "class": "svg-slot hero-wordmark",
+          "filter": "blur(6px) drop-shadow(rgba(255, 255, 255, 0.24) 0px 0px 7.92px)",
+          "overflow": "visible"
+        },
+        {
+          "box": [
+            208.5,
+            564,
+            1008,
+            115
+          ],
+          "class": "svg-slot hero-tagline",
+          "filter": "blur(1.4px) drop-shadow(rgba(255, 255, 255, 0.18) 0px 0px 4px)",
+          "overflow": "visible"
+        }
+      ],
+      "mediaCount": 1,
+      "name": "Desktop hero and fixed background",
+      "overflow": false,
+      "position": "fixed",
+      "scrollY": 0,
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    {
+      "background": [
+        0,
+        0,
+        375,
+        844
+      ],
+      "clientWidth": 375,
+      "hero": [
+        {
+          "box": [
+            33.453125,
+            333.6328125,
+            308.09375,
+            97.5
+          ],
+          "class": "svg-slot hero-wordmark",
+          "filter": "blur(2.6px) drop-shadow(rgba(255, 255, 255, 0.24) 0px 0px 3px)",
+          "overflow": "visible"
+        },
+        {
+          "box": [
+            17.8515625,
+            449.1328125,
+            339.296875,
+            46.796875
+          ],
+          "class": "svg-slot hero-tagline",
+          "filter": "blur(0.6px) drop-shadow(rgba(255, 255, 255, 0.18) 0px 0px 2px)",
+          "overflow": "visible"
+        }
+      ],
+      "name": "Mobile hero and fixed background",
+      "overflow": false,
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "Glass styles unchanged after scrolling from hero to FAQ",
+      "pass": true,
+      "panels": [
+        {
+          "background": "rgba(20, 20, 20, 0.78)",
+          "filter": "blur(24px) grayscale(1)",
+          "opacity": "1",
+          "theme": "dark"
+        },
+        {
+          "background": "rgba(20, 20, 20, 0.78)",
+          "filter": "blur(24px) grayscale(1)",
+          "opacity": "1",
+          "theme": "dark"
+        }
+      ]
+    },
+    {
+      "background": [
+        0,
+        0,
+        375,
+        844
+      ],
+      "name": "Fixed background covers viewport near footer",
+      "overflow": false,
+      "pass": true,
+      "scrollY": 6055.5
+    },
+    {
+      "name": "Real keyboard Tab highlights building",
+      "pass": true,
+      "scale": "1.0400"
+    },
+    {
+      "name": "Real keyboard Enter and Escape return to building",
+      "pass": true
+    }
+  ],
+  "completionAudit": [
+    {
+      "requirement": "Building enlargement, white outline, label linkage and rotation pause",
+      "status": "verified",
+      "evidence": "world results at 1440,390,320 widths; ux-world-hover-desktop.png"
+    },
+    {
+      "requirement": "Dragging does not open; single tap opens matching panorama; return restores position",
+      "status": "verified",
+      "evidence": "31-check world regression, including final 390-width run"
+    },
+    {
+      "requirement": "Keyboard equivalents and reduced motion",
+      "status": "verified",
+      "evidence": "Real Tab/Enter/Escape checks; reduced-motion 320-width world regression"
+    },
+    {
+      "requirement": "Reduce product text density and improve section spacing",
+      "status": "verified",
+      "evidence": "Six feature selections, one explanation, no desktop nested scrolling; desktop and mobile product screenshots"
+    },
+    {
+      "requirement": "Single white header and mobile menu",
+      "status": "verified",
+      "evidence": "Page-flow tests at 1440/390/320; mobile keyboard close and focus restore"
+    },
+    {
+      "requirement": "Language URL, reload, back navigation and panorama copy",
+      "status": "verified",
+      "evidence": "Page-flow tests plus actual browser reload/back and Chinese mobile instruction checks"
+    },
+    {
+      "requirement": "Booking switch retains position and input; mobile form-first layout",
+      "status": "verified",
+      "evidence": "Page-flow geometry comparisons at all three widths and actual local form submission"
+    },
+    {
+      "requirement": "App availability, Bilibili destination, FAQ order and white surfaces",
+      "status": "verified",
+      "evidence": "Page-flow checks; external video playback not tested"
+    },
+    {
+      "requirement": "Preserve hero soft focus, fixed background and constant glass",
+      "status": "verified",
+      "evidence": "finalVisual and hero screenshots; background covers viewport at hero and footer, glass parameters identical"
+    },
+    {
+      "requirement": "Upload current version to GitHub",
+      "status": "blocked_pending_user_confirmation",
+      "evidence": "Local commits complete; remote push rejected by automatic approval review. No successful push."
+    }
   ]
 }
