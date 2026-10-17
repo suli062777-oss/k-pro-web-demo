@@ -191,6 +191,12 @@
 
 ## 版本留痕
 
+### GitHub Pages 发布准备（2026-10-17）
+
+`.github/workflows/deploy-pages.yml` 支持主分支更新与手动部署。使用已经纳入 Git 的静态渲染产物，无需在线安装依赖；`python3 tools/package-pages.py` 将网站入口、脚本、样式和素材复制到 `_site/`。网站产物排除 Git 历史、开发源码目录、设计参考稿目录、验收记录及素材来源清单。重复打包前需自行保留或删除旧 `_site/`，脚本不会覆盖已有目录。
+
+当前仅完成本地部署配置准备，尚未启用或触发 GitHub Pages。仓库设置页提示私有仓库需要升级账户或改为公开；未修改仓库可见性、账户方案或任何付费设置。启用条件满足后，在 Settings → Pages 将 Source 设为 GitHub Actions，将最新版本和工作流同步到 main 后运行本工作流。源码仓库若改为公开，其全部已提交内容也会公开，与网站产物排除规则无关。
+
 私有仓库：[suli062777-oss/k-pro-web-demo](https://github.com/suli062777-oss/k-pro-web-demo)。
 
 初始版本保存固定背景、章节毛玻璃及现有交互。源代码、素材、字体许可与验收记录纳入版本管理；本机预览服务日志、进程号和系统临时文件由 `.gitignore` 排除。

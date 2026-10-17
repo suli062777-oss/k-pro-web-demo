@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-17",
+  "repository": "suli062777-oss/k-pro-web-demo",
+  "preflight": {
+    "remoteMain": "717053ac0cefb54321729231241be206107e319b",
+    "existingWorkflowRuns": 0,
+    "pagesInitiallyEnabled": false,
+    "pagesSettingsMessage": "升级或公开该仓库，以启用 GitHub Pages"
+  },
+  "authorization": {
+    "userApprovedPublicRepositoryAndDeployment": true,
+    "githubIdentityVerification": "awaiting_user"
+  },
+  "localPackage": {
+    "path": "_site/",
+    "files": 111,
+    "bytes": 61759621,
+    "htmlAndModulePaths": "passed",
+    "developmentDirectoriesExcluded": true,
+    "subdirectoryBrowserPreview": "http://127.0.0.1:4173/_site/?lang=en#settings",
+    "world": "ready",
+    "panoramaHome": "ready",
+    "productAnatomy": "ready",
+    "browserErrors": []
+  },
+  "deployment": {
+    "workflow": ".github/workflows/deploy-pages.yml",
+    "triggered": false,
+    "reason": "GitHub requires the account owner to complete sudo-mode identity verification before the repository can become public and Pages can be enabled."
+  }
+}
