@@ -9,17 +9,8 @@ window.KPRO_CONTENT = {
     "videoStart": 0,
     "videoEnd": null
   },
-  "branding": {
-    "wordmark": {
-      "blur": "clamp(2.6px, 0.42vw, 6px)",
-      "halo": "clamp(3px, 0.55vw, 8px)",
-      "haloOpacity": 0.24
-    },
-    "tagline": {
-      "blur": "clamp(0.6px, 0.1vw, 1.4px)",
-      "halo": "clamp(2px, 0.3vw, 4px)",
-      "haloOpacity": 0.18
-    }
+  "hero": {
+    "headlineLines": ["Effortless", "Hair Care With", "L Pro"]
   },
   "background": {
     "position": "50% 50%",

@@ -8,6 +8,15 @@
   const text = (selector, value) => { $(selector).textContent = value; };
 
   // Copy and image paths are kept outside the layout in content.js.
+  const heroTitle = $('#hero-title');
+  if (heroTitle && content.hero?.headlineLines?.length) {
+    heroTitle.replaceChildren(...content.hero.headlineLines.map((line, index) => {
+      const span = document.createElement('span');
+      span.textContent = line;
+      // Keep spaces in the accessible heading while CSS preserves the three lines.
+      return [index ? document.createTextNode(' ') : document.createTextNode(''), span];
+    }).flat());
+  }
   Object.entries(content.copy || {}).forEach(([selector, value]) => {
     const element = $(selector);
     if (element) { element.textContent = value; element.classList.add('configured-copy'); }
@@ -75,18 +84,6 @@
     text('#follow-message',button.dataset.follow === 'Contact' ? 'L PRO is taking shape. Our official contact details will be shared here as the project develops.' : 'Our official '+button.dataset.follow+' channel will be shared here. In the meantime, discover what L PRO is all about.');
     openDialog($('#follow-dialog'));
   }));
-
-  // Soften only the two brand graphics, independently of the scrolling backdrop.
-  ['wordmark', 'tagline'].forEach(name => {
-    const slot = $('.hero-' + name);
-    const effect = content.branding?.[name];
-    if (!slot || !effect) return;
-    if (effect.blur) slot.style.setProperty('--brand-blur', effect.blur);
-    if (effect.halo) slot.style.setProperty('--brand-halo', effect.halo);
-    if (Number.isFinite(effect.haloOpacity)) {
-      slot.style.setProperty('--brand-halo-opacity', Math.max(0, Math.min(1, effect.haloOpacity)));
-    }
-  });
 
   // Scale the image transform, preserving the source SVG root dimensions.
   const scaleAsset = img => {

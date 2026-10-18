@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "filter": "none",
+      "font": "57.6px",
+      "name": "Desktop headline and video",
+      "pass": true,
+      "stage": {
+        "bottom": 720,
+        "height": 636,
+        "left": 0,
+        "right": 1265,
+        "top": 84,
+        "width": 1265,
+        "x": 0,
+        "y": 84
+      },
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "menuHidden": true,
+      "name": "390px mobile layout",
+      "pass": true,
+      "playing": true,
+      "title": {
+        "bottom": 652,
+        "height": 112.453125,
+        "left": 24,
+        "right": 254.234375,
+        "top": 539.546875,
+        "width": 230.234375,
+        "x": 24,
+        "y": 539.546875
+      },
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "cta": {
+        "bottom": 460,
+        "height": 54,
+        "left": 24,
+        "right": 172,
+        "top": 406,
+        "width": 148,
+        "x": 24,
+        "y": 406
+      },
+      "name": "320px Chinese controls with English headline",
+      "pass": true,
+      "title": {
+        "bottom": 380,
+        "height": 103.6640625,
+        "left": 24,
+        "right": 236.2578125,
+        "top": 276.3359375,
+        "width": 212.2578125,
+        "x": 24,
+        "y": 276.3359375
+      },
+      "toggle": {
+        "bottom": 552,
+        "height": 40,
+        "left": 185,
+        "right": 281,
+        "top": 512,
+        "width": 96,
+        "x": 185,
+        "y": 512
+      },
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "name": "Explore navigates to routine",
+      "pass": true,
+      "sectionTop": 72
+    }
+  ],
+  "design": {
+    "copy": [
+      "Effortless",
+      "Hair Care With",
+      "L Pro"
+    ],
+    "desktop": "Left-aligned crisp white DM Sans 700 with fixed neutral horizontal scrim",
+    "mobile": "Lower-left copy with fixed neutral vertical scrim",
+    "heroHeight": "Viewport minus fixed navigation; 500px minimum on small screens",
+    "backup": "backups/pre-hero-headline-20261018",
+    "limits": "Browser viewport checks, not physical-device testing; second-section heading remains unchanged."
+  }
+}
